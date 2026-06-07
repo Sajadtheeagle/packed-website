@@ -152,6 +152,29 @@ def header(active=""):
         "<button class=\"burger\" onclick=\"document.getElementById('navLinks').classList.toggle('open')\">&#9776;</button>"
         "</div></header>\n")
 
+FORM_JS = """<script>
+function wireForm(id,evt,msg){
+  var f=document.getElementById(id);if(!f)return;
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var btn=f.querySelector("button[type=submit]"),orig=btn.textContent;
+    btn.disabled=true;btn.textContent="Sending...";
+    fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(f)))})
+    .then(function(r){return r.json()})
+    .then(function(d){
+      if(d.success){
+        f.innerHTML="<div style='padding:26px 6px;text-align:center'><div style='font-family:Archivo,sans-serif;font-weight:900;font-size:22px;color:#fff'>Got it. &#10003;</div><p style='color:#9AA4B4;margin-top:10px;font-size:14.5px'>"+msg+"</p></div>";
+        if(window.gtag)gtag("event",evt);
+      }else{btn.disabled=false;btn.textContent=orig;alert("Something went wrong - please call or text 343-558-5062.");}
+    })
+    .catch(function(){btn.disabled=false;btn.textContent=orig;alert("Something went wrong - please call or text 343-558-5062.");});
+  });
+}
+wireForm("auditForm","lead_audit","Your audit is on the way - we will text or call within one business day, and the video lands within two.");
+wireForm("contactForm","lead_contact","Message received - we reply within one business day.");
+</script>
+"""
+
 FOOTER = ("<footer class=\"site\"><div class=\"wrap\"><div class=\"f-grid\">"
     "<div><div class=\"logo\" style=\"margin-bottom:14px\">" + LOGO_SVG + "<div style=\"color:#fff\"><b style=\"color:#fff\">PACKED</b><span>AGENCY</span></div></div>"
     "<p style=\"font-size:14px;max-width:300px\">We keep your schedule packed. Marketing, exclusive leads and follow-up automation for Canada's trades. Ottawa-built.</p></div>"
@@ -160,7 +183,7 @@ FOOTER = ("<footer class=\"site\"><div class=\"wrap\"><div class=\"f-grid\">"
     "<div><h4>Company</h4><a href=\"process.html\">Our Process</a><a href=\"resources.html\">Free Resources</a><a href=\"guarantees.html\">Guarantees</a><a href=\"results.html\">Results</a><a href=\"reviews.html\">Reviews</a><a href=\"blog.html\">Blog</a><a href=\"contact.html\">Contact</a></div>"
     "</div><div class=\"f-bottom\"><span>&copy; 2026 Packed Agency. All rights reserved.</span>"
     "<span><a href=\"privacy.html\">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href=\"terms.html\">Terms</a> &nbsp;&middot;&nbsp; Client Portal (coming soon)</span></div></div></footer>\n"
-    "<a class=\"callbar\" href=\"" + TEL + "\">&#128222; Call Packed &mdash; " + PHONE + "</a>\n</body>\n</html>")
+    "<a class=\"callbar\" href=\"" + TEL + "\">&#128222; Call Packed &mdash; " + PHONE + "</a>\n" + FORM_JS + "</body>\n</html>")
 
 def phero(kicker, h1, lead, crumb=""):
     c = ("<div class=\"crumb\"><a href=\"index.html\">Home</a> / " + crumb + "</div>") if crumb else ""
@@ -425,12 +448,15 @@ audit_body += """
   <h3>Get your free audit</h3>
   <p class="sub">Three quick details — takes 30 seconds.</p>
   <ol style="margin:0 0 10px 18px;font-size:13.5px;color:var(--grey);line-height:1.8"><li>You send 3 details below</li><li>We check your Google listing, website, reviews and phones</li><li>You get a 10-minute video in 2 business days &mdash; no meeting, no pressure</li></ol>
-  <!-- GHL EMBED: replace this form with your GoHighLevel form embed before launch -->
-  <form onsubmit="event.preventDefault();alert('Connect this form to GoHighLevel before launch.');">
-    <label>Name</label><input type="text" placeholder="Mike Tremblay" required>
+  <form id="auditForm">
+    <input type="hidden" name="access_key" value="9aac958d-5965-4b75-8736-b6ab7274db68">
+    <input type="hidden" name="subject" value="NEW LEAD: Free Audit request (packedagency.ca)">
+    <input type="hidden" name="from_name" value="Packed Agency Website">
+    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+    <label>Name</label><input type="text" name="name" placeholder="Mike Tremblay" required>
     <label>Trade</label>
-    <select required><option value="">Choose your trade…</option><option>HVAC</option><option>Plumbing</option><option>Electrical</option><option>Renovation / General Contracting</option><option>Other home service</option></select>
-    <label>Phone</label><input type="tel" placeholder="613-555-0123" required>
+    <select name="trade" required><option value="">Choose your trade…</option><option>HVAC</option><option>Plumbing</option><option>Electrical</option><option>Renovation / General Contracting</option><option>Other home service</option></select>
+    <label>Phone</label><input type="tel" name="phone" placeholder="613-555-0123" required>
     <button class="btn" type="submit">Send Me My Free Audit</button>
     <p class="fine">By submitting, you agree to receive a reply by phone, text or email about your audit. No spam, no list-selling, unsubscribe anytime. (CASL compliant)</p>
     <p class="fine" style="margin-top:8px"><b>Hate forms?</b> Text the word <b>AUDIT</b> to <a href="sms:+13435585062" style="color:var(--orange);font-weight:700">343-558-5062</a> and we&rsquo;ll take it from there.</p>
@@ -616,11 +642,14 @@ contact_body += """
 <div class="aform">
   <h3>Send a message</h3>
   <p class="sub">We reply within one business day.</p>
-  <!-- GHL EMBED: replace with GoHighLevel form -->
-  <form onsubmit="event.preventDefault();alert('Connect this form to GoHighLevel before launch.');">
-    <label>Name</label><input type="text" required>
-    <label>Phone or email</label><input type="text" required>
-    <label>What do you need?</label><input type="text" placeholder="e.g., my website brings zero leads">
+  <form id="contactForm">
+    <input type="hidden" name="access_key" value="9aac958d-5965-4b75-8736-b6ab7274db68">
+    <input type="hidden" name="subject" value="NEW MESSAGE: Contact form (packedagency.ca)">
+    <input type="hidden" name="from_name" value="Packed Agency Website">
+    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+    <label>Name</label><input type="text" name="name" required>
+    <label>Phone or email</label><input type="text" name="contact_info" required>
+    <label>What do you need?</label><input type="text" name="message" placeholder="e.g., my website brings zero leads">
     <button class="btn" type="submit">Send</button>
     <p class="fine">CASL consent: by submitting you agree to be contacted about your inquiry. Unsubscribe anytime.</p>
     <p class="fine" style="margin-top:8px"><b>Faster:</b> call or text <a href="tel:+13435585062" style="color:var(--orange);font-weight:700">343-558-5062</a> &mdash; you reach Sajad directly, not a call centre.</p>
