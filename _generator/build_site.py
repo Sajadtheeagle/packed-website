@@ -180,7 +180,7 @@ FOOTER = ("<footer class=\"site\"><div class=\"wrap\"><div class=\"f-grid\">"
     "<p style=\"font-size:14px;max-width:300px\">We keep your schedule packed. Marketing, exclusive leads and follow-up automation for Canada's trades. Ottawa-built.</p></div>"
     "<div><h4>Services</h4><a href=\"local-seo.html\">Local SEO &amp; Maps</a><a href=\"google-ads.html\">Google Ads &amp; LSA</a><a href=\"websites.html\">Conversion Websites</a><a href=\"automation.html\">Follow-up Automation</a><a href=\"calculator.html\">Missed-Call Calculator</a></div>"
     "<div><h4>Trades</h4><a href=\"hvac-marketing.html\">HVAC Marketing</a><a href=\"plumber-marketing.html\">Plumber Marketing</a><a href=\"electrician-marketing.html\">Electrician Marketing</a><a href=\"renovation-marketing.html\">Renovation Marketing</a><a href=\"toronto.html\">Toronto</a></div>"
-    "<div><h4>Company</h4><a href=\"process.html\">Our Process</a><a href=\"resources.html\">Free Resources</a><a href=\"guarantees.html\">Guarantees</a><a href=\"results.html\">Results</a><a href=\"reviews.html\">Reviews</a><a href=\"blog.html\">Blog</a><a href=\"contact.html\">Contact</a></div>"
+    "<div><h4>Company</h4><a href=\"process.html\">Our Process</a><a href=\"resources.html\">Free Resources</a><a href=\"events.html\">Events</a><a href=\"news.html\">Trade News</a><a href=\"guarantees.html\">Guarantees</a><a href=\"results.html\">Results</a><a href=\"reviews.html\">Reviews</a><a href=\"blog.html\">Blog</a><a href=\"contact.html\">Contact</a></div>"
     "</div><div class=\"f-bottom\"><span>&copy; 2026 Packed Agency. All rights reserved.</span>"
     "<span><a href=\"privacy.html\">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href=\"terms.html\">Terms</a> &nbsp;&middot;&nbsp; Client Portal (coming soon)</span></div></div></footer>\n"
     "<a class=\"callbar\" href=\"" + TEL + "\">&#128222; Call Packed &mdash; " + PHONE + "</a>\n" + FORM_JS + "</body>\n</html>")
@@ -857,101 +857,204 @@ tor_body += """
 </div></div></section>""" + CTA
 page("toronto.html", "Contractor Marketing Toronto | Packed Agency", "Ottawa-proven contractor marketing for GTA trades: local SEO, ads, follow-up automation. One client per trade.", "", tor_body)
 
-# ============================================================ RESOURCES (free learning hub)
-res_body = phero("Free learning — no email wall", "The Contractor's <em>Marketing School.</em>",
-    "Everything below is free, specific, and usable today — the same playbooks we charge for, taught in public. Steal it all.", "Free Resources")
+# ============================================================ GUIDE PAGES (Marketing School)
+def guide_page(fname, title, kicker, h1, lead, intro, checks, faq, note):
+    b = phero(kicker, h1, lead, "Free Resources / Guide")
+    b += "<section><div class=\"wrap\" style=\"max-width:860px\">"
+    b += "<p class=\"sec-sub\" style=\"max-width:860px\">" + intro + "</p>"
+    b += "<ul class=\"checks\">"
+    for c in checks: b += "<li>" + c + "</li>"
+    b += "</ul>"
+    if note: b += "<div class=\"note\">" + note + "</div>"
+    b += "<h2 class=\"sec-h2\" style=\"font-size:26px;margin-top:40px\">Fair questions</h2>"
+    for q, a in faq: b += "<details><summary>" + q + "</summary><p>" + a + "</p></details>"
+    b += ("<p style=\"margin-top:34px\"><a class=\"btn\" href=\"free-audit.html\">Get My Free Audit</a>&nbsp;&nbsp;"
+          "<a class=\"btn navy\" href=\"resources.html\">More free guides</a></p></div></section>")
+    page(fname, title, lead, "resources", b)
+
+guide_page("guide-google-business-profile.html",
+    "Google Business Profile for Contractors: The 10-Minute Fix | Packed Agency",
+    "Free guide", "The 10-minute Google Business Profile <em>fix.</em>",
+    "Your Google listing drives more calls than your website — and most trades have it 30% filled. Six fixes you can do today, free.",
+    "When a homeowner searches your trade, Google shows the map first. Your Google Business Profile (the listing with your name, reviews and photos) decides whether you appear there. Here is exactly what to fix, in order of impact:",
+    ["Pick your <b>primary category</b> precisely (&ldquo;Plumber&rdquo;, not &ldquo;Contractor&rdquo;) — it is the single biggest ranking lever",
+     "Add every service you offer as a separate service item, with a sentence each",
+     "Upload 10+ real job photos (trucks, crews, finished work) — phone photos beat stock, always",
+     "Set service areas to the neighbourhoods you actually want jobs in",
+     "Answer the Q&amp;A section yourself before strangers do",
+     "Post once a week — a finished job with one photo counts"],
+    [("How long until I see results?", "Category and service fixes can move your map position within 2&ndash;4 weeks. Photos and weekly posts compound over 2&ndash;3 months. It is the highest-return free work in contractor marketing."),
+     ("Do I really need to post every week?", "It is a tie-breaker, not a magic bullet. Two competitors with equal reviews: the active profile wins. One photo of a finished job with one sentence is enough — do it from your truck."),
+     ("My listing is suspended or duplicated. Now what?", "Common and fixable: claim the duplicate, request reinstatement with your business documents, and never list a PO box. If you are stuck, this is exactly the kind of thing our free audit catches.")],
+    "<b>Since November 2024</b>, a verified Google Business Profile is also mandatory to run Google&rsquo;s pay-per-lead ads (Local Services Ads) — and since mid-2025 your profile reviews directly power those ads&rsquo; ranking. The listing is no longer optional infrastructure; it IS your marketing foundation.")
+
+guide_page("guide-reviews.html",
+    "How Contractors Get More Google Reviews: The Playbook | Packed Agency",
+    "Free guide", "The review playbook that <em>actually works.</em>",
+    "Reviews decide ties in the Google map pack. The trick isn't asking — it's when and how you ask.",
+    "Two contractors, same distance from the homeowner: the one with 150 fresh reviews beats the one with 30 old ones, almost every time. Here is the playbook:",
+    ["Ask at the <b>moment of thanks</b> — when the customer says &ldquo;this is great&rdquo;, that's the window",
+     "Send the direct review link by text within 10 minutes (search &ldquo;Google review link generator&rdquo; — it's free)",
+     "Aim for velocity, not volume: 2&ndash;3 fresh reviews a month beats 50 old ones",
+     "Reply to every review, including the bad ones — replies are ranking signals and trust signals",
+     "Never buy reviews. Google's filters catch them and the penalty outlasts the boost"],
+    [("Can I just ask every customer at the end of the job?", "Yes — but timing beats coverage. The customer who just thanked you converts at several times the rate of one getting a generic &ldquo;please review us&rdquo; email three days later."),
+     ("Should I respond to a bad review?", "Always, within 24 hours, calmly and factually. Future customers read your reply more carefully than the complaint. Never argue; offer to fix it offline."),
+     ("Are review incentives allowed?", "No — and Google tightened this again in 2026: review quotas for techs, asking customers to name a specific employee, and &ldquo;scan this tablet before I leave&rdquo; pressure are now formal policy violations that can get reviews wiped. Ask honestly, at the right moment, and you will not need tricks.")],
+    "")
+
+guide_page("guide-website-checklist.html",
+    "Why Contractor Websites Don't Generate Leads: 7 Fixes | Packed Agency",
+    "Free guide", "7 reasons contractor websites <em>never ring.</em>",
+    "About 90% of contractor websites fail to turn visitors into calls. These are the seven leaks — check yours against each one.",
+    "A website that doesn't make the phone ring isn't a website — it's a brochure nobody asked for. Walk through your own site on your phone and check:",
+    ["Phone number not clickable on mobile (60%+ of your visitors are on phones)",
+     "No quote form above the fold — visitors won't scroll to find it",
+     "Slow loading: every extra second loses visitors before they see anything",
+     "Stock photos instead of your real trucks and crews — homeowners can smell it",
+     "No reviews or proof on the page itself",
+     "One generic page instead of a page per service and area",
+     "No follow-up when someone does fill the form (see our follow-up guide)"],
+    [("Do I need a new website, or can mine be fixed?", "If it loads fast and you can edit it, most of these leaks are patchable. If it is on an old builder, locked by a previous agency, or takes 8 seconds to load on a phone — rebuilding is usually cheaper than fighting it. Our free audit tells you which, honestly."),
+     ("What matters more — looks or speed?", "Speed, and it is not close. Homeowners forgive a plain site that loads instantly and shows a phone number; they do not wait for a beautiful one. Test yours on your own phone, on data, not Wi-Fi.")],
+    "")
+
+guide_page("guide-follow-up.html",
+    "Lead Follow-Up for Contractors: Where the Money Leaks | Packed Agency",
+    "Free guide", "Follow-up: where the money <em>actually leaks.</em>",
+    "80% of sales take five or more contacts — most contractors stop at one. Three free fixes you can start today.",
+    "The cheapest lead you will ever get is the one already in your missed-call log. The stats that should change how you run your phone:",
+    ["<b>80% of sales take 5+ contacts</b> — most contractors stop at one",
+     "<b>85% of callers who hit voicemail don't leave a message</b> — they call the next name on Google",
+     "Free fix #1: a text auto-reply on your business line (&ldquo;Sorry we missed you — text us the job details&rdquo;)",
+     "Free fix #2: a 5-minute end-of-day rule — every missed call and quote gets one text before you go home",
+     "Free fix #3: a &ldquo;quote sent&rdquo; reminder 3 days later. One text. Most competitors never send it",
+     "Want your number? The <a href=\"calculator.html\" style=\"color:var(--orange);font-weight:700\">Missed-Call Calculator</a> takes 20 seconds"],
+    [("Won't automatic texts annoy my customers?", "A homeowner who just called you wants a reply. &ldquo;Sorry we missed you — how can we help?&rdquo; within seconds is service, not spam. Annoying is silence followed by a competitor's truck in their driveway."),
+     ("I'm a one-person shop. Is automation overkill?", "The opposite — you are the person who physically cannot answer while on the tools. Missed-call text-back exists precisely for the solo operator; it costs less per month than one lost service call."),
+     ("Why does answer speed suddenly matter even more in 2026?", "Google now tracks whether and how fast you answer calls from its pay-per-lead ads, and ranks slow answerers lower. Follow-up speed stopped being just good practice — it is now literally a ranking factor.")],
+    "")
+
+guide_page("guide-lead-costs.html",
+    "What a Contractor Lead Should Cost in 2026: Honest Benchmarks | Packed Agency",
+    "Free guide", "What leads should cost <em>(so nobody rips you off.)</em>",
+    "Honest 2026 benchmarks for every lead channel — so when someone quotes you a price, you can make them answer in numbers.",
+    "Almost nobody publishes real lead costs, which is exactly why contractors get overcharged. Here are the honest ranges from published industry data:",
+    ["<b>Google Local Services Ads (HVAC):</b> $60&ndash;120 per lead — and junk leads are disputable (most contractors never dispute)",
+     "<b>Google Search ads (managed):</b> ~$50&ndash;60 per call with ~55% close rates — roughly $110 per booked job",
+     "<b>Home-services average across channels:</b> ~$91 per lead; roofing runs up to ~$228",
+     "<b>Shared marketplaces (HomeStars/Angi):</b> similar sticker price — but the same homeowner is sold to up to 5 competitors, so your cost per WON job is far higher",
+     "<b>Google Maps / local SEO:</b> ~40% lower cost-per-sale than ads once ranked — the slow channel that wins"],
+    [("Are shared marketplace leads ever worth it?", "As a temporary bridge while you build owned channels, maybe. As a strategy, no — you are bidding against four competitors for the same homeowner, with no asset left when you stop paying."),
+     ("What should I ask an agency that quotes me a price?", "Three questions: What does a lead cost through you, in dollars? Do I own the accounts and the website if I leave? Can I see call tracking, not just a report? An honest agency answers all three in numbers — these benchmarks tell you if the numbers are fair.")],
+    "If someone quotes you far outside these ranges — in either direction — ask why, and make them answer in numbers. (Sources: published LocaliQ, WebFX and industry benchmark data; full citations on the blog.)")
+
+# ============================================================ EVENTS
+ev_body = phero("Events &amp; networking", "Where Ottawa contractors <em>actually meet.</em>",
+    "Trade shows, association breakfasts and networking that's worth a contractor's morning — updated as the calendar moves.", "Events")
+ev_body += """
+<section><div class="wrap">
+  <div class="kicker">Join one of these first</div>
+  <h2 class="sec-h2" style="font-size:28px">Local associations worth your membership</h2>
+  <div class="grid3" style="margin-top:26px">
+    <div class="card"><h3>Greater Ottawa Home Builders&rsquo; Association (GOHBA)</h3><p>The home-building and renovation crowd: monthly breakfast events, spring &amp; summer golf tournaments, the Housing Design Awards, and the HOWL women-in-homebuilding series. The breakfasts are the best networking-per-hour in the city. Find them at gohba.ca.</p></div>
+    <div class="card"><h3>Ottawa Construction Association (OCA)</h3><p>Commercial and trade contractors: education courses year-round and the annual OCA Construction Symposium &amp; Trade Show each spring at the EY Centre — builders, suppliers and buyers in one room. Details at oca.ca.</p></div>
+    <div class="card"><h3>BNI &amp; local referral groups</h3><p>Structured weekly referral networking. One plumber, one electrician, one renovator per chapter — which means your trade's seat might be open. Best ROI for service trades that live on referrals.</p></div>
+  </div>
+
+  <div class="kicker" style="margin-top:56px">Mark the calendar</div>
+  <h2 class="sec-h2" style="font-size:28px">Shows where homeowners come to you</h2>
+  <div class="grid3" style="margin-top:26px">
+    <div class="card"><h3>Ottawa Home shows (spring &amp; fall)</h3><p>The Ottawa Home + Garden Show (spring) and Ottawa Fall Home Show put you in front of thousands of homeowners actively planning projects. A modest booth plus a good follow-up system beats a big booth with no follow-up, every time.</p></div>
+    <div class="card"><h3>OCA Symposium &amp; Trade Show</h3><p>Annual, spring, EY Centre. Even as a visitor: suppliers, builders and subcontractor relationships in one afternoon.</p></div>
+    <div class="card"><h3>Worth the drive: Toronto</h3><p>The Buildings Show (December) is Canada&rsquo;s biggest construction event; CMPX is the national HVACR &amp; plumbing expo. Go once a year to see where the industry is heading before your competitors do.</p></div>
+  </div>
+
+  <div class="kicker" style="margin-top:56px">Free playbook</div>
+  <h2 class="sec-h2" style="font-size:28px">How to work a trade show (without wasting it)</h2>
+  <ul class="checks" style="max-width:820px">
+    <li>Set one number before you go: conversations that end with a phone number in your pocket. Ten beats a hundred business cards handed out</li>
+    <li>Text every contact the same evening — &ldquo;Good meeting you at the show&rdquo; — while everyone else waits a week and gets forgotten</li>
+    <li>Bring your calendar, not your brochure: book the estimate on the spot</li>
+    <li>Photograph your booth conversations (with permission) — a month of social content in one day</li>
+    <li>Walk the competitors&rsquo; booths: their pitch, their pricing sheet, their weaknesses — it&rsquo;s all public that day</li>
+  </ul>
+  <div class="note" style="max-width:820px;margin-top:36px"><b>Know an event we should list?</b> Tell us at info@packedagency.ca — this page is updated as the Ottawa calendar moves.</div>
+</div></section>""" + CTA
+page("events.html", "Contractor Events & Networking in Ottawa (2026) | Packed Agency",
+     "Ottawa contractor events, trade shows and associations: GOHBA, OCA Symposium, home shows, BNI — plus how to actually work a trade show.", "resources", ev_body)
+
+# ============================================================ NEWS BULLETIN
+news_body = phero("The Packed Bulletin &mdash; June 2026", "Trade news that <em>actually matters.</em>",
+    "Five changes affecting Ottawa contractors right now — what happened, and what to do about it. Updated monthly.", "News")
+news_body += """
+<section><div class="wrap" style="max-width:860px">
+
+  <div class="kicker">No. 1 &mdash; Money on the table</div>
+  <h2 class="sec-h2" style="font-size:26px">Ontario&rsquo;s heat-pump rebates run up to $7,500&ndash;$12,000 &mdash; and only registered contractors can submit</h2>
+  <p class="sec-sub" style="max-width:860px;margin-bottom:10px">Ontario&rsquo;s Home Renovation Savings program pays homeowners up to $7,500 for cold-climate air-source heat pumps and up to $12,000 for geothermal — and applications go through <b>HRS-registered contractors only</b>. If you're in HVAC and not registered, every competitor who is becomes the easier choice. Deadlines and program windows shift — check the program site before quoting it to customers.</p>
+  <p class="sec-sub" style="max-width:860px"><b>Do this:</b> get registered, then put &ldquo;rebate-registered&rdquo; on your Google listing, website and quotes. It's a closing tool, not paperwork.</p>
+
+  <div class="kicker" style="margin-top:50px">No. 2 &mdash; Google merged your reviews</div>
+  <h2 class="sec-h2" style="font-size:26px">Your Google Business Profile now powers your pay-per-lead ads</h2>
+  <p class="sec-sub" style="max-width:860px">Since mid-2025, Local Services Ads reviews live entirely in your Google Business Profile — and your profile's rating and review volume now directly affect your ad ranking. A verified profile is already mandatory to run LSAs at all. Translation: the free listing and the paid ads are now one system, and reviews are its fuel. (Our <a href="guide-reviews.html" style="color:var(--orange);font-weight:700">review playbook</a> is free.)</p>
+
+  <div class="kicker" style="margin-top:50px">No. 3 &mdash; New badge</div>
+  <h2 class="sec-h2" style="font-size:26px">&ldquo;Google Guaranteed&rdquo; is gone &mdash; meet the blue checkmark</h2>
+  <p class="sec-sub" style="max-width:860px">In late 2025 Google retired the Google Guaranteed and Google Screened badges and replaced both with a single <b>Google Verified</b> blue checkmark. If your truck wrap, website or estimates still say &ldquo;Google Guaranteed&rdquo;, update the wording — homeowners are already seeing the new badge in search.</p>
+
+  <div class="kicker" style="margin-top:50px">No. 4 &mdash; Review rules tightened</div>
+  <h2 class="sec-h2" style="font-size:26px">Tablet-in-the-driveway review asks are now a violation</h2>
+  <p class="sec-sub" style="max-width:860px">Google's 2026 review-policy refresh formally bans review quotas for techs, asking customers to mention an employee by name, and on-premises pressure — including the classic &ldquo;scan this before I leave&rdquo; tablet move. Penalty: wiped reviews, possibly a suspended profile. Asking honestly at the moment of thanks is still allowed — and still works best.</p>
+
+  <div class="kicker" style="margin-top:50px">No. 5 &mdash; Speed is now a ranking factor</div>
+  <h2 class="sec-h2" style="font-size:26px">Google now ranks you lower if you answer the phone slowly</h2>
+  <p class="sec-sub" style="max-width:860px">Local Services Ads now track whether you answer, how fast, and whether the call lasts long enough to be a real conversation — and slow answerers get worse placement and pay more per lead. Unanswered phones now cost you twice: the lost job AND the ranking. (This is exactly the leak our <a href="automation.html" style="color:var(--orange);font-weight:700">follow-up automation</a> plugs.)</p>
+
+  <div class="note" style="margin-top:50px"><b>Sources &amp; further reading:</b> Google Business Profile community notices, Google Local Services policy pages, Ontario Home Renovation Savings program documentation, and industry coverage from SmartSites, Surefire Local and Digital Shift. We read it so you can stay on the tools — new bulletin monthly.</div>
+</div></section>""" + CTA
+page("news.html", "Contractor Marketing News - June 2026 Bulletin | Packed Agency",
+     "Heat-pump rebates, Google review policy changes, the new Verified badge, and why answer speed now affects your ranking - monthly news for Ottawa trades.", "resources", news_body)
+
+# ============================================================ RESOURCES HUB
+res_body = phero("Free learning &mdash; no email wall", "The Contractor's <em>Marketing School.</em>",
+    "Free guides, local events, trade news and (soon) video lessons — the same playbooks we charge for, taught in public. Steal it all.", "Free Resources")
 res_body += """
 <section><div class="wrap">
+  <div class="kicker">Guides</div>
+  <h2 class="sec-h2" style="font-size:28px">Start here — five free playbooks</h2>
+  <div class="grid3" style="margin-top:26px">
+    <a class="card" href="guide-google-business-profile.html"><span class="tag">10 minutes</span><h3>The Google Business Profile fix</h3><p>The listing that drives more calls than your website — six fixes, free, today.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
+    <a class="card" href="guide-reviews.html"><span class="tag">Playbook</span><h3>Get more Google reviews</h3><p>Reviews decide map-pack ties. When and how to ask — and the 2026 rules that changed.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
+    <a class="card" href="guide-website-checklist.html"><span class="tag">Checklist</span><h3>7 reasons websites never ring</h3><p>Walk your own site through the seven leaks that kill contractor websites.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
+    <a class="card" href="guide-follow-up.html"><span class="tag">3 free fixes</span><h3>Follow-up: the money leak</h3><p>80% of sales take 5+ contacts. Most contractors stop at one. Fix it free.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
+    <a class="card" href="guide-lead-costs.html"><span class="tag">Benchmarks</span><h3>What leads should cost</h3><p>Honest 2026 numbers for every channel — so nobody rips you off.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
+    <a class="card dark" href="free-audit.html"><span class="badge">FASTEST PATH</span><h3>Skip ahead: the free audit</h3><p>We run all five playbooks against YOUR business and send you a 10-minute video.</p><span style="color:#FDBA74;font-weight:700;font-size:14px">Get it free →</span></a>
+  </div>
 
-  <div class="kicker">Lesson 1</div>
-  <h2 class="sec-h2" style="font-size:28px">The 10-minute Google Business Profile fix</h2>
-  <p class="sec-sub" style="margin-bottom:18px">Your GBP drives more calls than your website. Most trades have it 30% filled. Do these today:</p>
-  <ul class="checks" style="max-width:760px">
-    <li>Pick your <b>primary category</b> precisely ("Plumber", not "Contractor") — it is the single biggest ranking lever</li>
-    <li>Add every service you offer as a separate service item, with a sentence each</li>
-    <li>Upload 10+ real job photos (trucks, crews, finished work) — phone photos beat stock, always</li>
-    <li>Set service areas to the neighbourhoods you actually want jobs in</li>
-    <li>Answer the Q&amp;A section yourself before strangers do</li>
-    <li>Post once a week — a finished job with one photo counts</li>
-  </ul>
+  <div class="kicker" style="margin-top:60px">From the blog</div>
+  <h2 class="sec-h2" style="font-size:28px">Data we publish, weekly</h2>
+  <div class="grid3" style="margin-top:26px">
+    <a class="card" href="blog-hvac-lead-cost.html"><span class="tag">Published</span><h3>What an HVAC lead costs in Ottawa (2026)</h3><p>Real benchmarks: LSA, ads, marketplaces and SEO compared.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+    <div class="card" style="opacity:.75"><span class="tag">Next</span><h3>The mystery call: we phoned 10 Ottawa plumbers</h3><p>How many answered? The results explain who's busy.</p></div>
+    <a class="card" href="blog.html"><h3>All articles →</h3><p>Ottawa-specific answers to what contractors actually type into Google.</p></a>
+  </div>
 
-  <div class="kicker" style="margin-top:56px">Lesson 2</div>
-  <h2 class="sec-h2" style="font-size:28px">The review playbook that actually works</h2>
-  <p class="sec-sub" style="margin-bottom:18px">Reviews decide ties in the map pack. The trick isn't asking — it's <i>when</i> and <i>how</i>:</p>
-  <ul class="checks" style="max-width:760px">
-    <li>Ask at the <b>moment of thanks</b> — when the customer says "this is great", that's the window</li>
-    <li>Send the direct review link by text within 10 minutes (search "Google review link generator" — it's free)</li>
-    <li>Aim for velocity, not volume: 2–3 fresh reviews a month beats 50 old ones</li>
-    <li>Reply to every review, including the bad ones — replies are ranking signals and trust signals</li>
-    <li>Never buy reviews. Google's filters catch them and the penalty outlasts the boost</li>
-  </ul>
+  <div class="kicker" style="margin-top:60px">Get out of the truck</div>
+  <h2 class="sec-h2" style="font-size:28px">Events &amp; networking</h2>
+  <div class="grid2" style="margin-top:26px">
+    <a class="card" href="events.html"><span class="tag">Updated regularly</span><h3>The Ottawa contractor calendar</h3><p>GOHBA breakfasts, the OCA Symposium, home shows, BNI seats — where the work actually gets referred, plus our free &ldquo;how to work a trade show&rdquo; playbook.</p><span style="color:var(--orange);font-weight:700;font-size:14px">See events &amp; associations →</span></a>
+    <a class="card" href="news.html"><span class="tag">Monthly bulletin</span><h3>Trade news that matters</h3><p>Rebate programs, Google policy changes, rule updates — what happened and what to do about it, in plain English. No fluff, five items, monthly.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the June bulletin →</span></a>
+  </div>
 
-  <div class="kicker" style="margin-top:56px">Lesson 3</div>
-  <h2 class="sec-h2" style="font-size:28px">7 reasons contractor websites never ring</h2>
-  <ul class="checks" style="max-width:760px">
-    <li>Phone number not clickable on mobile (60%+ of your visitors are on phones)</li>
-    <li>No quote form above the fold — visitors won't scroll to find it</li>
-    <li>Slow loading: every extra second loses visitors before they see anything</li>
-    <li>Stock photos instead of your real trucks and crews — homeowners can smell it</li>
-    <li>No reviews or proof on the page itself</li>
-    <li>One generic page instead of a page per service and area</li>
-    <li>No follow-up when someone does fill the form (see Lesson 4)</li>
-  </ul>
+  <div class="kicker" style="margin-top:60px">Coming soon</div>
+  <h2 class="sec-h2" style="font-size:28px">Video lessons</h2>
+  <div class="card" style="max-width:860px"><h3>The Marketing School, on camera</h3><p>Short, practical videos of every guide above — watch from the truck between jobs. In production now; first episodes land here and on our YouTube channel. Want to be notified? Mention it in the <a href="contact.html" style="color:var(--orange);font-weight:700">contact form</a> and we'll text you when episode one drops.</p></div>
 
-  <div class="kicker" style="margin-top:56px">Lesson 4</div>
-  <h2 class="sec-h2" style="font-size:28px">Follow-up: where the money actually leaks</h2>
-  <p class="sec-sub" style="margin-bottom:18px">The stats that should change how you run your phone:</p>
-  <ul class="checks" style="max-width:760px">
-    <li><b>80% of sales take 5+ contacts</b> — most contractors stop at one</li>
-    <li><b>85% of callers who hit voicemail don't leave a message</b> — they call the next name on Google</li>
-    <li>Free fix #1: a text auto-reply on your business line ("Sorry we missed you — text us the job details")</li>
-    <li>Free fix #2: a 5-minute end-of-day rule — every missed call and quote gets one text before you go home</li>
-    <li>Free fix #3: a "quote sent" reminder 3 days later. One text. Most competitors never send it</li>
-    <li>Want your number? The <a href="calculator.html" style="color:var(--orange);font-weight:700">Missed-Call Calculator</a> takes 20 seconds</li>
-  </ul>
-
-  <div class="kicker" style="margin-top:56px">Lesson 5</div>
-  <h2 class="sec-h2" style="font-size:28px">What leads should cost (so nobody rips you off)</h2>
-  <table class="cb" style="max-width:820px"><tr><th>Channel</th><th>Honest benchmark</th></tr>
-    <tr><td>Google Local Services Ads (HVAC)</td><td>$60–120 per lead — disputable if junk</td></tr>
-    <tr><td>Google Search ads (managed)</td><td>~$50–60 per call, ~55% close</td></tr>
-    <tr><td>Home-services average</td><td>~$91 per lead; roofing up to ~$228</td></tr>
-    <tr><td>Shared marketplaces (HomeStars/Angi)</td><td>Similar sticker — but sold to up to 5 competitors</td></tr>
-    <tr><td>Map pack (local SEO)</td><td>~40% lower cost-per-sale than ads once ranked</td></tr></table>
-  <p class="sec-sub" style="margin-top:14px">If someone quotes you far outside these ranges, ask why — and make them answer in numbers.</p>
-
-  <div class="note" style="max-width:820px;margin-top:50px"><b>Why we give this away:</b> teaching is our marketing. If you do all of this yourself, genuinely — good, your schedule gets fuller and you'll tell other trades who taught you. If you'd rather be on the tools than on Google, that's what <a href="services.html" style="color:var(--orange);font-weight:700">we're for</a>.</p></div>
-  <p style="margin-top:26px"><a class="btn" href="blog.html">More lessons on the blog</a>&nbsp;&nbsp;<a class="btn navy" href="free-audit.html">Or get the free audit</a></p>
-</div></section>"""
+  <div class="note" style="max-width:820px;margin-top:50px"><b>Why we give this away:</b> teaching is our marketing. If you do all of this yourself — good, your schedule gets fuller and you'll tell other trades who taught you. If you'd rather be on the tools than on Google, that's what <a href="services.html" style="color:var(--orange);font-weight:700">we're for</a>.</div>
+</div></section>""" + CTA
 page("resources.html", "Free Marketing Resources for Contractors | Packed Agency",
-     "Free contractor marketing lessons: Google Business Profile fixes, review playbook, website checklist, follow-up tactics and honest lead-cost benchmarks.", "resources", res_body)
-
-# ============================================================ PRIVACY & TERMS
-priv_body = phero("Legal", "Privacy <em>Policy.</em>", "Plain-language, CASL-aware. Have a lawyer review before launch.", "Privacy")
-priv_body += """
-<section><div class="wrap prose">
-<div class="note"><b>Template notice:</b> this is a working draft for launch. Have it reviewed by a lawyer, and replace the bracketed items.</div>
-<h2>Who we are</h2><p>Packed Agency ("we") is a marketing services business operated by [legal name], Ottawa, Ontario. Contact: """ + EMAIL + """.</p>
-<h2>What we collect</h2><p>Information you submit through our forms (name, company, trade, phone, email), call recordings on tracked numbers (announced where required), and standard analytics (GA4) about site usage.</p>
-<h2>How we use it</h2><p>To deliver the audit or services you requested, to respond to enquiries, and — only with your express consent (CASL) — to send commercial electronic messages. Every message includes an unsubscribe that works.</p>
-<h2>What we never do</h2><p>Sell, rent or trade your information. Ever.</p>
-<h2>Storage &amp; access</h2><p>Data is stored in our CRM (GoHighLevel) and analytics tools. You may request a copy or deletion of your data at any time via """ + EMAIL + """.</p>
-<h2>Cookies</h2><p>We use analytics and advertising cookies (GA4, Meta Pixel). You can block cookies in your browser without losing access to this site.</p>
-<p><i>Last updated: [date]. Questions: """ + EMAIL + """.</i></p>
-</div></section>"""
-page("privacy.html", "Privacy Policy | Packed Agency", "Packed Agency privacy policy — CASL-aware, plain language.", "", priv_body)
-
-terms_body = phero("Legal", "Terms of <em>Service.</em>", "The short, fair version. Full service terms live in your signed agreement.", "Terms")
-terms_body += """
-<section><div class="wrap prose">
-<div class="note"><b>Template notice:</b> working draft — lawyer review before launch.</div>
-<h2>Site use</h2><p>Content on this site is provided for information. Benchmarks cited are from published industry sources and your results will vary with market, budget and execution.</p>
-<h2>Service terms (summary)</h2><p>Services are governed by a signed agreement which includes our three guarantees: client ownership of all assets, 90-day initial term then month-to-month, and one-client-per-trade-per-city exclusivity. The agreement prevails over this summary.</p>
-<h2>No guarantees of outcomes</h2><p>We do not guarantee specific rankings, lead volumes or revenue — and we put that in writing because honest expectations are part of the product.</p>
-<h2>Liability</h2><p>To the maximum extent permitted by law, our liability is limited to fees paid in the three months preceding a claim.</p>
-<p><i>Last updated: [date].</i></p>
-</div></section>"""
-page("terms.html", "Terms | Packed Agency", "Packed Agency terms of service.", "", terms_body)
+     "Free contractor marketing school: Google Business Profile fixes, review playbook, website checklist, lead-cost benchmarks, Ottawa events and monthly trade news.", "resources", res_body)
 
 # ============================================================ 404
 nf_body = phero("404", "This page is <em>not packed.</em>",
