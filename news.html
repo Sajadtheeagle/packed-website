@@ -28,25 +28,32 @@
 <section class="phero"><div class="bgfx"></div><div class="wrap"><div class="crumb"><a href="index.html">Home</a> / News</div><div class="kicker">The Packed Bulletin &mdash; June 2026</div><h1>Trade news that <em>actually matters.</em></h1><p class="lead">Five changes affecting Ottawa contractors right now — what happened, and what to do about it. Updated monthly.</p><a class="btn" href="free-audit.html">Get My Free Audit</a></div></section>
 
 <section><div class="wrap" style="max-width:860px">
+  <div style="margin-bottom:36px">
+    <a class="chip" href="#n1"><b>1</b> &nbsp;Heat-pump rebates up to $12k</a>
+    <a class="chip" href="#n2"><b>2</b> &nbsp;Reviews now power your ads</a>
+    <a class="chip" href="#n3"><b>3</b> &nbsp;New Google badge</a>
+    <a class="chip" href="#n4"><b>4</b> &nbsp;Review-ask rules tightened</a>
+    <a class="chip" href="#n5"><b>5</b> &nbsp;Slow answers = lower rank</a>
+  </div>
 
-  <div class="kicker">No. 1 &mdash; Money on the table</div>
+  <div class="kicker" id="n1">No. 1 &mdash; Money on the table</div>
   <h2 class="sec-h2" style="font-size:26px">Ontario&rsquo;s heat-pump rebates run up to $7,500&ndash;$12,000 &mdash; and only registered contractors can submit</h2>
   <p class="sec-sub" style="max-width:860px;margin-bottom:10px">Ontario&rsquo;s Home Renovation Savings program pays homeowners up to $7,500 for cold-climate air-source heat pumps and up to $12,000 for geothermal — and applications go through <b>HRS-registered contractors only</b>. If you're in HVAC and not registered, every competitor who is becomes the easier choice. Deadlines and program windows shift — check the program site before quoting it to customers.</p>
   <p class="sec-sub" style="max-width:860px"><b>Do this:</b> get registered, then put &ldquo;rebate-registered&rdquo; on your Google listing, website and quotes. It's a closing tool, not paperwork.</p>
 
-  <div class="kicker" style="margin-top:50px">No. 2 &mdash; Google merged your reviews</div>
+  <div class="kicker" style="margin-top:50px" id="n2">No. 2 &mdash; Google merged your reviews</div>
   <h2 class="sec-h2" style="font-size:26px">Your Google Business Profile now powers your pay-per-lead ads</h2>
   <p class="sec-sub" style="max-width:860px">Since mid-2025, Local Services Ads reviews live entirely in your Google Business Profile — and your profile's rating and review volume now directly affect your ad ranking. A verified profile is already mandatory to run LSAs at all. Translation: the free listing and the paid ads are now one system, and reviews are its fuel. (Our <a href="guide-reviews.html" style="color:var(--orange);font-weight:700">review playbook</a> is free.)</p>
 
-  <div class="kicker" style="margin-top:50px">No. 3 &mdash; New badge</div>
+  <div class="kicker" style="margin-top:50px" id="n3">No. 3 &mdash; New badge</div>
   <h2 class="sec-h2" style="font-size:26px">&ldquo;Google Guaranteed&rdquo; is gone &mdash; meet the blue checkmark</h2>
   <p class="sec-sub" style="max-width:860px">In late 2025 Google retired the Google Guaranteed and Google Screened badges and replaced both with a single <b>Google Verified</b> blue checkmark. If your truck wrap, website or estimates still say &ldquo;Google Guaranteed&rdquo;, update the wording — homeowners are already seeing the new badge in search.</p>
 
-  <div class="kicker" style="margin-top:50px">No. 4 &mdash; Review rules tightened</div>
+  <div class="kicker" style="margin-top:50px" id="n4">No. 4 &mdash; Review rules tightened</div>
   <h2 class="sec-h2" style="font-size:26px">Tablet-in-the-driveway review asks are now a violation</h2>
   <p class="sec-sub" style="max-width:860px">Google's 2026 review-policy refresh formally bans review quotas for techs, asking customers to mention an employee by name, and on-premises pressure — including the classic &ldquo;scan this before I leave&rdquo; tablet move. Penalty: wiped reviews, possibly a suspended profile. Asking honestly at the moment of thanks is still allowed — and still works best.</p>
 
-  <div class="kicker" style="margin-top:50px">No. 5 &mdash; Speed is now a ranking factor</div>
+  <div class="kicker" style="margin-top:50px" id="n5">No. 5 &mdash; Speed is now a ranking factor</div>
   <h2 class="sec-h2" style="font-size:26px">Google now ranks you lower if you answer the phone slowly</h2>
   <p class="sec-sub" style="max-width:860px">Local Services Ads now track whether you answer, how fast, and whether the call lasts long enough to be a real conversation — and slow answerers get worse placement and pay more per lead. Unanswered phones now cost you twice: the lost job AND the ranking. (This is exactly the leak our <a href="automation.html" style="color:var(--orange);font-weight:700">follow-up automation</a> plugs.)</p>
 
@@ -74,6 +81,13 @@ function wireForm(id,evt,msg){
 }
 wireForm("auditForm","lead_audit","Your audit is on the way - we will text or call within one business day, and the video lands within two.");
 wireForm("contactForm","lead_contact","Message received - we reply within one business day.");
+document.querySelectorAll(".todo-box").forEach(function(box){
+  var cbs=box.querySelectorAll("input[type=checkbox]"),sc=box.querySelector("[data-score]"),msg=box.querySelector("[data-msg]");
+  function upd(){var n=0;cbs.forEach(function(c){if(c.checked)n++});sc.textContent=n+" / "+cbs.length+" done";
+    if(n===cbs.length){msg.innerHTML="All boxes ticked? You're ahead of 90% of contractors. The <a href='free-audit.html' style='color:#F97316;font-weight:700'>free audit</a> finds what checklists can't.";}
+    else{msg.textContent="Tick what you've already done - every empty box is costing you calls. "+(cbs.length-n)+" to go.";}}
+  cbs.forEach(function(c){c.addEventListener("change",upd)});upd();
+});
 </script>
 </body>
 </html>

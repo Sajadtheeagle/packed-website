@@ -111,6 +111,19 @@ footer.site{background:#070A0F;color:#8B95A5;padding:60px 0 30px;border-top:1px 
 @media(prefers-reduced-motion:reduce){.marq span{animation:none}html{scroll-behavior:auto}}
 @media(max-width:920px){.grid2,.grid3,.f-grid{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:1fr 1fr}.stat-strip{grid-template-columns:1fr}.statbar{grid-template-columns:1fr}.statbar div{border-right:none;border-bottom:1px solid var(--line)}.nav-links{display:none}.burger{display:block}.nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;background:#0A0E14;flex-direction:column;padding:24px;gap:18px;border-bottom:1px solid var(--line);z-index:49}}
 @media(max-width:600px){.grid2,.grid3,.grid4,.f-grid{grid-template-columns:1fr}section{padding:60px 0}.callbar{display:block}body{padding-bottom:54px}}
+.todo-box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 22px 16px;margin:26px 0}
+.todo-head{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);font-family:'Archivo',sans-serif;font-weight:700}
+.todo-score{color:var(--orange);font-weight:800;font-size:15px}
+.todo{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line);cursor:pointer;font-size:15.5px}
+.todo:last-of-type{border-bottom:none}
+.todo input{width:21px;height:21px;min-width:21px;margin-top:2px;accent-color:var(--orange);cursor:pointer}
+.todo input:checked+span{color:var(--grey);text-decoration:line-through;text-decoration-color:rgba(249,115,22,.6)}
+.todo-msg{padding-top:12px;color:var(--grey);font-size:13.5px}
+.ic{width:44px;height:44px;border-radius:10px;background:rgba(249,115,22,.13);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--orange)}
+.ic svg{width:22px;height:22px}
+.chip{display:inline-block;background:var(--card);border:1px solid var(--line);color:#DDE4F0;padding:8px 15px;border-radius:99px;font-size:12.5px;font-weight:600;margin:0 8px 10px 0}
+.chip b{color:var(--orange)}
+.chip:hover{border-color:rgba(249,115,22,.6)}
 """
 
 LOGO_SVG = """<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="14" width="84" height="78" rx="16" fill="#F97316"/><rect x="22" y="6" width="8" height="16" rx="3" fill="#F97316"/><rect x="70" y="6" width="8" height="16" rx="3" fill="#F97316"/><g fill="#190B01"><rect x="20" y="32" width="16" height="16" rx="3"/><rect x="42" y="32" width="16" height="16" rx="3"/><rect x="64" y="32" width="16" height="16" rx="3"/><rect x="20" y="54" width="16" height="16" rx="3"/><rect x="64" y="54" width="16" height="16" rx="3"/><rect x="20" y="76" width="16" height="10" rx="3"/><rect x="42" y="76" width="16" height="10" rx="3"/><rect x="64" y="76" width="16" height="10" rx="3"/></g><rect x="42" y="54" width="16" height="16" rx="3" fill="#FFE3CC"/></svg>"""
@@ -172,6 +185,13 @@ function wireForm(id,evt,msg){
 }
 wireForm("auditForm","lead_audit","Your audit is on the way - we will text or call within one business day, and the video lands within two.");
 wireForm("contactForm","lead_contact","Message received - we reply within one business day.");
+document.querySelectorAll(".todo-box").forEach(function(box){
+  var cbs=box.querySelectorAll("input[type=checkbox]"),sc=box.querySelector("[data-score]"),msg=box.querySelector("[data-msg]");
+  function upd(){var n=0;cbs.forEach(function(c){if(c.checked)n++});sc.textContent=n+" / "+cbs.length+" done";
+    if(n===cbs.length){msg.innerHTML="All boxes ticked? You're ahead of 90% of contractors. The <a href='free-audit.html' style='color:#F97316;font-weight:700'>free audit</a> finds what checklists can't.";}
+    else{msg.textContent="Tick what you've already done - every empty box is costing you calls. "+(cbs.length-n)+" to go.";}}
+  cbs.forEach(function(c){c.addEventListener("change",upd)});upd();
+});
 </script>
 """
 
@@ -862,9 +882,10 @@ def guide_page(fname, title, kicker, h1, lead, intro, checks, faq, note):
     b = phero(kicker, h1, lead, "Free Resources / Guide")
     b += "<section><div class=\"wrap\" style=\"max-width:860px\">"
     b += "<p class=\"sec-sub\" style=\"max-width:860px\">" + intro + "</p>"
-    b += "<ul class=\"checks\">"
-    for c in checks: b += "<li>" + c + "</li>"
-    b += "</ul>"
+    b += ("<div class=\"todo-box\"><div class=\"todo-head\"><span>Your checklist</span>"
+          "<span class=\"todo-score\" data-score></span></div>")
+    for c in checks: b += "<label class=\"todo\"><input type=\"checkbox\"><span>" + c + "</span></label>"
+    b += "<div class=\"todo-msg\" data-msg></div></div>"
     if note: b += "<div class=\"note\">" + note + "</div>"
     b += "<h2 class=\"sec-h2\" style=\"font-size:26px;margin-top:40px\">Fair questions</h2>"
     for q, a in faq: b += "<details><summary>" + q + "</summary><p>" + a + "</p></details>"
@@ -989,25 +1010,32 @@ news_body = phero("The Packed Bulletin &mdash; June 2026", "Trade news that <em>
     "Five changes affecting Ottawa contractors right now — what happened, and what to do about it. Updated monthly.", "News")
 news_body += """
 <section><div class="wrap" style="max-width:860px">
+  <div style="margin-bottom:36px">
+    <a class="chip" href="#n1"><b>1</b> &nbsp;Heat-pump rebates up to $12k</a>
+    <a class="chip" href="#n2"><b>2</b> &nbsp;Reviews now power your ads</a>
+    <a class="chip" href="#n3"><b>3</b> &nbsp;New Google badge</a>
+    <a class="chip" href="#n4"><b>4</b> &nbsp;Review-ask rules tightened</a>
+    <a class="chip" href="#n5"><b>5</b> &nbsp;Slow answers = lower rank</a>
+  </div>
 
-  <div class="kicker">No. 1 &mdash; Money on the table</div>
+  <div class="kicker" id="n1">No. 1 &mdash; Money on the table</div>
   <h2 class="sec-h2" style="font-size:26px">Ontario&rsquo;s heat-pump rebates run up to $7,500&ndash;$12,000 &mdash; and only registered contractors can submit</h2>
   <p class="sec-sub" style="max-width:860px;margin-bottom:10px">Ontario&rsquo;s Home Renovation Savings program pays homeowners up to $7,500 for cold-climate air-source heat pumps and up to $12,000 for geothermal — and applications go through <b>HRS-registered contractors only</b>. If you're in HVAC and not registered, every competitor who is becomes the easier choice. Deadlines and program windows shift — check the program site before quoting it to customers.</p>
   <p class="sec-sub" style="max-width:860px"><b>Do this:</b> get registered, then put &ldquo;rebate-registered&rdquo; on your Google listing, website and quotes. It's a closing tool, not paperwork.</p>
 
-  <div class="kicker" style="margin-top:50px">No. 2 &mdash; Google merged your reviews</div>
+  <div class="kicker" style="margin-top:50px" id="n2">No. 2 &mdash; Google merged your reviews</div>
   <h2 class="sec-h2" style="font-size:26px">Your Google Business Profile now powers your pay-per-lead ads</h2>
   <p class="sec-sub" style="max-width:860px">Since mid-2025, Local Services Ads reviews live entirely in your Google Business Profile — and your profile's rating and review volume now directly affect your ad ranking. A verified profile is already mandatory to run LSAs at all. Translation: the free listing and the paid ads are now one system, and reviews are its fuel. (Our <a href="guide-reviews.html" style="color:var(--orange);font-weight:700">review playbook</a> is free.)</p>
 
-  <div class="kicker" style="margin-top:50px">No. 3 &mdash; New badge</div>
+  <div class="kicker" style="margin-top:50px" id="n3">No. 3 &mdash; New badge</div>
   <h2 class="sec-h2" style="font-size:26px">&ldquo;Google Guaranteed&rdquo; is gone &mdash; meet the blue checkmark</h2>
   <p class="sec-sub" style="max-width:860px">In late 2025 Google retired the Google Guaranteed and Google Screened badges and replaced both with a single <b>Google Verified</b> blue checkmark. If your truck wrap, website or estimates still say &ldquo;Google Guaranteed&rdquo;, update the wording — homeowners are already seeing the new badge in search.</p>
 
-  <div class="kicker" style="margin-top:50px">No. 4 &mdash; Review rules tightened</div>
+  <div class="kicker" style="margin-top:50px" id="n4">No. 4 &mdash; Review rules tightened</div>
   <h2 class="sec-h2" style="font-size:26px">Tablet-in-the-driveway review asks are now a violation</h2>
   <p class="sec-sub" style="max-width:860px">Google's 2026 review-policy refresh formally bans review quotas for techs, asking customers to mention an employee by name, and on-premises pressure — including the classic &ldquo;scan this before I leave&rdquo; tablet move. Penalty: wiped reviews, possibly a suspended profile. Asking honestly at the moment of thanks is still allowed — and still works best.</p>
 
-  <div class="kicker" style="margin-top:50px">No. 5 &mdash; Speed is now a ranking factor</div>
+  <div class="kicker" style="margin-top:50px" id="n5">No. 5 &mdash; Speed is now a ranking factor</div>
   <h2 class="sec-h2" style="font-size:26px">Google now ranks you lower if you answer the phone slowly</h2>
   <p class="sec-sub" style="max-width:860px">Local Services Ads now track whether you answer, how fast, and whether the call lasts long enough to be a real conversation — and slow answerers get worse placement and pay more per lead. Unanswered phones now cost you twice: the lost job AND the ranking. (This is exactly the leak our <a href="automation.html" style="color:var(--orange);font-weight:700">follow-up automation</a> plugs.)</p>
 
@@ -1024,12 +1052,12 @@ res_body += """
   <div class="kicker">Guides</div>
   <h2 class="sec-h2" style="font-size:28px">Start here — five free playbooks</h2>
   <div class="grid3" style="margin-top:26px">
-    <a class="card" href="guide-google-business-profile.html"><span class="tag">10 minutes</span><h3>The Google Business Profile fix</h3><p>The listing that drives more calls than your website — six fixes, free, today.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
-    <a class="card" href="guide-reviews.html"><span class="tag">Playbook</span><h3>Get more Google reviews</h3><p>Reviews decide map-pack ties. When and how to ask — and the 2026 rules that changed.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
-    <a class="card" href="guide-website-checklist.html"><span class="tag">Checklist</span><h3>7 reasons websites never ring</h3><p>Walk your own site through the seven leaks that kill contractor websites.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
-    <a class="card" href="guide-follow-up.html"><span class="tag">3 free fixes</span><h3>Follow-up: the money leak</h3><p>80% of sales take 5+ contacts. Most contractors stop at one. Fix it free.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
-    <a class="card" href="guide-lead-costs.html"><span class="tag">Benchmarks</span><h3>What leads should cost</h3><p>Honest 2026 numbers for every channel — so nobody rips you off.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
-    <a class="card dark" href="free-audit.html"><span class="badge">FASTEST PATH</span><h3>Skip ahead: the free audit</h3><p>We run all five playbooks against YOUR business and send you a 10-minute video.</p><span style="color:#FDBA74;font-weight:700;font-size:14px">Get it free →</span></a>
+    <a class="card" href="guide-google-business-profile.html"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><span class="tag">10 minutes</span><h3>The Google Business Profile fix</h3><p>The listing that drives more calls than your website — six fixes, free, today.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
+    <a class="card" href="guide-reviews.html"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg></div><span class="tag">Playbook</span><h3>Get more Google reviews</h3><p>Reviews decide map-pack ties. When and how to ask — and the 2026 rules that changed.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
+    <a class="card" href="guide-website-checklist.html"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><circle cx="6" cy="6.5" r=".5"/><circle cx="8.5" cy="6.5" r=".5"/></svg></div><span class="tag">Checklist</span><h3>7 reasons websites never ring</h3><p>Walk your own site through the seven leaks that kill contractor websites.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
+    <a class="card" href="guide-follow-up.html"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></div><span class="tag">3 free fixes</span><h3>Follow-up: the money leak</h3><p>80% of sales take 5+ contacts. Most contractors stop at one. Fix it free.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
+    <a class="card" href="guide-lead-costs.html"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 6.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2 2.8 5 3.7 5 1.8 5 3.8-2.2 3-5 3-5-1.1-5-3"/></svg></div><span class="tag">Benchmarks</span><h3>What leads should cost</h3><p>Honest 2026 numbers for every channel — so nobody rips you off.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the guide →</span></a>
+    <a class="card dark" href="free-audit.html"><div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3.5 14H10l-1 8L19 10h-6.5L13 2z"/></svg></div><span class="badge">FASTEST PATH</span><h3>Skip ahead: the free audit</h3><p>We run all five playbooks against YOUR business and send you a 10-minute video.</p><span style="color:#FDBA74;font-weight:700;font-size:14px">Get it free →</span></a>
   </div>
 
   <div class="kicker" style="margin-top:60px">From the blog</div>
@@ -1043,13 +1071,13 @@ res_body += """
   <div class="kicker" style="margin-top:60px">Get out of the truck</div>
   <h2 class="sec-h2" style="font-size:28px">Events &amp; networking</h2>
   <div class="grid2" style="margin-top:26px">
-    <a class="card" href="events.html"><span class="tag">Updated regularly</span><h3>The Ottawa contractor calendar</h3><p>GOHBA breakfasts, the OCA Symposium, home shows, BNI seats — where the work actually gets referred, plus our free &ldquo;how to work a trade show&rdquo; playbook.</p><span style="color:var(--orange);font-weight:700;font-size:14px">See events &amp; associations →</span></a>
-    <a class="card" href="news.html"><span class="tag">Monthly bulletin</span><h3>Trade news that matters</h3><p>Rebate programs, Google policy changes, rule updates — what happened and what to do about it, in plain English. No fluff, five items, monthly.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the June bulletin →</span></a>
+    <a class="card" href="events.html"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg></div><span class="tag">Updated regularly</span><h3>The Ottawa contractor calendar</h3><p>GOHBA breakfasts, the OCA Symposium, home shows, BNI seats — where the work actually gets referred, plus our free &ldquo;how to work a trade show&rdquo; playbook.</p><span style="color:var(--orange);font-weight:700;font-size:14px">See events &amp; associations →</span></a>
+    <a class="card" href="news.html"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h13a2 2 0 0 1 2 2v12a2 2 0 0 0 2-2"/><path d="M19 20H6a2 2 0 0 1-2-2V4"/><line x1="8" y1="9" x2="15" y2="9"/><line x1="8" y1="13" x2="15" y2="13"/></svg></div><span class="tag">Monthly bulletin</span><h3>Trade news that matters</h3><p>Rebate programs, Google policy changes, rule updates — what happened and what to do about it, in plain English. No fluff, five items, monthly.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read the June bulletin →</span></a>
   </div>
 
   <div class="kicker" style="margin-top:60px">Coming soon</div>
   <h2 class="sec-h2" style="font-size:28px">Video lessons</h2>
-  <div class="card" style="max-width:860px"><h3>The Marketing School, on camera</h3><p>Short, practical videos of every guide above — watch from the truck between jobs. In production now; first episodes land here and on our YouTube channel. Want to be notified? Mention it in the <a href="contact.html" style="color:var(--orange);font-weight:700">contact form</a> and we'll text you when episode one drops.</p></div>
+  <div class="card" style="max-width:860px"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor" stroke="none"/></svg></div><h3>The Marketing School, on camera</h3><p>Short, practical videos of every guide above — watch from the truck between jobs. In production now; first episodes land here and on our YouTube channel. Want to be notified? Mention it in the <a href="contact.html" style="color:var(--orange);font-weight:700">contact form</a> and we'll text you when episode one drops.</p></div>
 
   <div class="note" style="max-width:820px;margin-top:50px"><b>Why we give this away:</b> teaching is our marketing. If you do all of this yourself — good, your schedule gets fuller and you'll tell other trades who taught you. If you'd rather be on the tools than on Google, that's what <a href="services.html" style="color:var(--orange);font-weight:700">we're for</a>.</div>
 </div></section>""" + CTA

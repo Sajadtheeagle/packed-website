@@ -49,6 +49,13 @@ function wireForm(id,evt,msg){
 }
 wireForm("auditForm","lead_audit","Your audit is on the way - we will text or call within one business day, and the video lands within two.");
 wireForm("contactForm","lead_contact","Message received - we reply within one business day.");
+document.querySelectorAll(".todo-box").forEach(function(box){
+  var cbs=box.querySelectorAll("input[type=checkbox]"),sc=box.querySelector("[data-score]"),msg=box.querySelector("[data-msg]");
+  function upd(){var n=0;cbs.forEach(function(c){if(c.checked)n++});sc.textContent=n+" / "+cbs.length+" done";
+    if(n===cbs.length){msg.innerHTML="All boxes ticked? You're ahead of 90% of contractors. The <a href='free-audit.html' style='color:#F97316;font-weight:700'>free audit</a> finds what checklists can't.";}
+    else{msg.textContent="Tick what you've already done - every empty box is costing you calls. "+(cbs.length-n)+" to go.";}}
+  cbs.forEach(function(c){c.addEventListener("change",upd)});upd();
+});
 </script>
 </body>
 </html>
