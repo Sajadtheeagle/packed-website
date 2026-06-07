@@ -446,17 +446,19 @@ audit_body += """
 </div>
 <div class="aform">
   <h3>Get your free audit</h3>
-  <p class="sub">Three quick details — takes 30 seconds.</p>
-  <ol style="margin:0 0 10px 18px;font-size:13.5px;color:var(--grey);line-height:1.8"><li>You send 3 details below</li><li>We check your Google listing, website, reviews and phones</li><li>You get a 10-minute video in 2 business days &mdash; no meeting, no pressure</li></ol>
+  <p class="sub">Takes under a minute.</p>
+  <ol style="margin:0 0 10px 18px;font-size:13.5px;color:var(--grey);line-height:1.8"><li>You fill in the basics below</li><li>We check your Google listing, website, reviews and phones</li><li>You get a 10-minute video in 2 business days &mdash; no meeting, no pressure</li></ol>
   <form id="auditForm">
     <input type="hidden" name="access_key" value="9aac958d-5965-4b75-8736-b6ab7274db68">
     <input type="hidden" name="subject" value="NEW LEAD: Free Audit request (packedagency.ca)">
     <input type="hidden" name="from_name" value="Packed Agency Website">
     <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
     <label>Name</label><input type="text" name="name" placeholder="Mike Tremblay" required>
+    <label>Email</label><input type="email" name="email" placeholder="mike@tremblayheating.ca" required>
     <label>Trade</label>
-    <select name="trade" required><option value="">Choose your trade…</option><option>HVAC</option><option>Plumbing</option><option>Electrical</option><option>Renovation / General Contracting</option><option>Other home service</option></select>
+    <select name="trade" required><option value="">Choose your trade…</option><option>HVAC / Heating &amp; Cooling</option><option>Plumbing</option><option>Electrical</option><option>Renovation / General Contracting</option><option>Roofing</option><option>Kitchen &amp; Bath</option><option>Flooring</option><option>Painting</option><option>Windows &amp; Doors</option><option>Landscaping / Lawn Care</option><option>Concrete / Paving</option><option>Fencing &amp; Decks</option><option>Garage Doors</option><option>Eavestrough / Siding</option><option>Cleaning Services</option><option>Pest Control</option><option>Appliance Repair</option><option>Moving</option><option>Other home service</option></select>
     <label>Phone</label><input type="tel" name="phone" placeholder="613-555-0123" required>
+    <label>City / area <span style="font-weight:500;color:var(--grey)">(optional)</span></label><input type="text" name="city" placeholder="Ottawa, Kanata, Orl&eacute;ans&hellip;">
     <button class="btn" type="submit">Send Me My Free Audit</button>
     <p class="fine">By submitting, you agree to receive a reply by phone, text or email about your audit. No spam, no list-selling, unsubscribe anytime. (CASL compliant)</p>
     <p class="fine" style="margin-top:8px"><b>Hate forms?</b> Text the word <b>AUDIT</b> to <a href="sms:+13435585062" style="color:var(--orange);font-weight:700">343-558-5062</a> and we&rsquo;ll take it from there.</p>
