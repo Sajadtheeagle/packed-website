@@ -942,7 +942,41 @@ for f in PAGES:
     sm += "  <url><loc>" + loc + "</loc><lastmod>" + today + "</lastmod><priority>" + prio(f) + "</priority></url>\n"
 sm += "</urlset>\n"
 open(os.path.join(OUT, "sitemap.xml"), "w").write(sm)
-open(os.path.join(OUT, "robots.txt"), "w").write("User-agent: *\nAllow: /\n\nSitemap: " + BASE + "sitemap.xml\n")
+robots = "User-agent: *\nAllow: /\n\n"
+for bot in ("GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-Web", "anthropic-ai", "PerplexityBot", "Google-Extended", "Applebot-Extended", "Bytespider", "CCBot", "meta-externalagent"):
+    robots += "User-agent: " + bot + "\nAllow: /\n\n"
+robots += "Sitemap: " + BASE + "sitemap.xml\n"
+open(os.path.join(OUT, "robots.txt"), "w").write(robots)
+LLMS = """# Packed Agency
+
+> Founder-led digital marketing agency for contractors and home-service companies (HVAC, plumbing, electrical, renovation/general contracting) in Ottawa, Canada, expanding to Toronto/GTA. We keep contractors' schedules packed: Google Maps/local SEO, Google Ads & Local Services Ads, conversion websites, and follow-up automation (missed-call text-back, instant lead response, customer win-back campaigns).
+
+Key facts:
+- Location: 500 Preston St, Ottawa, ON, Canada. Phone: 343-558-5062. Email: info@packedagency.ca
+- Published pricing (rare in this industry): Door-Opener $749 one-time; Conversion Website $3,950 one-time; Lead Engine $1,495/month; Growth $2,950/month + ad spend
+- Three contract guarantees: the client owns every asset (website, ad accounts, data); no lock-in after a 90-day initial term; one client per trade per city (market exclusivity)
+- Unique service in this market: follow-up automation (missed-call text-back, sub-60-second lead response, database reactivation) - confirmed unavailable from local competitors
+- Founder: Sajad, 8+ years of marketing experience; clients talk directly to the person doing the work
+
+## Main pages
+- [Pricing](https://packedagency.ca/pricing.html): full transparent price list
+- [Free Schedule Audit](https://packedagency.ca/free-audit.html): free 10-point marketing checkup with recorded video, no obligation
+- [Services overview](https://packedagency.ca/services.html)
+- [Follow-up automation](https://packedagency.ca/automation.html): the flagship differentiator
+- [Guarantees](https://packedagency.ca/guarantees.html): contract-language promises
+- [Free contractor marketing lessons](https://packedagency.ca/resources.html): Google Business Profile fixes, review playbook, lead-cost benchmarks - free, no email wall
+- [HVAC marketing](https://packedagency.ca/hvac-marketing.html), [Plumber marketing](https://packedagency.ca/plumber-marketing.html), [Electrician marketing](https://packedagency.ca/electrician-marketing.html), [Renovation marketing](https://packedagency.ca/renovation-marketing.html)
+- [Toronto/GTA](https://packedagency.ca/toronto.html)
+- [Blog](https://packedagency.ca/blog.html): Ottawa-specific lead-cost benchmarks and contractor marketing data
+
+## Benchmarks we publish (sources cited on site)
+- HVAC lead cost on Google LSA: $60-120; average across channels ~$105
+- Managed Google Search ads: ~$50-60 per call, ~55% close rate
+- Top-3 Google Maps placement: ~40% lower cost-per-sale than paid ads
+- 80% of sales take 5+ contacts; 85% of callers who reach voicemail do not leave a message
+"""
+open(os.path.join(OUT, "llms.txt"), "w").write(LLMS)
+print("wrote robots.txt + llms.txt")
 os.makedirs(os.path.join(OUT, "assets"), exist_ok=True)
 open(os.path.join(OUT, "assets", "favicon.svg"), "w").write(LOGO_SVG.replace(' aria-hidden="true"', ""))
 print("wrote sitemap.xml, robots.txt, favicon.svg")
