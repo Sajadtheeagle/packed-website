@@ -185,6 +185,17 @@ function wireForm(id,evt,msg){
 }
 wireForm("auditForm","lead_audit","Your audit is on the way - we will text or call within one business day, and the video lands within two.");
 wireForm("contactForm","lead_contact","Message received - we reply within one business day.");
+document.querySelectorAll(".nl-form").forEach(function(f){
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var btn=f.querySelector("button"),orig=btn.textContent;btn.disabled=true;btn.textContent="...";
+    fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(f)))})
+    .then(function(r){return r.json()}).then(function(d){
+      if(d.success){f.innerHTML="<p style='font-family:Archivo,sans-serif;font-weight:900;color:#fff;font-size:17px;padding:10px 0'>You're in. &#10003; First bulletin lands next month.</p>";if(window.gtag)gtag("event","newsletter_signup");}
+      else{btn.disabled=false;btn.textContent=orig;}
+    }).catch(function(){btn.disabled=false;btn.textContent=orig;});
+  });
+});
 document.querySelectorAll(".todo-box").forEach(function(box){
   var cbs=box.querySelectorAll("input[type=checkbox]"),sc=box.querySelector("[data-score]"),msg=box.querySelector("[data-msg]");
   function upd(){var n=0;cbs.forEach(function(c){if(c.checked)n++});sc.textContent=n+" / "+cbs.length+" done";
@@ -216,6 +227,26 @@ CTA = ("<section class=\"ctaband\"><div class=\"wrap\"><h2>Ready for a packed sc
     "<p>Start with the free audit &mdash; we check your Google listing, website and phones, then send you a 10-minute video of what we found. No meeting. No pressure. No cost.</p>"
     "<a class=\"btn\" href=\"free-audit.html\">Get My Free Audit</a>&nbsp;&nbsp;"
     "<a class=\"btn ghost\" href=\"" + TEL + "\">Call or Text " + PHONE + "</a></div></section>\n")
+
+NEWSLETTER = """
+<div style="background:var(--card);border:1px solid rgba(249,115,22,.35);border-radius:14px;padding:30px;max-width:860px;margin:50px auto 0">
+  <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap">
+    <div style="flex:1;min-width:240px">
+      <div class="kicker" style="margin-bottom:8px">The Packed Bulletin</div>
+      <h3 style="font-size:20px;color:#fff;margin-bottom:6px">One email a month. Worth opening.</h3>
+      <p style="color:var(--grey);font-size:14px">Rebates, Google rule changes, lead-cost data and one tactic to try — in plain English, for Ottawa trades. No spam, unsubscribe anytime.</p>
+    </div>
+    <form class="nl-form" style="flex:1;min-width:260px;display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start;margin-top:6px">
+      <input type="hidden" name="access_key" value="9aac958d-5965-4b75-8736-b6ab7274db68">
+      <input type="hidden" name="subject" value="NEWSLETTER SIGNUP (packedagency.ca)">
+      <input type="hidden" name="from_name" value="Packed Agency Website">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="email" name="email" placeholder="you@yourcompany.ca" required style="flex:1;min-width:180px;padding:13px 14px;border:1px solid rgba(255,255,255,.14);border-radius:8px;font-size:15px;background:#0A0E14;color:var(--ink)">
+      <button class="btn" type="submit" style="padding:13px 22px;font-size:14.5px">Sign me up</button>
+      <p class="fine" style="width:100%;margin:2px 0 0;font-size:11.5px;color:var(--grey)">CASL consent: you agree to receive our monthly email. Unsubscribe in one click, anytime.</p>
+    </form>
+  </div>
+</div>"""
 
 def cb_table(rows):
     out = "<table class=\"cb\"><tr><th>Your concern</th><th>How Packed handles it</th></tr>"
@@ -783,7 +814,7 @@ blog_body += """
   <a class="card" href="blog-hvac-lead-cost.html"><span class="tag">Published</span><h3>What an HVAC Lead Costs in Ottawa (2026)</h3><p>Real benchmark numbers: LSA, Google Ads, marketplaces and SEO compared — and which one quietly wins.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
   <div class="card" style="opacity:.7"><span class="tag">Next week</span><h3>The Mystery Call: We Phoned 10 Ottawa Plumbers</h3><p>How many answered? How many called back? The results explain a lot about who's busy.</p></div>
   <div class="card" style="opacity:.7"><span class="tag">Coming</span><h3>HomeStars vs. Owning Your Leads: the Real Math</h3><p>What shared leads actually cost over a year, vs. building sources you own.</p></div>
-</div></div></section>""" + CTA
+</div>""" + NEWSLETTER + """</div></section>""" + CTA
 page("blog.html", "Contractor Marketing Blog | Packed Agency", "Ottawa-specific contractor marketing answers, published weekly.", "", blog_body)
 
 post_body = phero("Blog · 6 min read", "What an HVAC Lead Costs in Ottawa <em>(2026)</em>",
@@ -1039,7 +1070,7 @@ news_body += """
   <h2 class="sec-h2" style="font-size:26px">Google now ranks you lower if you answer the phone slowly</h2>
   <p class="sec-sub" style="max-width:860px">Local Services Ads now track whether you answer, how fast, and whether the call lasts long enough to be a real conversation — and slow answerers get worse placement and pay more per lead. Unanswered phones now cost you twice: the lost job AND the ranking. (This is exactly the leak our <a href="automation.html" style="color:var(--orange);font-weight:700">follow-up automation</a> plugs.)</p>
 
-  <div class="note" style="margin-top:50px"><b>Sources &amp; further reading:</b> Google Business Profile community notices, Google Local Services policy pages, Ontario Home Renovation Savings program documentation, and industry coverage from SmartSites, Surefire Local and Digital Shift. We read it so you can stay on the tools — new bulletin monthly.</div>
+  """ + NEWSLETTER + """<div class="note" style="margin-top:50px"><b>Sources &amp; further reading:</b> Google Business Profile community notices, Google Local Services policy pages, Ontario Home Renovation Savings program documentation, and industry coverage from SmartSites, Surefire Local and Digital Shift. We read it so you can stay on the tools — new bulletin monthly.</div>
 </div></section>""" + CTA
 page("news.html", "Contractor Marketing News - June 2026 Bulletin | Packed Agency",
      "Heat-pump rebates, Google review policy changes, the new Verified badge, and why answer speed now affects your ranking - monthly news for Ottawa trades.", "resources", news_body)
@@ -1079,7 +1110,7 @@ res_body += """
   <h2 class="sec-h2" style="font-size:28px">Video lessons</h2>
   <div class="card" style="max-width:860px"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor" stroke="none"/></svg></div><h3>The Marketing School, on camera</h3><p>Short, practical videos of every guide above — watch from the truck between jobs. In production now; first episodes land here and on our YouTube channel. Want to be notified? Mention it in the <a href="contact.html" style="color:var(--orange);font-weight:700">contact form</a> and we'll text you when episode one drops.</p></div>
 
-  <div class="note" style="max-width:820px;margin-top:50px"><b>Why we give this away:</b> teaching is our marketing. If you do all of this yourself — good, your schedule gets fuller and you'll tell other trades who taught you. If you'd rather be on the tools than on Google, that's what <a href="services.html" style="color:var(--orange);font-weight:700">we're for</a>.</div>
+  """ + NEWSLETTER + """<div class="note" style="max-width:820px;margin-top:50px"><b>Why we give this away:</b> teaching is our marketing. If you do all of this yourself — good, your schedule gets fuller and you'll tell other trades who taught you. If you'd rather be on the tools than on Google, that's what <a href="services.html" style="color:var(--orange);font-weight:700">we're for</a>.</div>
 </div></section>""" + CTA
 page("resources.html", "Free Marketing Resources for Contractors | Packed Agency",
      "Free contractor marketing school: Google Business Profile fixes, review playbook, website checklist, lead-cost benchmarks, Ottawa events and monthly trade news.", "resources", res_body)

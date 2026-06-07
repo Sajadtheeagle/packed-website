@@ -94,6 +94,17 @@ function wireForm(id,evt,msg){
 }
 wireForm("auditForm","lead_audit","Your audit is on the way - we will text or call within one business day, and the video lands within two.");
 wireForm("contactForm","lead_contact","Message received - we reply within one business day.");
+document.querySelectorAll(".nl-form").forEach(function(f){
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var btn=f.querySelector("button"),orig=btn.textContent;btn.disabled=true;btn.textContent="...";
+    fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(f)))})
+    .then(function(r){return r.json()}).then(function(d){
+      if(d.success){f.innerHTML="<p style='font-family:Archivo,sans-serif;font-weight:900;color:#fff;font-size:17px;padding:10px 0'>You're in. &#10003; First bulletin lands next month.</p>";if(window.gtag)gtag("event","newsletter_signup");}
+      else{btn.disabled=false;btn.textContent=orig;}
+    }).catch(function(){btn.disabled=false;btn.textContent=orig;});
+  });
+});
 document.querySelectorAll(".todo-box").forEach(function(box){
   var cbs=box.querySelectorAll("input[type=checkbox]"),sc=box.querySelector("[data-score]"),msg=box.querySelector("[data-msg]");
   function upd(){var n=0;cbs.forEach(function(c){if(c.checked)n++});sc.textContent=n+" / "+cbs.length+" done";
