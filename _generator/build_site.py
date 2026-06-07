@@ -480,7 +480,7 @@ index_body = """
       <p style="color:#B9C4D8;font-size:16px;margin-bottom:18px">Because we&rsquo;re new, you get our best-ever pricing. Because I&rsquo;m confident, you risk 90 days — not a year. When you call, I answer. When something isn&rsquo;t working, I tell you first.</p>
       <a class="btn" href="about.html">More about me</a>&nbsp;&nbsp;<a class="btn ghost" href="guarantees.html">Read the guarantees</a>
     </div>
-    <div style="aspect-ratio:4/3;background:#1B2435;border:1px solid var(--line);border-radius:14px;display:flex;align-items:center;justify-content:center;color:#7C8698;font-size:14px;text-align:center;padding:20px">[ Founder photo &mdash; job-site setting. Replace with &lt;img&gt; ]</div>
+    <img src="assets/founder-sajad.jpg" alt="Sajad — founder of Packed Agency" loading="lazy" width="1000" height="1000" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--line)">
   </div></div>
 </section>
 
@@ -679,7 +679,7 @@ about_body = phero("About Packed", "Built by a marketer who got tired of <em>age
 about_body += """
 <section><div class="wrap"><div class="grid2" style="gap:60px;align-items:start">
 <div>
-  <div style="aspect-ratio:3/4;max-width:340px;background:linear-gradient(160deg,#22345A,#1B2A4A);border-radius:18px;display:flex;align-items:center;justify-content:center;color:#7E8DAA;font-size:14px;text-align:center;padding:20px">[ Founder photo — job-site setting. Replace with &lt;img&gt; ]</div>
+  <img src="assets/founder-sajad.jpg" alt="Sajad — founder of Packed Agency" width="1000" height="1000" style="width:100%;max-width:380px;height:auto;border-radius:18px;border:1px solid var(--line)">
 </div>
 <div class="prose">
   <h2 style="font-size:30px;margin-top:0">The short version</h2>
