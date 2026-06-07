@@ -185,6 +185,17 @@ function wireForm(id,evt,msg){
 }
 wireForm("auditForm","lead_audit","Your audit is on the way - we will text or call within one business day, and the video lands within two.");
 wireForm("contactForm","lead_contact","Message received - we reply within one business day.");
+document.querySelectorAll(".mg-form").forEach(function(f){
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var btn=f.querySelector("button"),orig=btn.textContent;btn.disabled=true;btn.textContent="...";
+    fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(f)))})
+    .then(function(r){return r.json()}).then(function(d){
+      if(d.success){f.innerHTML="<a class='btn' style='width:100%;text-align:center' href='assets/packed-contractor-marketing-checklist.pdf' download>Download the checklist (PDF) &#8595;</a><p class='fine' style='margin-top:8px;color:#9AA4B4'>It's yours. The monthly bulletin lands in your inbox too.</p>";if(window.gtag)gtag("event","magnet_download");}
+      else{btn.disabled=false;btn.textContent=orig;}
+    }).catch(function(){btn.disabled=false;btn.textContent=orig;});
+  });
+});
 document.querySelectorAll(".nl-form").forEach(function(f){
   f.addEventListener("submit",function(e){
     e.preventDefault();
@@ -247,6 +258,27 @@ NEWSLETTER = """
     </form>
   </div>
 </div>"""
+
+MAGNET = """
+<div style="background:linear-gradient(135deg,#1C140A,#151C27);border:1px solid rgba(249,115,22,.45);border-radius:16px;padding:34px;max-width:1000px;margin:0 auto 56px">
+  <div style="display:flex;gap:26px;align-items:center;flex-wrap:wrap">
+    <div style="flex:1.4;min-width:260px">
+      <span class="badge">FREE DOWNLOAD</span>
+      <h3 style="font-size:24px;color:#fff;margin:8px 0 8px">The Ottawa Contractor&rsquo;s Marketing Checklist</h3>
+      <p style="color:var(--grey);font-size:15px">All 5 playbooks as one printable PDF — 34 tick-boxes covering your Google listing, reviews, website, follow-up and lead costs. Pin it to the shop wall.</p>
+    </div>
+    <form class="mg-form" style="flex:1;min-width:260px">
+      <input type="hidden" name="access_key" value="9aac958d-5965-4b75-8736-b6ab7274db68">
+      <input type="hidden" name="subject" value="CHECKLIST DOWNLOAD (packedagency.ca)">
+      <input type="hidden" name="from_name" value="Packed Agency Website">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="email" name="email" placeholder="you@yourcompany.ca" required style="width:100%;padding:13px 14px;border:1px solid rgba(255,255,255,.14);border-radius:8px;font-size:15px;background:#0A0E14;color:var(--ink);margin-bottom:10px">
+      <button class="btn" type="submit" style="width:100%">Send me the checklist (PDF)</button>
+      <p class="fine" style="margin-top:8px;font-size:11.5px;color:var(--grey)">Instant download. CASL consent: you&rsquo;ll also get our monthly bulletin — unsubscribe anytime.</p>
+    </form>
+  </div>
+</div>"""
+
 
 def cb_table(rows):
     out = "<table class=\"cb\"><tr><th>Your concern</th><th>How Packed handles it</th></tr>"
@@ -1082,6 +1114,7 @@ res_body = phero("Free learning &mdash; no email wall", "The Contractor's <em>Ma
     "Free guides, local events, trade news and (soon) video lessons — the same playbooks we charge for, taught in public. Steal it all.", "Free Resources")
 res_body += """
 <section><div class="wrap">
+""" + MAGNET + """
   <div class="kicker">Guides</div>
   <h2 class="sec-h2" style="font-size:28px">Start here — five free playbooks</h2>
   <div class="grid3" style="margin-top:26px">

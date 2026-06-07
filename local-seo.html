@@ -50,6 +50,17 @@ function wireForm(id,evt,msg){
 }
 wireForm("auditForm","lead_audit","Your audit is on the way - we will text or call within one business day, and the video lands within two.");
 wireForm("contactForm","lead_contact","Message received - we reply within one business day.");
+document.querySelectorAll(".mg-form").forEach(function(f){
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var btn=f.querySelector("button"),orig=btn.textContent;btn.disabled=true;btn.textContent="...";
+    fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(f)))})
+    .then(function(r){return r.json()}).then(function(d){
+      if(d.success){f.innerHTML="<a class='btn' style='width:100%;text-align:center' href='assets/packed-contractor-marketing-checklist.pdf' download>Download the checklist (PDF) &#8595;</a><p class='fine' style='margin-top:8px;color:#9AA4B4'>It's yours. The monthly bulletin lands in your inbox too.</p>";if(window.gtag)gtag("event","magnet_download");}
+      else{btn.disabled=false;btn.textContent=orig;}
+    }).catch(function(){btn.disabled=false;btn.textContent=orig;});
+  });
+});
 document.querySelectorAll(".nl-form").forEach(function(f){
   f.addEventListener("submit",function(e){
     e.preventDefault();
