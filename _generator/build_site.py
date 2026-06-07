@@ -7,7 +7,7 @@ os.makedirs(OUT, exist_ok=True)
 
 PHONE = "343-558-5062"
 TEL = "tel:+13435585062"
-EMAIL = "hello@packedagency.ca"
+EMAIL = "info@packedagency.ca"
 BASE = "https://packedagency.ca/"
 
 CSS = """
@@ -136,7 +136,7 @@ def head(title, desc, fname=""):
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-P93QZLT872"></script>\n'
         '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-P93QZLT872");</script>\n'
         '<meta name="theme-color" content="#0A0E14">\n'
-        '<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Packed Agency","telephone":"+1-343-558-5062","email":"hello@packedagency.ca","url":"https://packedagency.ca","address":{"@type":"PostalAddress","streetAddress":"500 Preston St","addressLocality":"Ottawa","addressRegion":"ON","addressCountry":"CA"},"areaServed":["Ottawa","Gatineau","Toronto"],"description":"Marketing, exclusive leads and follow-up automation for contractors and home-service companies."}</script>\n</head>\n<body>\n')
+        '<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Packed Agency","telephone":"+1-343-558-5062","email":"info@packedagency.ca","url":"https://packedagency.ca","address":{"@type":"PostalAddress","streetAddress":"500 Preston St","addressLocality":"Ottawa","addressRegion":"ON","addressCountry":"CA"},"areaServed":["Ottawa","Gatineau","Toronto"],"description":"Marketing, exclusive leads and follow-up automation for contractors and home-service companies."}</script>\n</head>\n<body>\n')
 
 def header(active=""):
     def on(k): return " class=\"on\"" if k == active else ""
