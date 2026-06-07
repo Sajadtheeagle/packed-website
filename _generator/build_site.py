@@ -920,11 +920,24 @@ terms_body += """
 </div></section>"""
 page("terms.html", "Terms | Packed Agency", "Packed Agency terms of service.", "", terms_body)
 
+# ============================================================ 404
+nf_body = phero("404", "This page is <em>not packed.</em>",
+    "The page you were looking for does not exist — but your schedule can still be. Try one of these instead.")
+nf_body += """
+<section><div class="wrap"><div class="grid3">
+  <a class="card" href="index.html"><h3>Home</h3><p>Start from the top.</p></a>
+  <a class="card" href="pricing.html"><h3>Pricing</h3><p>Real published prices.</p></a>
+  <a class="card" href="free-audit.html"><h3>Free Audit</h3><p>The 30-second form.</p></a>
+</div></div></section>"""
+page("404.html", "Page Not Found | Packed Agency", "That page does not exist.", "", nf_body)
+
 # ============================================================ SEO files
 today = datetime.date.today().isoformat()
 prio = lambda f: "1.0" if f == "index.html" else ("0.3" if f in ("privacy.html", "terms.html") else "0.8")
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for f in PAGES:
+    if f == "404.html":
+        continue
     loc = BASE + ("" if f == "index.html" else f)
     sm += "  <url><loc>" + loc + "</loc><lastmod>" + today + "</lastmod><priority>" + prio(f) + "</priority></url>\n"
 sm += "</urlset>\n"
