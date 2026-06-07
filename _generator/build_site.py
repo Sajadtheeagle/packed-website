@@ -752,7 +752,7 @@ calc_body += """
   <p><b>The fix costs $199/month.</b> Compare that to the number on the left.</p>
   <a class="btn" href="automation.html">See Follow-up Automation</a>
 </div>
-</div></div></section>
+</div>""" + NEWSLETTER + """</div></section>
 <script>
 function calc(){
   var mc=+document.getElementById('mc').value||0, cr=(+document.getElementById('cr').value||0)/100, jv=+document.getElementById('jv').value||0;
@@ -835,7 +835,7 @@ post_body += """
   <h2>What we'd do with a $2,000/month budget in Ottawa</h2>
   <p>First $200: fix follow-up — missed-call text-back and a five-touch sequence, so nothing leaks. Next $1,000+: own the map pack — GBP, reviews, service-area pages. The rest: LSA, managed and disputed weekly. Paid search ads only after the first two are converting, because ads pointed at a leaky bucket just speed up the leak.</p>
   <p><i>Sources: LocaliQ 2025 home-services benchmarks, Contractor Marketing Pros HVAC lead-cost data, WebFX home-services benchmarks. Full citations available on request — we don't make numbers up.</i></p>
-</div></section>""" + CTA
+""" + NEWSLETTER + """</div></section>""" + CTA
 page("blog-hvac-lead-cost.html", "What an HVAC Lead Costs in Ottawa (2026) | Packed Agency",
      "HVAC lead cost benchmarks for Ottawa: LSA $60-120, search ads ~$50-60/call, marketplaces vs map pack compared.", "", post_body)
 
@@ -921,7 +921,9 @@ def guide_page(fname, title, kicker, h1, lead, intro, checks, faq, note):
     b += "<h2 class=\"sec-h2\" style=\"font-size:26px;margin-top:40px\">Fair questions</h2>"
     for q, a in faq: b += "<details><summary>" + q + "</summary><p>" + a + "</p></details>"
     b += ("<p style=\"margin-top:34px\"><a class=\"btn\" href=\"free-audit.html\">Get My Free Audit</a>&nbsp;&nbsp;"
-          "<a class=\"btn navy\" href=\"resources.html\">More free guides</a></p></div></section>")
+          "<a class=\"btn navy\" href=\"resources.html\">More free guides</a></p>")
+    b += NEWSLETTER
+    b += "</div></section>"
     page(fname, title, lead, "resources", b)
 
 guide_page("guide-google-business-profile.html",
@@ -1032,7 +1034,7 @@ ev_body += """
     <li>Walk the competitors&rsquo; booths: their pitch, their pricing sheet, their weaknesses — it&rsquo;s all public that day</li>
   </ul>
   <div class="note" style="max-width:820px;margin-top:36px"><b>Know an event we should list?</b> Tell us at info@packedagency.ca — this page is updated as the Ottawa calendar moves.</div>
-</div></section>""" + CTA
+""" + NEWSLETTER + """</div></section>""" + CTA
 page("events.html", "Contractor Events & Networking in Ottawa (2026) | Packed Agency",
      "Ottawa contractor events, trade shows and associations: GOHBA, OCA Symposium, home shows, BNI — plus how to actually work a trade show.", "resources", ev_body)
 
