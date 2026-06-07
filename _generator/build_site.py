@@ -133,6 +133,8 @@ def head(title, desc, fname=""):
         '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
         '<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">\n'
         '<link rel="stylesheet" href="style.css">\n'
+        '<script async src="https://www.googletagmanager.com/gtag/js?id=G-P93QZLT872"></script>\n'
+        '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-P93QZLT872");</script>\n'
         '<meta name="theme-color" content="#0A0E14">\n'
         '<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Packed Agency","telephone":"+1-343-558-5062","email":"hello@packedagency.ca","url":"https://packedagency.ca","address":{"@type":"PostalAddress","streetAddress":"500 Preston St","addressLocality":"Ottawa","addressRegion":"ON","addressCountry":"CA"},"areaServed":["Ottawa","Gatineau","Toronto"],"description":"Marketing, exclusive leads and follow-up automation for contractors and home-service companies."}</script>\n</head>\n<body>\n')
 
