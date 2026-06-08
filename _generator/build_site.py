@@ -591,36 +591,69 @@ pricing_body = phero("Published. Like it should be.", "Real prices. <em>No sales
     "Almost no agency publishes prices. We do — because $1,495 a month should be an easy decision when one extra furnace install covers it.", "Pricing")
 pricing_body += """
 <section><div class="wrap">
-<div class="grid4" style="align-items:stretch">
-  <div class="price-card"><span class="tag">Step 1</span><h3>Door-Opener</h3><div class="amt">$749</div><div class="per">one-time</div>
-    <ul class="checks"><li>A &ldquo;win-back&rdquo; text/email campaign to your past customers <i>or</i> your Google listing fixed top to bottom</li><li>Tracked results in ~30 days</li><li>No strings attached</li></ul></div>
-  <div class="price-card"><span class="tag">Foundation</span><h3>Conversion Website</h3><div class="amt">$3,950</div><div class="per">one-time · website + Google listing + brand refresh</div>
-    <ul class="checks"><li>WordPress — you own it, in writing</li><li>Click-to-call, quote forms, reviews</li><li>SEO-ready structure</li></ul></div>
-  <div class="price-card hot"><span class="pin">MOST POPULAR</span><span class="tag">Monthly</span><h3>Lead Engine</h3><div class="amt">$1,495</div><div class="per">per month · 90 days, then month-to-month</div>
-    <ul class="checks"><li>Google Maps ranking work (local SEO)</li><li>Automatic review requests after every job</li><li>Missed calls get an instant text back</li><li>New leads answered in under a minute</li><li>Monthly report in jobs and dollars</li></ul></div>
-  <div class="price-card"><span class="tag">Monthly</span><h3>Growth</h3><div class="amt">$2,950</div><div class="per">per month + ad spend</div>
-    <ul class="checks"><li>Everything in Lead Engine</li><li>Google Ads + LSA management</li><li>Social media management</li><li>Quarterly content day (photo/video)</li></ul></div>
-</div>
-<div class="note"><b>The anchor:</b> $1,495/month is roughly the price of 16 shared HomeStars/Angi leads — except marketplace leads get sold to five competitors and disappear, while everything we build is exclusive and compounds. One average HVAC install pays for the month.</div>
-<h2 class="sec-h2" style="font-size:28px;margin-top:50px">À la carte</h2>
-<table class="cb"><tr><th>Service</th><th>Price</th></tr>
-<tr><td>Local SEO (standalone)</td><td>$1,195/mo</td></tr>
-<tr><td>Google Ads management</td><td>$549/mo or 12% of ad spend above $5k</td></tr>
-<tr><td>Local Services Ads management</td><td>$449/mo flat</td></tr>
-<tr><td>Meta/Facebook lead campaigns</td><td>$449/mo add-on</td></tr>
-<tr><td>Landing page</td><td>$649 per page</td></tr>
-<tr><td>Missed-call text-back (alone)</td><td>$199/mo</td></tr>
-<tr><td>Automation suite (speed-to-lead + booking + reviews)</td><td>$995 setup + $349/mo</td></tr>
-<tr><td>Database reactivation campaign</td><td>$749 per campaign</td></tr>
-<tr><td>Reputation management</td><td>$249/mo</td></tr>
-<tr><td>Social media management</td><td>$649/mo</td></tr>
-<tr><td>Logo / brand kit</td><td>$495 / $1,250</td></tr>
-<tr><td>Promo video / job-site content day</td><td>$1,450 / $495</td></tr></table>
-<div style="max-width:820px;margin-top:40px">
-<details><summary>Why are you cheaper than the big agencies?</summary><p>Lower overhead, no account-manager layers, and entry pricing while we build our Ottawa case-study wall. Prices rise as proof accumulates — locking in now is genuinely the best deal we'll ever offer.</p></details>
-<details><summary>What's NOT included?</summary><p>Ad spend (paid directly to Google/Meta — your account, your money, full visibility) and third-party costs like premium stock or print runs. No markups, no surprises.</p></details>
-</div>
+
+  <div class="kicker" style="text-align:center;justify-content:center">Two ways to buy</div>
+  <h2 class="sec-h2" style="text-align:center">Pick one service, or the whole system.</h2>
+  <p class="sec-sub" style="margin:0 auto 36px;text-align:center">Need just a website? Just Google rankings? Buy it on its own below. Want it all handled for one monthly price? Jump to the <a href="#plans" style="color:var(--orange);font-weight:700">managed plans</a>. Every price is published &mdash; no sales call to find out what it costs.</p>
+
+  <div class="kicker">One-time projects</div>
+  <h3 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:24px;color:#fff;margin-bottom:6px">Pay once. You own it forever.</h3>
+  <p class="sec-sub" style="margin-bottom:18px">For when you need a specific thing built &mdash; a website, a logo, a one-time campaign.</p>
+  <table class="cb">
+    <tr><th>What you get</th><th>What's included</th><th>Price</th></tr>
+    <tr><td>Website</td><td>5&ndash;10 page WordPress site, click-to-call, quote forms, mobile-fast. You own every file, in writing.</td><td><b>$2,950</b></td></tr>
+    <tr><td>Website + Launch Bundle</td><td>Everything in the website, <i>plus</i> your Google Business Profile set up and a brand refresh (logo touch-up + colours). <b>Save vs. buying separately.</b></td><td><b>$3,950</b></td></tr>
+    <tr><td>Door-Opener</td><td>A fast first win: a &ldquo;win-back&rdquo; campaign to your past customers <i>or</i> your Google listing fixed top to bottom. Booked jobs in ~30 days.</td><td><b>$749</b></td></tr>
+    <tr><td>Extra landing page</td><td>One focused page for a specific service or ad campaign.</td><td>$649</td></tr>
+    <tr><td>Logo</td><td>A clean, professional logo for your trucks, site and quotes.</td><td>$495</td></tr>
+    <tr><td>Full brand kit</td><td>Logo + colours + fonts + truck/uniform-ready files.</td><td>$1,250</td></tr>
+    <tr><td>Promo video</td><td>A short, professional video for your site and social.</td><td>$1,450</td></tr>
+    <tr><td>Job-site content day</td><td>Half a day on site capturing real photos &amp; clips of your crew and work.</td><td>$495</td></tr>
+    <tr><td>Database reactivation campaign</td><td>A one-time text/email push to your past customers to fill a slow stretch.</td><td>$749</td></tr>
+  </table>
+
+  <div class="kicker" style="margin-top:54px">Monthly services</div>
+  <h3 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:24px;color:#fff;margin-bottom:6px">Ongoing work, billed monthly.</h3>
+  <p class="sec-sub" style="margin-bottom:18px">Buy any one on its own &mdash; or bundle several into a managed plan below and pay less.</p>
+  <table class="cb">
+    <tr><th>Service</th><th>What it does</th><th>Price / month</th></tr>
+    <tr><td>Local SEO &amp; Google Maps</td><td>Gets you into the top-3 map results where homeowners pick who to call.</td><td><b>$1,195</b></td></tr>
+    <tr><td>Google Ads management</td><td>Paid ads on money searches, managed and tracked. (Ad budget paid to Google separately.)</td><td><b>$549</b> <small>or 12% of spend over $5k</small></td></tr>
+    <tr><td>Local Services Ads (LSA)</td><td>The &ldquo;Google Guaranteed&rdquo; pay-per-lead ads, set up and managed.</td><td>$449</td></tr>
+    <tr><td>Facebook / Instagram leads</td><td>Lead campaigns on Meta, as an add-on.</td><td>$449</td></tr>
+    <tr><td>Missed-call text-back</td><td>Every missed call gets an instant text so the lead doesn't call a competitor.</td><td><b>$199</b></td></tr>
+    <tr><td>Automation suite</td><td>Missed-call text-back + instant lead reply + booking + review requests, all wired together. <small>($995 one-time setup)</small></td><td>$349</td></tr>
+    <tr><td>Reputation management</td><td>Automatic review requests and response handling to grow your star rating.</td><td>$249</td></tr>
+    <tr><td>Social media management</td><td>Regular posts so your pages look alive and trustworthy.</td><td>$649</td></tr>
+  </table>
+
+  <div id="plans" class="kicker" style="margin-top:58px">Managed plans &mdash; bundle &amp; save</div>
+  <h3 style="font-family:'Archivo',sans-serif;font-weight:900;font-size:24px;color:#fff;margin-bottom:6px">Want it all handled? Pick a plan.</h3>
+  <p class="sec-sub" style="margin-bottom:24px">These bundle the monthly services above into one price &mdash; cheaper than buying each on its own, and managed as one system. 90-day initial term, then month-to-month.</p>
+  <div class="grid3" style="align-items:stretch">
+    <div class="price-card"><span class="tag">Starter</span><h3>Door-Opener</h3><div class="amt">$749</div><div class="per">one-time &middot; not monthly</div>
+      <ul class="checks"><li>One fast, provable win in ~30 days</li><li>Win-back campaign or Google listing overhaul</li><li>No commitment &mdash; a no-risk first step</li></ul>
+      <a class="btn navy" href="free-audit.html" style="width:100%;text-align:center;margin-top:6px">Start here</a></div>
+    <div class="price-card hot"><span class="pin">MOST POPULAR</span><span class="tag">Monthly</span><h3>Lead Engine</h3><div class="amt">$1,495<small style="font-size:15px;color:var(--grey);font-weight:500">/mo</small></div><div class="per">the core system that keeps you booked</div>
+      <ul class="checks"><li>Local SEO + Google Maps ranking</li><li>Automatic review requests</li><li>Missed-call text-back</li><li>Leads answered in under a minute</li><li>Monthly report in jobs &amp; dollars</li></ul>
+      <a class="btn" href="free-audit.html" style="width:100%;text-align:center;margin-top:6px">Get started</a></div>
+    <div class="price-card"><span class="tag">Monthly</span><h3>Growth</h3><div class="amt">$2,950<small style="font-size:15px;color:var(--grey);font-weight:500">/mo</small></div><div class="per">+ ad budget &middot; for scaling up</div>
+      <ul class="checks"><li>Everything in Lead Engine</li><li>Google Ads + LSA management</li><li>Social media management</li><li>Quarterly job-site content day</li></ul>
+      <a class="btn navy" href="free-audit.html" style="width:100%;text-align:center;margin-top:6px">Get started</a></div>
+  </div>
+
+  <div class="note" style="margin-top:36px"><b>Quick gut-check:</b> the $1,495/mo Lead Engine is about the cost of 16 shared HomeStars/Angi leads &mdash; except those get sold to five competitors and vanish, while everything we build is yours and compounds. One average furnace install covers the month.</div>
+
+  <div style="max-width:820px;margin-top:46px">
+  <h2 class="sec-h2" style="font-size:26px">Common questions</h2>
+  <details><summary>I just want a website. What do I pay?</summary><p>$2,950 for the website on its own &mdash; built, yours to keep, no monthly fee. Or $3,950 for the Launch Bundle, which adds your Google Business Profile setup and a brand refresh (a better deal if you need all three). No monthly commitment required for either.</p></details>
+  <details><summary>Do I have to sign up for a monthly plan?</summary><p>No. Buy any single service &mdash; a website, a logo, just local SEO &mdash; on its own. The monthly plans simply bundle several services for less and manage them as one system. Many contractors start with the $749 Door-Opener to see results first.</p></details>
+  <details><summary>Can I mix and match?</summary><p>Yes. Start with a website, add missed-call text-back next month, layer in SEO when you're ready. We'll always tell you the single most valuable next step &mdash; the free audit usually makes it obvious.</p></details>
+  <details><summary>What's NOT included in the prices?</summary><p>Ad spend (paid directly to Google/Meta &mdash; your account, your money, full visibility) and third-party costs like premium stock or print runs. No markups, no surprises.</p></details>
+  <details><summary>Why are you cheaper than the big agencies?</summary><p>Lower overhead, no account-manager layers, and entry pricing while we build our Ottawa case-study wall. Prices rise as proof accumulates &mdash; locking in now is the best deal we'll ever offer.</p></details>
+  </div>
 </div></section>""" + CTA
+
 page("pricing.html", "Pricing | Packed Agency — Contractor Marketing Ottawa",
      "Published pricing: Door-Opener $749, conversion website $3,950, Lead Engine $1,495/mo, Growth $2,950/mo. No lock-in after 90 days.", "pricing", pricing_body)
 
