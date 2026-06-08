@@ -80,10 +80,16 @@
 <footer class="site"><div class="wrap"><div class="f-grid"><div><div class="logo" style="margin-bottom:14px"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="14" width="84" height="78" rx="16" fill="#F97316"/><rect x="22" y="6" width="8" height="16" rx="3" fill="#F97316"/><rect x="70" y="6" width="8" height="16" rx="3" fill="#F97316"/><g fill="#190B01"><rect x="20" y="32" width="16" height="16" rx="3"/><rect x="42" y="32" width="16" height="16" rx="3"/><rect x="64" y="32" width="16" height="16" rx="3"/><rect x="20" y="54" width="16" height="16" rx="3"/><rect x="64" y="54" width="16" height="16" rx="3"/><rect x="20" y="76" width="16" height="10" rx="3"/><rect x="42" y="76" width="16" height="10" rx="3"/><rect x="64" y="76" width="16" height="10" rx="3"/></g><rect x="42" y="54" width="16" height="16" rx="3" fill="#FFE3CC"/></svg><div style="color:#fff"><b style="color:#fff">PACKED</b><span>AGENCY</span></div></div><p style="font-size:14px;max-width:300px">We keep your schedule packed. Marketing, exclusive leads and follow-up automation for Canada's trades. Ottawa-built.</p></div><div><h4>Services</h4><a href="local-seo.html">Local SEO &amp; Maps</a><a href="google-ads.html">Google Ads &amp; LSA</a><a href="websites.html">Conversion Websites</a><a href="automation.html">Follow-up Automation</a><a href="calculator.html">Missed-Call Calculator</a></div><div><h4>Trades</h4><a href="hvac-marketing.html">HVAC Marketing</a><a href="plumber-marketing.html">Plumber Marketing</a><a href="electrician-marketing.html">Electrician Marketing</a><a href="renovation-marketing.html">Renovation Marketing</a><a href="toronto.html">Toronto</a></div><div><h4>Company</h4><a href="process.html">Our Process</a><a href="resources.html">Free Resources</a><a href="events.html">Events</a><a href="news.html">Trade News</a><a href="guarantees.html">Guarantees</a><a href="results.html">Results</a><a href="reviews.html">Reviews</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div></div><div class="f-bottom"><span>&copy; 2026 Packed Agency. All rights reserved.</span><span><a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms</a> &nbsp;&middot;&nbsp; Client Portal (coming soon)</span></div></div></footer>
 <a class="callbar" href="tel:+13435585062">&#128222; Call Packed &mdash; 343-558-5062</a>
 <script>
+function pkLower(f){var e=f.querySelector("input[name=email]");return e?e.value.trim().toLowerCase():"";}
+function pkSeen(type,email){try{var k="pk_"+type;var list=JSON.parse(localStorage.getItem(k)||"[]");return email&&list.indexOf(email)>-1;}catch(e){return false;}}
+function pkMark(type,email){try{var k="pk_"+type;var list=JSON.parse(localStorage.getItem(k)||"[]");if(email&&list.indexOf(email)<0){list.push(email);localStorage.setItem(k,JSON.stringify(list));}}catch(e){}}
+function pkDoneBox(f,title,msg){f.innerHTML="<div style='padding:24px 6px;text-align:center'><div style='font-family:Archivo,sans-serif;font-weight:900;font-size:21px;color:#fff'>"+title+"</div><p style='color:#9AA4B4;margin-top:10px;font-size:14.5px'>"+msg+"</p></div>";}
 function wireForm(id,evt,msg){
   var f=document.getElementById(id);if(!f)return;
   f.addEventListener("submit",function(e){
     e.preventDefault();
+    var email=pkLower(f);
+    if(pkSeen(evt,email)){pkDoneBox(f,"You're already on our list. ✓","Looks like you already reached out with this email &mdash; no need to send it twice. We'll get back to you soon. Need it faster? Call or text 343-558-5062.");return;}
     var btn=f.querySelector("button[type=submit]"),orig=btn.textContent;
     btn.disabled=true;btn.textContent="Sending...";
     fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(f)))})
@@ -91,7 +97,7 @@ function wireForm(id,evt,msg){
     .then(function(d){
       if(d.success){
         f.innerHTML="<div style='padding:26px 6px;text-align:center'><div style='font-family:Archivo,sans-serif;font-weight:900;font-size:22px;color:#fff'>Got it. &#10003;</div><p style='color:#9AA4B4;margin-top:10px;font-size:14.5px'>"+msg+"</p></div>";
-        if(window.gtag)gtag("event",evt);
+        pkMark(evt,email);if(window.gtag)gtag("event",evt);
       }else{btn.disabled=false;btn.textContent=orig;alert("Something went wrong - please call or text 343-558-5062.");}
     })
     .catch(function(){btn.disabled=false;btn.textContent=orig;alert("Something went wrong - please call or text 343-558-5062.");});
@@ -102,10 +108,12 @@ wireForm("contactForm","lead_contact","Message received - we reply within one bu
 document.querySelectorAll(".mg-form").forEach(function(f){
   f.addEventListener("submit",function(e){
     e.preventDefault();
+    var email=pkLower(f);
+    if(pkSeen("magnet_download",email)){f.innerHTML="<a class='btn' style='width:100%;text-align:center' href='assets/packed-contractor-marketing-checklist.pdf' download>Download the checklist (PDF) &#8595;</a><p class='fine' style='margin-top:8px;color:#9AA4B4'>You already grabbed this &mdash; here it is again. Check your inbox for the bulletin.</p>";return;}
     var btn=f.querySelector("button"),orig=btn.textContent;btn.disabled=true;btn.textContent="...";
     fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(f)))})
     .then(function(r){return r.json()}).then(function(d){
-      if(d.success){f.innerHTML="<a class='btn' style='width:100%;text-align:center' href='assets/packed-contractor-marketing-checklist.pdf' download>Download the checklist (PDF) &#8595;</a><p class='fine' style='margin-top:8px;color:#9AA4B4'>It's yours. The monthly bulletin lands in your inbox too.</p>";if(window.gtag)gtag("event","magnet_download");}
+      if(d.success){f.innerHTML="<a class='btn' style='width:100%;text-align:center' href='assets/packed-contractor-marketing-checklist.pdf' download>Download the checklist (PDF) &#8595;</a><p class='fine' style='margin-top:8px;color:#9AA4B4'>It's yours. The monthly bulletin lands in your inbox too.</p>";pkMark("magnet_download",email);if(window.gtag)gtag("event","magnet_download");}
       else{btn.disabled=false;btn.textContent=orig;}
     }).catch(function(){btn.disabled=false;btn.textContent=orig;});
   });
@@ -113,10 +121,12 @@ document.querySelectorAll(".mg-form").forEach(function(f){
 document.querySelectorAll(".nl-form").forEach(function(f){
   f.addEventListener("submit",function(e){
     e.preventDefault();
+    var email=pkLower(f);
+    if(pkSeen("newsletter_signup",email)){f.innerHTML="<p style='font-family:Archivo,sans-serif;font-weight:900;color:#fff;font-size:16px;padding:10px 0'>You're already subscribed. ✓<br><span style='font-weight:400;font-size:13.5px;color:#9AA4B4'>No need to sign up twice &mdash; the next bulletin is on its way.</span></p>";return;}
     var btn=f.querySelector("button"),orig=btn.textContent;btn.disabled=true;btn.textContent="...";
     fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(f)))})
     .then(function(r){return r.json()}).then(function(d){
-      if(d.success){f.innerHTML="<p style='font-family:Archivo,sans-serif;font-weight:900;color:#fff;font-size:17px;padding:10px 0'>You're in. &#10003; First bulletin lands next month.</p>";if(window.gtag)gtag("event","newsletter_signup");}
+      if(d.success){f.innerHTML="<p style='font-family:Archivo,sans-serif;font-weight:900;color:#fff;font-size:17px;padding:10px 0'>You're in. &#10003; First bulletin lands next month.</p>";pkMark("newsletter_signup",email);if(window.gtag)gtag("event","newsletter_signup");}
       else{btn.disabled=false;btn.textContent=orig;}
     }).catch(function(){btn.disabled=false;btn.textContent=orig;});
   });

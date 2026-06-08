@@ -112,3 +112,18 @@ footer.site{background:#070A0F;color:#8B95A5;padding:60px 0 30px;border-top:1px 
 .chip{display:inline-block;background:var(--card);border:1px solid var(--line);color:#DDE4F0;padding:8px 15px;border-radius:99px;font-size:12.5px;font-weight:600;margin:0 8px 10px 0}
 .chip b{color:var(--orange)}
 .chip:hover{border-color:rgba(249,115,22,.6)}
+.chooser{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+.choose{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 20px;text-align:center;transition:.16s;display:block}
+.choose:hover{border-color:var(--orange);transform:translateY(-3px)}
+.choose .ci{width:54px;height:54px;border-radius:14px;background:rgba(249,115,22,.13);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:var(--orange)}
+.choose .ci svg{width:27px;height:27px}
+.choose h3{font-size:16px;color:#fff;margin-bottom:6px}
+.choose p{font-size:13px;color:var(--grey);margin-bottom:10px;line-height:1.5}
+.choose .go{color:var(--orange);font-weight:700;font-size:13px}
+.cardico{width:46px;height:46px;border-radius:11px;background:rgba(249,115,22,.13);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--orange)}
+.cardico svg{width:23px;height:23px}
+.card.dark .cardico{background:rgba(249,115,22,.2)}
+.pill-ico{width:46px;height:46px;border-radius:11px;background:rgba(249,115,22,.16);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--orange)}
+.pill-ico svg{width:23px;height:23px}
+@media(max-width:760px){.chooser{grid-template-columns:1fr 1fr}}
+@media(max-width:430px){.chooser{grid-template-columns:1fr}}
