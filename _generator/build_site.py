@@ -186,7 +186,7 @@ def header(active=""):
         "<a href=\"pricing.html\"" + on("pricing") + ">Pricing</a>" "<a href=\"resources.html\"" + on("resources") + ">Free Resources</a>"
         "<a href=\"results.html\"" + on("results") + ">Results</a>"
         "<a href=\"about.html\"" + on("about") + ">About</a>"
-        "<a class=\"nav-phone\" href=\"" + TEL + "\">" + PHONE + "</a>"
+        "<a class=\"nav-phone\" href=\"https://calendar.app.google/s2etv2aRyPFDhRZm7\" target=\"_blank\" rel=\"noopener\">Book a call</a>"
         "<a class=\"btn\" href=\"free-audit.html\">Get Free Audit</a></nav>"
         "<button class=\"burger\" onclick=\"document.getElementById('navLinks').classList.toggle('open')\">&#9776;</button>"
         "</div></header>\n")
@@ -261,7 +261,7 @@ FOOTER = ("<footer class=\"site\"><div class=\"wrap\"><div class=\"f-grid\">"
     "<div><h4>Company</h4><a href=\"process.html\">Our Process</a><a href=\"resources.html\">Free Resources</a><a href=\"events.html\">Events</a><a href=\"news.html\">Trade News</a><a href=\"guarantees.html\">Guarantees</a><a href=\"results.html\">Results</a><a href=\"reviews.html\">Reviews</a><a href=\"blog.html\">Blog</a><a href=\"contact.html\">Contact</a></div>"
     "</div><div class=\"f-bottom\"><span>&copy; 2026 Packed Agency. All rights reserved.</span>"
     "<span><a href=\"privacy.html\">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href=\"terms.html\">Terms</a> &nbsp;&middot;&nbsp; Client Portal (coming soon)</span></div></div></footer>\n"
-    "<a class=\"callbar\" href=\"" + TEL + "\">&#128222; Call Packed &mdash; " + PHONE + "</a>\n" + FORM_JS + "</body>\n</html>")
+    "<a class=\"callbar\" href=\"https://calendar.app.google/s2etv2aRyPFDhRZm7\" target=\"_blank\" rel=\"noopener\">&#128197; Book a free 30-min call</a>\n" + FORM_JS + "</body>\n</html>")
 
 def phero(kicker, h1, lead, crumb=""):
     c = ("<div class=\"crumb\"><a href=\"index.html\">Home</a> / " + crumb + "</div>") if crumb else ""
