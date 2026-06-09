@@ -271,9 +271,10 @@ def phero(kicker, h1, lead, crumb=""):
         "<a class=\"btn\" href=\"free-audit.html\">Get My Free Audit</a></div></section>\n")
 
 CTA = ("<section class=\"ctaband\"><div class=\"wrap\"><h2>Ready for a packed schedule?</h2>"
-    "<p>Start with the free audit &mdash; we check your Google listing, website and phones, then send you a 10-minute video of what we found. No meeting. No pressure. No cost.</p>"
+    "<p>Start with the free audit &mdash; we check your Google listing, website and phones, then send you a 10-minute video of what we found. No pressure, no cost.</p>"
     "<a class=\"btn\" href=\"free-audit.html\">Get My Free Audit</a>&nbsp;&nbsp;"
-    "<a class=\"btn ghost\" href=\"" + TEL + "\">Call or Text " + PHONE + "</a></div></section>\n")
+    "<a class=\"btn ghost\" href=\"https://calendar.app.google/s2etv2aRyPFDhRZm7\" target=\"_blank\" rel=\"noopener\">Book a 30-min call</a>"
+    "<p style=\"margin:18px 0 0;font-size:14px;color:#8B95A5\">Or text us anytime at <a href=\"" + TEL + "\" style=\"color:#fff;font-weight:600\">" + PHONE + "</a></p></div></section>\n")
 
 NEWSLETTER = """
 <div style="background:var(--card);border:1px solid rgba(249,115,22,.35);border-radius:14px;padding:30px;max-width:860px;margin:50px auto 0">
@@ -429,7 +430,7 @@ index_body = """
     <p class="lead" style="font-size:20px">We get you found on Google, make the phone ring, and follow up on every lead automatically — for HVAC, plumbing, electrical and renovation companies. Everything we build belongs to you.</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
       <a class="btn" href="free-audit.html">Get My Free Audit</a>
-      <a class="btn ghost" href="tel:+13435585062">Call or Text """ + PHONE + """</a>
+      <a class="btn ghost" href="https://calendar.app.google/s2etv2aRyPFDhRZm7" target="_blank" rel="noopener">Book a 30-min call</a>
     </div>
     <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:44px">
       <span style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:9px 18px;border-radius:99px;font-size:14px;font-weight:600;color:#DDE4F0"><b style="color:var(--orange)">HVAC</b></span>
@@ -760,11 +761,17 @@ page("guarantees.html", "Our Guarantees | Packed Agency", "You own everything. N
 
 # ============================================================ CONTACT
 contact_body = phero("Contact", "Talk to the person who <em>does the work.</em>",
-    "No call centre, no account managers. Phone, text or email — you reach the founder.", "Contact")
+    "No call centre, no account managers — you reach the founder directly. Book a call, send a message, or text.", "Contact")
 contact_body += """
 <section><div class="wrap"><div class="grid2" style="gap:60px;align-items:start">
 <div class="prose">
-  <h2 style="margin-top:0">Reach us</h2>
+  <div style="background:var(--card);border:1px solid rgba(249,115,22,.4);border-radius:14px;padding:24px;margin-bottom:24px">
+    <div class="kicker" style="margin-bottom:8px">Best way to talk</div>
+    <h2 style="margin-top:0;font-size:22px">Book a free 30-minute call</h2>
+    <p style="color:var(--grey);font-size:14.5px;margin-bottom:16px">Grab a time that suits you and we&rsquo;ll meet on Google Meet &mdash; no pressure, just a straight conversation about your schedule and how to fill it.</p>
+    <a class="btn" href="https://calendar.app.google/s2etv2aRyPFDhRZm7" target="_blank" rel="noopener">Pick a time that works &rarr;</a>
+  </div>
+  <h2 style="margin-top:0">Other ways to reach us</h2>
   <p><b>Phone / text:</b> <a href=\"""" + TEL + """\" style="color:var(--orange);font-weight:700">""" + PHONE + """</a><br>
   <b>Email:</b> <a href="mailto:""" + EMAIL + """" style="color:var(--orange);font-weight:700">""" + EMAIL + """</a><br>
   <b>Address:</b> 500 Preston St, Ottawa, ON<br>
