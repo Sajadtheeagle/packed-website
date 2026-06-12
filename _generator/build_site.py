@@ -261,7 +261,7 @@ FOOTER = ("<footer class=\"site\"><div class=\"wrap\"><div class=\"f-grid\">"
     "<div><h4>Company</h4><a href=\"process.html\">Our Process</a><a href=\"resources.html\">Free Resources</a><a href=\"events.html\">Events</a><a href=\"news.html\">Trade News</a><a href=\"guarantees.html\">Guarantees</a><a href=\"results.html\">Results</a><a href=\"reviews.html\">Reviews</a><a href=\"blog.html\">Blog</a><a href=\"contact.html\">Contact</a></div>"
     "</div><div class=\"f-bottom\"><span>&copy; 2026 Packed Agency. All rights reserved.</span>"
     "<span><a href=\"privacy.html\">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href=\"terms.html\">Terms</a> &nbsp;&middot;&nbsp; Client Portal (coming soon)</span></div></div></footer>\n"
-    "<a class=\"callbar\" href=\"https://calendar.app.google/s2etv2aRyPFDhRZm7\" target=\"_blank\" rel=\"noopener\">&#128197; Book a free 30-min call</a>\n" + FORM_JS + "</body>\n</html>")
+    "<a class=\"callbar\" href=\"https://calendar.app.google/s2etv2aRyPFDhRZm7\" target=\"_blank\" rel=\"noopener\">&#128197; Book a free 30-min call</a>\n" + FORM_JS + "<!--Start of Tawk.to Script--><script type=\"text/javascript\">var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();(function(){var s1=document.createElement(\"script\"),s0=document.getElementsByTagName(\"script\")[0];s1.async=true;s1.src='https://embed.tawk.to/6a2b7499d6a95f1c2c58b9cc/1jqsruufi';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();</script><!--End of Tawk.to Script--></body>\n</html>")
 
 def phero(kicker, h1, lead, crumb=""):
     c = ("<div class=\"crumb\"><a href=\"index.html\">Home</a> / " + crumb + "</div>") if crumb else ""
@@ -1266,6 +1266,33 @@ print("wrote robots.txt + llms.txt")
 os.makedirs(os.path.join(OUT, "assets"), exist_ok=True)
 open(os.path.join(OUT, "assets", "favicon.svg"), "w").write(LOGO_SVG.replace(' aria-hidden="true"', ""))
 print("wrote sitemap.xml, robots.txt, favicon.svg")
+
+# ============================================================ PRIVACY & TERMS
+priv_body = phero("Legal", "Privacy <em>Policy.</em>", "Plain-language and CASL-aware. Have a lawyer review before you rely on it.", "Privacy")
+priv_body += """
+<section><div class="wrap prose">
+<div class="note"><b>Template notice:</b> this is a working draft for launch. Have it reviewed by a lawyer and replace the bracketed items.</div>
+<h2>Who we are</h2><p>Packed Agency (&ldquo;we&rdquo;) is a marketing services business operated by [legal name], at 500 Preston St, Ottawa, Ontario. Contact: """ + EMAIL + """.</p>
+<h2>What we collect</h2><p>Information you submit through our forms (name, company, trade, phone, email), chat messages, and standard analytics (GA4) about site usage.</p>
+<h2>How we use it</h2><p>To deliver the audit or services you requested, to respond to enquiries, and &mdash; only with your express consent (CASL) &mdash; to send commercial electronic messages. Every message includes an unsubscribe that works.</p>
+<h2>What we never do</h2><p>Sell, rent or trade your information. Ever.</p>
+<h2>Storage &amp; access</h2><p>Data is stored in our tools (forms provider, analytics, chat). You may request a copy or deletion of your data at any time via """ + EMAIL + """.</p>
+<h2>Cookies</h2><p>We use analytics and chat cookies (GA4, Tawk.to). You can block cookies in your browser without losing access to this site.</p>
+<p><i>Last updated: [date]. Questions: """ + EMAIL + """.</i></p>
+</div></section>"""
+page("privacy.html", "Privacy Policy | Packed Agency", "Packed Agency privacy policy &mdash; CASL-aware, plain language.", "", priv_body)
+
+terms_body = phero("Legal", "Terms of <em>Service.</em>", "The short, fair version. Full service terms live in your signed agreement.", "Terms")
+terms_body += """
+<section><div class="wrap prose">
+<div class="note"><b>Template notice:</b> working draft &mdash; lawyer review before launch.</div>
+<h2>Site use</h2><p>Content on this site is provided for information. Benchmarks cited are from published industry sources and your results will vary with market, budget and execution.</p>
+<h2>Service terms (summary)</h2><p>Services are governed by a signed agreement which includes our three guarantees: client ownership of all assets, 90-day initial term then month-to-month, and one-client-per-trade-per-city exclusivity. The agreement prevails over this summary.</p>
+<h2>No guarantees of outcomes</h2><p>We do not guarantee specific rankings, lead volumes or revenue &mdash; and we put that in writing because honest expectations are part of the product.</p>
+<h2>Liability</h2><p>To the maximum extent permitted by law, our liability is limited to fees paid in the three months preceding a claim.</p>
+<p><i>Last updated: [date].</i></p>
+</div></section>"""
+page("terms.html", "Terms | Packed Agency", "Packed Agency terms of service.", "", terms_body)
 
 # ============================================================ style.css
 with open(os.path.join(OUT, "style.css"), "w") as f:
