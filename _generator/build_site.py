@@ -324,6 +324,12 @@ def cb_table(rows):
     return out + "</table>"
 
 PAGES = []
+BLOG_POSTS = {
+    "blog-hvac-lead-cost.html": ("What an HVAC Lead Costs in Ottawa (2026)", "2026-06-07"),
+    "is-homestars-worth-it.html": ("Is HomeStars Worth It for Ottawa Contractors? (2026)", "2026-06-09"),
+    "how-to-get-more-hvac-leads-ottawa.html": ("How to Get More HVAC Leads in Ottawa (2026)", "2026-06-09"),
+    "contractor-marketing-ideas.html": ("11 Contractor Marketing Ideas That Actually Work (2026)", "2026-06-09"),
+}
 SERVICE_SCHEMA = {
     "local-seo.html": ("Local SEO and Google Maps for Contractors", "Google Maps ranking, reviews and local search for Ottawa contractors.", "1195"),
     "google-ads.html": ("Google Ads and Local Services Ads Management", "Managed Google Ads and LSA campaigns for Ottawa contractors.", "549"),
@@ -351,8 +357,8 @@ def page(fname, title, desc, active, body):
     if fname in SERVICE_SCHEMA:
         nm, ds, pr = SERVICE_SCHEMA[fname]
         extras += '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@type": "Service", "name": nm, "description": ds, "provider": {"@type": "LocalBusiness", "name": "Packed Agency", "telephone": "+1-343-558-5062"}, "areaServed": "Ottawa, ON", "offers": {"@type": "Offer", "price": pr, "priceCurrency": "CAD"}}) + "</script>\n"
-    if fname == "blog-hvac-lead-cost.html":
-        extras += '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@type": "BlogPosting", "headline": "What an HVAC Lead Costs in Ottawa (2026)", "author": {"@type": "Person", "name": "Sajad"}, "publisher": {"@type": "Organization", "name": "Packed Agency"}, "datePublished": "2026-06-07", "mainEntityOfPage": BASE + fname}) + "</script>\n"
+    if fname in BLOG_POSTS:
+        extras += '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@type": "BlogPosting", "headline": BLOG_POSTS[fname][0], "author": {"@type": "Person", "name": "Sajad"}, "publisher": {"@type": "Organization", "name": "Packed Agency"}, "datePublished": BLOG_POSTS[fname][1], "mainEntityOfPage": BASE + fname}) + "</script>\n"
     if extras:
         html = html.replace("</head>", extras + "</head>")
     with open(os.path.join(OUT, fname), "w") as f:
@@ -899,9 +905,11 @@ blog_body = phero("The Packed Blog", "We give the playbook <em>away.</em>",
     "Weekly, Ottawa-specific answers to the questions contractors actually type into Google. Teaching is our marketing.", "Blog")
 blog_body += """
 <section><div class="wrap"><div class="grid3">
-  <a class="card" href="blog-hvac-lead-cost.html"><span class="tag">Published</span><h3>What an HVAC Lead Costs in Ottawa (2026)</h3><p>Real benchmark numbers: LSA, Google Ads, marketplaces and SEO compared — and which one quietly wins.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
-  <div class="card" style="opacity:.7"><span class="tag">Next week</span><h3>The Mystery Call: We Phoned 10 Ottawa Plumbers</h3><p>How many answered? How many called back? The results explain a lot about who's busy.</p></div>
-  <div class="card" style="opacity:.7"><span class="tag">Coming</span><h3>HomeStars vs. Owning Your Leads: the Real Math</h3><p>What shared leads actually cost over a year, vs. building sources you own.</p></div>
+  <a class="card" href="how-to-get-more-hvac-leads-ottawa.html"><span class="tag">Guide</span><h3>How to Get More HVAC Leads in Ottawa (2026)</h3><p>Seven channels that actually fill an HVAC schedule, ranked by cost and speed — with real Ottawa numbers.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+  <a class="card" href="is-homestars-worth-it.html"><span class="tag">Honest math</span><h3>Is HomeStars Worth It for Ottawa Contractors?</h3><p>The real cost of shared leads over a year vs. owning your own — run the numbers before you renew.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+  <a class="card" href="contractor-marketing-ideas.html"><span class="tag">Ideas</span><h3>11 Contractor Marketing Ideas That Actually Work</h3><p>No fluff — the tactics that move the needle in 2026, from free fixes to paid plays.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+  <a class="card" href="blog-hvac-lead-cost.html"><span class="tag">Benchmarks</span><h3>What an HVAC Lead Costs in Ottawa (2026)</h3><p>Real benchmark numbers: LSA, Google Ads, marketplaces and SEO compared.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+  <div class="card" style="opacity:.7"><span class="tag">Next</span><h3>The Mystery Call: We Phoned 10 Ottawa Plumbers</h3><p>How many answered? The results explain who's busy.</p></div>
 </div>""" + NEWSLETTER + """</div></section>""" + CTA
 page("blog.html", "Contractor Marketing Blog | Packed Agency", "Ottawa-specific contractor marketing answers, published weekly.", "", blog_body)
 
@@ -926,6 +934,108 @@ post_body += """
 """ + NEWSLETTER + """</div></section>""" + CTA
 page("blog-hvac-lead-cost.html", "What an HVAC Lead Costs in Ottawa (2026) | Packed Agency",
      "HVAC lead cost benchmarks for Ottawa: LSA $60-120, search ads ~$50-60/call, marketplaces vs map pack compared.", "", post_body)
+
+# ---- SEO post: Is HomeStars Worth It ----
+hs_body = phero("Blog &middot; 7 min read", "Is HomeStars Worth It for Ottawa <em>Contractors?</em>",
+    "Before you renew that subscription, run the real math on shared leads &mdash; here it is, honestly.", "Blog")
+hs_body += """
+<section><div class="wrap prose">
+  <p>If you're an Ottawa contractor, you've almost certainly been pitched HomeStars (or Angi, or Houzz). The promise is simple: pay us, and we'll send you homeowners ready to hire. So <b>is HomeStars worth it?</b> The honest answer: it can work as a short-term bridge, but the math rarely works as a long-term strategy. Here's why &mdash; with numbers.</p>
+  <h2>How shared-lead marketplaces actually work</h2>
+  <p>When a homeowner submits a request on HomeStars, that lead is typically sold to <b>three to five</b> contractors at once. You're not buying a customer &mdash; you're buying a <i>race</i>. The fastest caller usually wins, and everyone else paid for nothing. So while a lead might cost $30&ndash;$80 on the sticker, your real <b>cost per won job</b> is that number multiplied by how many competitors you're bidding against and divided by your win rate.</p>
+  <h2>The real-cost math</h2>
+  <p>Say a lead costs $50 and goes to 4 contractors. If you win 1 in 4 (a fair close rate when you're racing strangers on price), you paid $50 four times to land one job &mdash; <b>$200 per booked job</b>, before you've done any work. Win 1 in 5 and it's $250. And because every competitor got the same lead, the homeowner is now price-shopping, which squeezes your margin on the job you did win.</p>
+  <p>Compare that to channels you <b>own</b>: a strong Google Business Profile in the top-3 map pack averages roughly 40% lower cost-per-sale than paid leads, and those calls come to you alone &mdash; nobody else is racing you. Once it ranks, it keeps producing without per-lead fees.</p>
+  <h2>When HomeStars is actually worth it</h2>
+  <ul>
+    <li><b>You're brand new</b> and need any work this week while you build owned channels. Fine &mdash; as a bridge, not a strategy.</li>
+    <li><b>You answer instantly.</b> The whole model rewards speed; if you can't call back within minutes, you'll lose the races and burn money.</li>
+    <li><b>You have a follow-up system.</b> Most marketplace leads need 5+ contacts. No follow-up, no ROI.</li>
+  </ul>
+  <h2>When it isn't</h2>
+  <ul>
+    <li>You're using it <i>instead</i> of building your own Google presence &mdash; you're renting forever and own nothing.</li>
+    <li>You compete on quality, not lowest price &mdash; marketplaces train homeowners to shop on price.</li>
+    <li>You can't track which leads became jobs &mdash; then you genuinely don't know if it's working.</li>
+  </ul>
+  <h2>The bottom line</h2>
+  <p>HomeStars isn't a scam &mdash; it's just an expensive way to rent customers you'll never own. Use it to survive a slow stretch if you must, but every dollar is better spent building a Google Business Profile, reviews, and follow-up that produce leads <i>only you</i> get, month after month, with no per-lead fee. That's the difference between renting and owning your pipeline.</p>
+  <p>Want to see where your own Google presence stands today? Our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free 10-point audit</a> shows you in a 10-minute video &mdash; no charge, no pitch.</p>
+  <div style="max-width:760px">
+    <details><summary>How much does HomeStars cost in Ottawa?</summary><p>Pricing varies, but per-lead costs commonly run $30&ndash;$80, with leads sold to several contractors at once &mdash; so your real cost per booked job is typically $150&ndash;$250+ depending on your close rate.</p></details>
+    <details><summary>What's better than HomeStars for contractors?</summary><p>Owned channels: a top-3 Google Business Profile, steady reviews, and follow-up automation. They cost less per won job and the leads are exclusively yours, with no per-lead fee once they're ranking.</p></details>
+  </div>
+""" + NEWSLETTER + """</div></section>""" + CTA
+page("is-homestars-worth-it.html", "Is HomeStars Worth It for Ottawa Contractors? (2026 Honest Math) | Packed Agency",
+     "Is HomeStars worth it for contractors? The real cost of shared leads ($150-250+ per won job) vs. owning your Google presence, with honest 2026 math.", "", hs_body)
+
+# ---- SEO post: How to Get More HVAC Leads in Ottawa ----
+hl_body = phero("Blog &middot; 8 min read", "How to Get More HVAC Leads in <em>Ottawa</em> (2026)",
+    "Seven channels that actually fill an HVAC schedule &mdash; ranked by cost, speed, and who owns the lead.", "Blog")
+hl_body += """
+<section><div class="wrap prose">
+  <p>Every HVAC company in Ottawa wants the same thing: a phone that rings with real jobs, especially in the shoulder seasons when the heat waves and cold snaps quiet down. Here's <b>how to get more HVAC leads in Ottawa</b> in 2026 &mdash; the channels that work, ranked, with the trade-offs nobody tells you.</p>
+  <h2>1. Win the Google Maps top 3 (highest ROI, slower)</h2>
+  <p>When a furnace dies, homeowners search &ldquo;HVAC near me&rdquo; and call from the map &mdash; roughly 70% of those calls go to the top three results. Getting there is about your <b>Google Business Profile</b>: the right primary category (&ldquo;HVAC contractor&rdquo;), complete services, real job photos, and a steady stream of reviews. It takes 60&ndash;90 days to climb, but once you're there it produces calls month after month with no per-lead fee.</p>
+  <h2>2. Local Services Ads (fastest paid calls)</h2>
+  <p>Google's pay-per-lead ads (the &ldquo;Google Guaranteed&rdquo; / Verified ones at the very top) put you in front of emergency searchers this week. HVAC leads run roughly $60&ndash;$120 each, you only pay for real leads, and you can <b>dispute</b> junk &mdash; most contractors don't, and leave money on the table. A verified Google Business Profile is now required to run them.</p>
+  <h2>3. Reviews (the cheapest lead multiplier)</h2>
+  <p>Two HVAC companies, same distance: the one with 300 fresh reviews beats the one with 30, every time. Ask at the moment of thanks, text the direct review link within 10 minutes, and aim for 2&ndash;3 fresh reviews a month. It's free and it lifts every other channel.</p>
+  <h2>4. A website that converts (stop the leak)</h2>
+  <p>About 90% of contractor websites fail to turn a visit into a call &mdash; no click-to-call, no quote form, slow on mobile. Fixing that doesn't get you more traffic; it gets you more <i>jobs</i> from the traffic you already have, which is cheaper than buying more.</p>
+  <h2>5. Missed-call text-back (recover what you're losing)</h2>
+  <p>You're on a roof or under a furnace; the call goes to voicemail; 85% of those callers never leave a message &mdash; they call the next company. An automatic &ldquo;Sorry we missed you, what's the job?&rdquo; text catches them. The cheapest HVAC lead is the one already in your missed-call log.</p>
+  <h2>6. Database reactivation (your past customers)</h2>
+  <p>Before a shoulder season, a simple text/email campaign to your past customers (&ldquo;time for your pre-winter tune-up?&rdquo;) books jobs at a fraction of the cost of buying new leads. You already earned their trust; remind them you exist.</p>
+  <h2>7. Search ads (scale, once the rest converts)</h2>
+  <p>Google Search ads on high-intent keywords work &mdash; about $50&ndash;$60 per call when tightly managed &mdash; but only point them at a site and follow-up that convert. Ads aimed at a leaky bucket just drain your budget faster.</p>
+  <h2>The order that works</h2>
+  <p>Fix follow-up first (text-back, reviews), then own the map pack, then layer paid ads. That sequence plugs the leaks before you pour in more water. If you'd like a free read on where your HVAC business stands across all seven, our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a> covers exactly this.</p>
+  <div style="max-width:760px">
+    <details><summary>What's the fastest way to get HVAC leads in Ottawa?</summary><p>Local Services Ads and missed-call text-back work within days. Google Maps rankings take 60&ndash;90 days but become your cheapest long-term source.</p></details>
+    <details><summary>How much do HVAC leads cost in Ottawa?</summary><p>Roughly $60&ndash;$120 on Local Services Ads, ~$50&ndash;$60 per call on managed search ads, and far less per won job once you rank in the Google map pack.</p></details>
+  </div>
+""" + NEWSLETTER + """</div></section>""" + CTA
+page("how-to-get-more-hvac-leads-ottawa.html", "How to Get More HVAC Leads in Ottawa (2026 Guide) | Packed Agency",
+     "How to get more HVAC leads in Ottawa: 7 channels ranked by cost and speed - Google Maps, LSA, reviews, websites, missed-call text-back, reactivation and ads.", "", hl_body)
+
+# ---- SEO post: Contractor Marketing Ideas ----
+ci_body = phero("Blog &middot; 9 min read", "11 Contractor Marketing Ideas That <em>Actually Work</em> (2026)",
+    "No fluff, no vanity metrics &mdash; the tactics that put booked jobs on an Ottawa contractor's calendar.", "Blog")
+ci_body += """
+<section><div class="wrap prose">
+  <p>Most &ldquo;contractor marketing ideas&rdquo; lists are filler. Here are 11 that actually move the needle in 2026 &mdash; ordered roughly from free-and-fast to bigger plays &mdash; based on what works for real Ottawa trades.</p>
+  <h2>1. Fix your Google Business Profile (free, 30 minutes)</h2>
+  <p>Your listing drives more calls than your website. Set the exact primary category, list every service, upload 10+ real job photos, and post weekly. It's the highest-return free hour in contractor marketing.</p>
+  <h2>2. Turn on missed-call text-back</h2>
+  <p>Every missed call gets an instant text so the lead doesn't dial your competitor. Recovers a real chunk of the calls you're losing while on the tools.</p>
+  <h2>3. Ask for reviews the right way</h2>
+  <p>At the moment the customer says &ldquo;this is great,&rdquo; text them the direct review link. Velocity beats volume &mdash; 2&ndash;3 fresh reviews a month outranks 50 old ones.</p>
+  <h2>4. Put your real trucks and crew on the website</h2>
+  <p>Stock photos kill trust. Homeowners hire people they can see. Swap the stock for real job-site photos and your van.</p>
+  <h2>5. Make the phone number tap-to-call on mobile</h2>
+  <p>60%+ of your visitors are on phones. If they can't tap to call in one move, you're losing jobs to a missing link.</p>
+  <h2>6. Build a page per service and per area</h2>
+  <p>One generic page can't rank for twenty searches. A page for &ldquo;furnace repair Barrhaven&rdquo; ranks for that; your homepage won't.</p>
+  <h2>7. Reactivate your past customers</h2>
+  <p>A seasonal text/email to people who already hired you books jobs at a fraction of new-lead cost. Your customer list is an asset most contractors never use.</p>
+  <h2>8. Follow up five times, not once</h2>
+  <p>80% of sales take 5+ contacts; most contractors quit after one. A simple sequence (text, call, &ldquo;quote sent&rdquo; reminder) wins jobs your competitors abandon.</p>
+  <h2>9. Run Local Services Ads &mdash; and dispute junk</h2>
+  <p>Pay-per-lead ads at the top of Google. You can dispute invalid leads for a refund; most contractors never do, so they overpay.</p>
+  <h2>10. Publish one helpful answer a week</h2>
+  <p>Write the questions homeowners actually Google (&ldquo;how much does a furnace cost in Ottawa?&rdquo;). It builds your search presence and gets you cited by AI assistants, which more homeowners now use to find contractors.</p>
+  <h2>11. Show up where contractors and homeowners already are</h2>
+  <p>A complete profile on Google, Bing Places, and the local directories &mdash; consistent name, address, phone &mdash; makes you easy to find and trust everywhere at once.</p>
+  <h2>The honest part</h2>
+  <p>You don't need all 11 at once. Pick the leaks that are costing you most &mdash; usually reviews and follow-up &mdash; and fix those first. If you'd like a free, specific read on which ones will move your business fastest, that's exactly what our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a> delivers.</p>
+  <div style="max-width:760px">
+    <details><summary>What's the best free marketing for contractors?</summary><p>Your Google Business Profile and reviews. Both are free, drive the most calls, and lift every paid channel you add later.</p></details>
+    <details><summary>How do contractors get more customers in 2026?</summary><p>Own your Google presence (maps + reviews), fix follow-up so no lead leaks, and publish helpful local content. Paid ads scale it once those convert.</p></details>
+  </div>
+""" + NEWSLETTER + """</div></section>""" + CTA
+page("contractor-marketing-ideas.html", "11 Contractor Marketing Ideas That Actually Work (2026) | Packed Agency",
+     "11 contractor marketing ideas that actually work in 2026 - Google Business Profile, reviews, missed-call text-back, follow-up, local pages and more. Ottawa-tested.", "", ci_body)
 
 # ============================================================ TRADE PAGES (Phase 2)
 trade_page("hvac-marketing.html", "HVAC",
