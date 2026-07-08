@@ -11,9 +11,9 @@ EMAIL = "info@packedagency.ca"
 BASE = "https://packedagency.ca/"
 
 CSS = """
-:root{--navy:#131A24;--navy-d:#0D1219;--orange:#F97316;--orange-d:#FB8A3C;--paper:#0A0E14;--ink:#EAEEF5;--grey:#9AA4B4;--line:rgba(255,255,255,.09);--surface:#0F141C;--card:#151C27}
+:root{--navy:#0A2540;--navy-d:#081B30;--orange:#F26A1B;--orange-d:#D0560F;--blue:#1E7FC2;--blue-soft:#7FA8C9;--amber:#F5A623;--paper:#0A0E14;--ink:#EAEEF5;--grey:#9AA4B4;--line:rgba(255,255,255,.09);--surface:#0F141C;--card:#151C27}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+body{font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
 h1,h2,h3{font-family:'Archivo',sans-serif;line-height:1.1;letter-spacing:-.5px}
 img,video{max-width:100%;display:block}a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--orange);outline-offset:2px}
@@ -31,13 +31,13 @@ header.top{position:sticky;top:0;z-index:50;background:rgba(10,14,20,.88);backdr
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
 .logo{display:flex;align-items:center;gap:11px;font-family:'Archivo',sans-serif}
 .logo svg{width:36px;height:36px}.logo b{font-weight:900;font-size:20px;letter-spacing:-.5px;color:#fff}
-.logo span{display:block;font-size:9px;letter-spacing:.42em;color:var(--orange);font-weight:700}
+.logo span{display:block;font-size:9px;letter-spacing:.42em;color:var(--blue-soft);font-weight:600}
 .nav-links{display:flex;gap:24px;align-items:center;font-weight:500;font-size:14.5px;color:#C2CAD6}
 .nav-links a:hover{color:#fff}.nav-links a.on{color:var(--orange)}
 .nav-phone{font-weight:700;color:#fff}.nav .btn{padding:10px 18px;font-size:14px}
 .burger{display:none;background:none;border:none;font-size:26px;cursor:pointer;color:#fff}
 .phero{background:var(--navy-d);color:#fff;padding:90px 0 76px;position:relative;overflow:hidden}
-.phero .bgfx{position:absolute;inset:0;background:radial-gradient(900px 500px at 85% -10%,rgba(249,115,22,.13),transparent 60%),repeating-linear-gradient(0deg,transparent 0 79px,rgba(255,255,255,.03) 79px 80px),repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.03) 79px 80px)}
+.phero .bgfx{position:absolute;inset:0;background:radial-gradient(900px 500px at 85% -10%,rgba(242,106,27,.13),transparent 60%),repeating-linear-gradient(0deg,transparent 0 79px,rgba(255,255,255,.03) 79px 80px),repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.03) 79px 80px)}
 .phero .wrap{position:relative;z-index:2}
 .phero h1{font-size:clamp(34px,5vw,58px);font-weight:900;letter-spacing:-1.5px;max-width:840px;color:#fff}
 .phero h1 em{font-style:italic;color:var(--orange)}
@@ -45,11 +45,11 @@ header.top{position:sticky;top:0;z-index:50;background:rgba(10,14,20,.88);backdr
 .crumb{font-size:13px;color:#7C8698;margin-bottom:18px}.crumb a:hover{color:var(--orange)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px;transition:.18s}
-.card:hover{border-color:rgba(249,115,22,.55);transform:translateY(-2px);box-shadow:0 16px 34px rgba(0,0,0,.45)}
+.card:hover{border-color:rgba(242,106,27,.55);transform:translateY(-2px);box-shadow:0 16px 34px rgba(0,0,0,.45)}
 .card h3{font-size:19px;margin-bottom:8px;color:#fff}.card p{color:var(--grey);font-size:15px}
 .card .tag{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
 .card .from{font-weight:800;font-family:'Archivo',sans-serif;margin-top:14px;color:#fff}.card .from small{color:var(--grey);font-weight:500}
-.card.dark{background:#1C140A;border-color:rgba(249,115,22,.4)}.card.dark p{color:#C9B299}
+.card.dark{background:#1C140A;border-color:rgba(242,106,27,.4)}.card.dark p{color:#C9B299}
 .badge{display:inline-block;background:var(--orange);color:#190B01;font-size:11px;font-weight:800;letter-spacing:.1em;padding:4px 10px;border-radius:6px;margin-bottom:10px}
 table.cb{width:100%;border-collapse:collapse;margin:26px 0;background:var(--surface);border-radius:12px;overflow:hidden;border:1px solid var(--line)}
 table.cb th{background:#1B2435;color:#fff;text-align:left;padding:14px 18px;font-family:'Archivo',sans-serif;font-size:15px}
@@ -78,7 +78,7 @@ details p{margin-top:12px;color:var(--grey);font-size:15.5px;max-width:700px}
 .aform .btn{width:100%;margin-top:22px}
 .aform .fine{font-size:12.5px;color:var(--grey);margin-top:12px;line-height:1.5}
 .price-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:34px;position:relative}
-.price-card.hot{border-color:var(--orange);box-shadow:0 18px 44px rgba(249,115,22,.13)}
+.price-card.hot{border-color:var(--orange);box-shadow:0 18px 44px rgba(242,106,27,.13)}
 .price-card .pin{position:absolute;top:-13px;left:30px;background:var(--orange);color:#190B01;font-size:11px;font-weight:800;letter-spacing:.1em;padding:5px 12px;border-radius:6px}
 .price-card .amt{font-family:'Archivo',sans-serif;font-weight:900;font-size:34px;margin:8px 0 2px;color:#fff}
 .price-card .per{color:var(--grey);font-size:14px;margin-bottom:16px}
@@ -117,42 +117,42 @@ footer.site{background:#070A0F;color:#8B95A5;padding:60px 0 30px;border-top:1px 
 .todo{display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line);cursor:pointer;font-size:15.5px}
 .todo:last-of-type{border-bottom:none}
 .todo input{width:21px;height:21px;min-width:21px;margin-top:2px;accent-color:var(--orange);cursor:pointer}
-.todo input:checked+span{color:var(--grey);text-decoration:line-through;text-decoration-color:rgba(249,115,22,.6)}
+.todo input:checked+span{color:var(--grey);text-decoration:line-through;text-decoration-color:rgba(242,106,27,.6)}
 .todo-msg{padding-top:12px;color:var(--grey);font-size:13.5px}
-.ic{width:44px;height:44px;border-radius:10px;background:rgba(249,115,22,.13);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--orange)}
+.ic{width:44px;height:44px;border-radius:10px;background:rgba(242,106,27,.13);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:var(--orange)}
 .ic svg{width:22px;height:22px}
 .chip{display:inline-block;background:var(--card);border:1px solid var(--line);color:#DDE4F0;padding:8px 15px;border-radius:99px;font-size:12.5px;font-weight:600;margin:0 8px 10px 0}
 .chip b{color:var(--orange)}
-.chip:hover{border-color:rgba(249,115,22,.6)}
+.chip:hover{border-color:rgba(242,106,27,.6)}
 .chooser{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
 .choose{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 20px;text-align:center;transition:.16s;display:block}
 .choose:hover{border-color:var(--orange);transform:translateY(-3px)}
-.choose .ci{width:54px;height:54px;border-radius:14px;background:rgba(249,115,22,.13);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:var(--orange)}
+.choose .ci{width:54px;height:54px;border-radius:14px;background:rgba(242,106,27,.13);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:var(--orange)}
 .choose .ci svg{width:27px;height:27px}
 .choose h3{font-size:16px;color:#fff;margin-bottom:6px}
 .choose p{font-size:13px;color:var(--grey);margin-bottom:10px;line-height:1.5}
 .choose .go{color:var(--orange);font-weight:700;font-size:13px}
-.cardico{width:46px;height:46px;border-radius:11px;background:rgba(249,115,22,.13);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--orange)}
+.cardico{width:46px;height:46px;border-radius:11px;background:rgba(242,106,27,.13);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--orange)}
 .cardico svg{width:23px;height:23px}
-.card.dark .cardico{background:rgba(249,115,22,.2)}
-.pill-ico{width:46px;height:46px;border-radius:11px;background:rgba(249,115,22,.16);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--orange)}
+.card.dark .cardico{background:rgba(242,106,27,.2)}
+.pill-ico{width:46px;height:46px;border-radius:11px;background:rgba(242,106,27,.16);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--orange)}
 .pill-ico svg{width:23px;height:23px}
 @media(max-width:760px){.chooser{grid-template-columns:1fr 1fr}}
 @media(max-width:430px){.chooser{grid-template-columns:1fr}}
 .svcgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
 .svc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column}
-.svc .si{width:44px;height:44px;border-radius:11px;background:rgba(249,115,22,.13);display:flex;align-items:center;justify-content:center;color:var(--orange);margin-bottom:14px}
+.svc .si{width:44px;height:44px;border-radius:11px;background:rgba(242,106,27,.13);display:flex;align-items:center;justify-content:center;color:var(--orange);margin-bottom:14px}
 .svc .si svg{width:22px;height:22px}
 .svc h4{font-size:16px;color:#fff;margin-bottom:6px;font-family:'Archivo',sans-serif}
 .svc p{font-size:13px;color:var(--grey);line-height:1.5;flex:1;margin-bottom:14px}
 .svc .pr{font-family:'Archivo',sans-serif;font-weight:900;font-size:22px;color:#fff}
 .svc .pr small{font-size:12px;color:var(--grey);font-weight:500;display:block;margin-top:2px}
-.svc.feat{border-color:rgba(249,115,22,.5)}
+.svc.feat{border-color:rgba(242,106,27,.5)}
 @media(max-width:760px){.svcgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.svcgrid{grid-template-columns:1fr}}
 """
 
-LOGO_SVG = """<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="14" width="84" height="78" rx="16" fill="#F97316"/><rect x="22" y="6" width="8" height="16" rx="3" fill="#F97316"/><rect x="70" y="6" width="8" height="16" rx="3" fill="#F97316"/><g fill="#190B01"><rect x="20" y="32" width="16" height="16" rx="3"/><rect x="42" y="32" width="16" height="16" rx="3"/><rect x="64" y="32" width="16" height="16" rx="3"/><rect x="20" y="54" width="16" height="16" rx="3"/><rect x="64" y="54" width="16" height="16" rx="3"/><rect x="20" y="76" width="16" height="10" rx="3"/><rect x="42" y="76" width="16" height="10" rx="3"/><rect x="64" y="76" width="16" height="10" rx="3"/></g><rect x="42" y="54" width="16" height="16" rx="3" fill="#FFE3CC"/></svg>"""
+LOGO_SVG = """<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="14" y="18" width="72" height="68" rx="12" fill="none" stroke="#F4F1EA" stroke-width="5"/><rect x="32" y="10" width="7" height="16" rx="3.5" fill="#F4F1EA"/><rect x="61" y="10" width="7" height="16" rx="3.5" fill="#F4F1EA"/><rect x="22" y="28" width="56" height="13" rx="4" fill="#F26A1B"/><rect x="22" y="46" width="14" height="13" rx="3" fill="#7FA8C9"/><rect x="43" y="46" width="14" height="13" rx="3" fill="#F5A623"/><rect x="64" y="46" width="14" height="13" rx="3" fill="#7FA8C9"/><rect x="22" y="65" width="14" height="13" rx="3" fill="#F5A623"/><rect x="43" y="65" width="14" height="13" rx="3" fill="#7FA8C9"/><rect x="64" y="65" width="14" height="13" rx="3" fill="#7FA8C9"/></svg>"""
 
 def head(title, desc, fname=""):
     url = BASE + ("" if fname == "index.html" else fname)
@@ -170,7 +170,7 @@ def head(title, desc, fname=""):
         '<meta name="twitter:card" content="summary_large_image">\n'
         '<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">\n'
         '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
-        '<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">\n'
+        '<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">\n'
         '<link rel="stylesheet" href="style.css">\n'
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-P93QZLT872"></script>\n'
         '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-P93QZLT872");</script>\n'
@@ -246,7 +246,7 @@ document.querySelectorAll(".nl-form").forEach(function(f){
 document.querySelectorAll(".todo-box").forEach(function(box){
   var cbs=box.querySelectorAll("input[type=checkbox]"),sc=box.querySelector("[data-score]"),msg=box.querySelector("[data-msg]");
   function upd(){var n=0;cbs.forEach(function(c){if(c.checked)n++});sc.textContent=n+" / "+cbs.length+" done";
-    if(n===cbs.length){msg.innerHTML="All boxes ticked? You're ahead of 90% of contractors. The <a href='free-audit.html' style='color:#F97316;font-weight:700'>free audit</a> finds what checklists can't.";}
+    if(n===cbs.length){msg.innerHTML="All boxes ticked? You're ahead of 90% of contractors. The <a href='free-audit.html' style='color:#F26A1B;font-weight:700'>free audit</a> finds what checklists can't.";}
     else{msg.textContent="Tick what you've already done - every empty box is costing you calls. "+(cbs.length-n)+" to go.";}}
   cbs.forEach(function(c){c.addEventListener("change",upd)});upd();
 });
@@ -277,7 +277,7 @@ CTA = ("<section class=\"ctaband\"><div class=\"wrap\"><h2>Ready for a packed sc
     "<p style=\"margin:18px 0 0;font-size:14px;color:#8B95A5\">Or text us anytime at <a href=\"" + TEL + "\" style=\"color:#fff;font-weight:600\">" + PHONE + "</a></p></div></section>\n")
 
 NEWSLETTER = """
-<div style="background:var(--card);border:1px solid rgba(249,115,22,.35);border-radius:14px;padding:30px;max-width:860px;margin:50px auto 0">
+<div style="background:var(--card);border:1px solid rgba(242,106,27,.35);border-radius:14px;padding:30px;max-width:860px;margin:50px auto 0">
   <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap">
     <div style="flex:1;min-width:240px">
       <div class="kicker" style="margin-bottom:8px">The Packed Bulletin</div>
@@ -297,7 +297,7 @@ NEWSLETTER = """
 </div>"""
 
 MAGNET = """
-<div style="background:linear-gradient(135deg,#1C140A,#151C27);border:1px solid rgba(249,115,22,.45);border-radius:16px;padding:34px;max-width:1000px;margin:0 auto 56px">
+<div style="background:linear-gradient(135deg,#1C140A,#151C27);border:1px solid rgba(242,106,27,.45);border-radius:16px;padding:34px;max-width:1000px;margin:0 auto 56px">
   <div style="display:flex;gap:26px;align-items:center;flex-wrap:wrap">
     <div style="flex:1.4;min-width:260px">
       <span class="badge">FREE DOWNLOAD</span>
@@ -771,7 +771,7 @@ contact_body = phero("Contact", "Talk to the person who <em>does the work.</em>"
 contact_body += """
 <section><div class="wrap"><div class="grid2" style="gap:60px;align-items:start">
 <div class="prose">
-  <div style="background:var(--card);border:1px solid rgba(249,115,22,.4);border-radius:14px;padding:24px;margin-bottom:24px">
+  <div style="background:var(--card);border:1px solid rgba(242,106,27,.4);border-radius:14px;padding:24px;margin-bottom:24px">
     <div class="kicker" style="margin-bottom:8px">Best way to talk</div>
     <h2 style="margin-top:0;font-size:22px">Book a free 30-minute call</h2>
     <p style="color:var(--grey);font-size:14.5px;margin-bottom:16px">Grab a time that suits you and we&rsquo;ll meet on Google Meet &mdash; no pressure, just a straight conversation about your schedule and how to fill it.</p>
@@ -1374,7 +1374,7 @@ Key facts:
 open(os.path.join(OUT, "llms.txt"), "w").write(LLMS)
 print("wrote robots.txt + llms.txt")
 os.makedirs(os.path.join(OUT, "assets"), exist_ok=True)
-open(os.path.join(OUT, "assets", "favicon.svg"), "w").write(LOGO_SVG.replace(' aria-hidden="true"', ""))
+open(os.path.join(OUT, "assets", "favicon.svg"), "w").write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64"><rect x="0" y="0" width="64" height="64" rx="15" fill="#0A0E14"/><g transform="translate(6.4,6.4) scale(0.512)"><rect x="14" y="18" width="72" height="68" rx="12" fill="none" stroke="#F4F1EA" stroke-width="6"/><rect x="32" y="10" width="7" height="16" rx="3.5" fill="#F4F1EA"/><rect x="61" y="10" width="7" height="16" rx="3.5" fill="#F4F1EA"/><rect x="22" y="28" width="56" height="13" rx="4" fill="#F26A1B"/><rect x="22" y="46" width="14" height="13" rx="3" fill="#7FA8C9"/><rect x="43" y="46" width="14" height="13" rx="3" fill="#F5A623"/><rect x="64" y="46" width="14" height="13" rx="3" fill="#7FA8C9"/><rect x="22" y="65" width="14" height="13" rx="3" fill="#F5A623"/><rect x="43" y="65" width="14" height="13" rx="3" fill="#7FA8C9"/><rect x="64" y="65" width="14" height="13" rx="3" fill="#7FA8C9"/></g></svg>')
 print("wrote sitemap.xml, robots.txt, favicon.svg")
 
 # ============================================================ PRIVACY & TERMS
