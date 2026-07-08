@@ -258,7 +258,7 @@ FOOTER = ("<footer class=\"site\"><div class=\"wrap\"><div class=\"f-grid\">"
     "<p style=\"font-size:14px;max-width:300px\">We keep your schedule packed. Marketing, exclusive leads and follow-up automation for Canada's trades. Ottawa-built.</p></div>"
     "<div><h4>Services</h4><a href=\"local-seo.html\">Local SEO &amp; Maps</a><a href=\"google-ads.html\">Google Ads &amp; LSA</a><a href=\"websites.html\">Conversion Websites</a><a href=\"automation.html\">Follow-up Automation</a><a href=\"calculator.html\">Missed-Call Calculator</a></div>"
     "<div><h4>Trades</h4><a href=\"hvac-marketing.html\">HVAC Marketing</a><a href=\"plumber-marketing.html\">Plumber Marketing</a><a href=\"electrician-marketing.html\">Electrician Marketing</a><a href=\"renovation-marketing.html\">Renovation Marketing</a><a href=\"toronto.html\">Toronto</a></div>"
-    "<div><h4>Company</h4><a href=\"process.html\">Our Process</a><a href=\"resources.html\">Free Resources</a><a href=\"events.html\">Events</a><a href=\"news.html\">Trade News</a><a href=\"guarantees.html\">Guarantees</a><a href=\"results.html\">Results</a><a href=\"reviews.html\">Reviews</a><a href=\"blog.html\">Blog</a><a href=\"contact.html\">Contact</a></div>"
+    "<div><h4>Company</h4><a href=\"contractor-marketing-ottawa.html\">Contractor Marketing Ottawa</a><a href=\"process.html\">Our Process</a><a href=\"resources.html\">Free Resources</a><a href=\"events.html\">Events</a><a href=\"news.html\">Trade News</a><a href=\"guarantees.html\">Guarantees</a><a href=\"results.html\">Results</a><a href=\"reviews.html\">Reviews</a><a href=\"blog.html\">Blog</a><a href=\"contact.html\">Contact</a></div>"
     "</div><div class=\"f-bottom\"><span>&copy; 2026 Packed Agency. All rights reserved.</span>"
     "<span><a href=\"privacy.html\">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href=\"terms.html\">Terms</a> &nbsp;&middot;&nbsp; Client Portal (coming soon)</span></div></div></footer>\n"
     "<a class=\"callbar\" href=\"https://calendar.app.google/s2etv2aRyPFDhRZm7\" target=\"_blank\" rel=\"noopener\">&#128197; Book a free 30-min call</a>\n" + FORM_JS + "<!--Start of Tawk.to Script--><script type=\"text/javascript\">var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();(function(){var s1=document.createElement(\"script\"),s0=document.getElementsByTagName(\"script\")[0];s1.async=true;s1.src='https://embed.tawk.to/6a2b7499d6a95f1c2c58b9cc/1jqsruufi';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();</script><!--End of Tawk.to Script--></body>\n</html>")
@@ -498,6 +498,7 @@ index_body = """
   <div class="wrap">
     <div class="kicker">What we do</div>
     <h2 class="sec-h2">Everything a trade needs to stay booked.</h2>
+    <p class="sec-sub" style="margin-bottom:10px">New here? Start with <a href="contractor-marketing-ottawa.html" style="color:var(--orange);font-weight:700">our guide to contractor marketing in Ottawa</a>.</p>
     <div class="grid2" style="margin-top:40px">
       <a class="card" href="local-seo.html"><div class="cardico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><span class="tag">Get Found</span><h3>Get Found on Google Maps</h3><p>When a homeowner searches &ldquo;plumber near me&rdquo;, the top 3 map results get the calls. We put you there — and keep you there.</p><div class="from">From $1,195/mo <small>· or inside the Lead Engine</small></div></a>
       <a class="card" href="google-ads.html"><div class="cardico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M15 9a3 3 0 0 1 0 6"/><path d="M18 6a7 7 0 0 1 0 12"/></svg></div><span class="tag">Get Leads</span><h3>Ads That Pay for Themselves</h3><p>Ads only on searches that mean money — emergencies and big jobs. About $50–60 per call, and you see every dollar spent.</p><div class="from">From $549/mo <small>· or 12% of ad spend</small></div></a>
@@ -1036,6 +1037,52 @@ ci_body += """
 """ + NEWSLETTER + """</div></section>""" + CTA
 page("contractor-marketing-ideas.html", "11 Contractor Marketing Ideas That Actually Work (2026) | Packed Agency",
      "11 contractor marketing ideas that actually work in 2026 - Google Business Profile, reviews, missed-call text-back, follow-up, local pages and more. Ottawa-tested.", "", ci_body)
+
+# ============================================================ CORNERSTONE: Contractor Marketing Ottawa
+cmo_body = phero("Contractor Marketing &mdash; Ottawa", "Contractor Marketing in <em>Ottawa</em>",
+    "The plain-English guide to getting your trade found, chosen and booked in Ottawa &mdash; and the agency that does it for you.", "Contractor Marketing Ottawa")
+cmo_body += """
+<section><div class="wrap prose">
+  <p><b>Contractor marketing in Ottawa</b> is simply everything that makes a homeowner in Kanata, Barrhaven, Orl&eacute;ans or the Glebe pick <i>you</i> instead of the other truck. In 2026 that decision happens online: they search Google, they scan the map, they read reviews, and they call the business that looks the safest bet. If you're a contractor who wants more of those calls, this page explains exactly how it works &mdash; and how Packed Agency does it for Ottawa trades.</p>
+
+  <h2>Why Ottawa contractors need marketing that's built for search</h2>
+  <p>97% of people looking for a local service start on Google, and the top three Google Maps results take roughly 70% of the calls. It doesn't matter how good your work is if a homeowner never sees you. Most Ottawa contractors do excellent work with strong reviews &mdash; they're just invisible past the first few results. Contractor marketing closes that gap: it puts your business where the searching, ready-to-hire homeowner is already looking.</p>
+
+  <h2>The five channels that actually work for Ottawa trades</h2>
+  <ul>
+    <li><b>Google Maps &amp; local SEO</b> &mdash; ranking in the top-3 map pack for &ldquo;[your trade] near me&rdquo; and &ldquo;[trade] Ottawa.&rdquo; The highest-ROI channel once it ranks. <a href="local-seo.html" style="color:var(--orange);font-weight:700">See local SEO &rarr;</a></li>
+    <li><b>Google Ads &amp; Local Services Ads</b> &mdash; paid placement at the top of Google for emergency and high-value searches, this week. <a href="google-ads.html" style="color:var(--orange);font-weight:700">See ads &rarr;</a></li>
+    <li><b>A website that converts</b> &mdash; fast, mobile-first, click-to-call, built to turn a visit into a booked job (90% of contractor sites don't). <a href="websites.html" style="color:var(--orange);font-weight:700">See websites &rarr;</a></li>
+    <li><b>Reviews &amp; reputation</b> &mdash; the tie-breaker in the map pack; steady fresh reviews beat a big old pile.</li>
+    <li><b>Follow-up automation</b> &mdash; missed-call text-back and speed-to-lead so you stop losing jobs you already earned. <a href="automation.html" style="color:var(--orange);font-weight:700">See automation &rarr;</a></li>
+  </ul>
+
+  <h2>Which Ottawa trades we work with</h2>
+  <p>We focus only on contractors and home services, so every lesson from one client makes the next stronger:</p>
+  <ul>
+    <li><a href="hvac-marketing.html" style="color:var(--orange);font-weight:700">HVAC marketing in Ottawa</a> &mdash; heating &amp; cooling, seasonal demand.</li>
+    <li><a href="plumber-marketing.html" style="color:var(--orange);font-weight:700">Plumber marketing in Ottawa</a> &mdash; emergency-driven, map-pack critical.</li>
+    <li><a href="electrician-marketing.html" style="color:var(--orange);font-weight:700">Electrician marketing in Ottawa</a> &mdash; panels, EV chargers, high-ticket work.</li>
+    <li><a href="renovation-marketing.html" style="color:var(--orange);font-weight:700">Renovation &amp; GC marketing in Ottawa</a> &mdash; big tickets, long sales cycles.</li>
+  </ul>
+
+  <h2>What contractor marketing costs in Ottawa</h2>
+  <p>We publish our prices &mdash; almost no agency does. A conversion website is $2,950 one-time (yours to keep). Ongoing plans start at $1,495/month for the Lead Engine (local SEO, reviews, missed-call text-back). You can buy any single service on its own, too. <a href="pricing.html" style="color:var(--orange);font-weight:700">See the full price list &rarr;</a></p>
+
+  <h2>Why Ottawa contractors choose Packed Agency</h2>
+  <p>We're founder-led, trades-only, and we put our promises in the contract: <b>you own everything we build, there's no lock-in after 90 days, and we take just one client per trade per city</b> &mdash; so your competitor can't hire us. Every monthly report is written in calls, jobs and dollars, not vanity metrics. And you talk to the person who actually does the work.</p>
+
+  <p>The best way to see where you stand is our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free 10-point audit</a> &mdash; we check your Google listing, reviews, website and phones, then send you a 10-minute video of exactly what to fix. No meeting, no pressure, no cost.</p>
+
+  <div style="max-width:760px">
+    <details><summary>How much does contractor marketing cost in Ottawa?</summary><p>A conversion website is $2,950 one-time; ongoing management starts at $1,495/month for the Lead Engine. Individual services (local SEO, ads, automation) can be bought on their own. All prices are published on our pricing page.</p></details>
+    <details><summary>How long until an Ottawa contractor sees results?</summary><p>Win-back campaigns and missed-call text-back work within days; ads within the first week; Google Maps rankings in 60&ndash;90 days, then they compound. We start with the fast wins so you see proof early.</p></details>
+    <details><summary>Do you only work with Ottawa contractors?</summary><p>Ottawa&ndash;Gatineau is home base, and we serve Toronto/GTA trades remotely. We work only with contractors and home-service companies &mdash; that focus is the point.</p></details>
+    <details><summary>What makes Packed different from other Ottawa marketing agencies?</summary><p>Trades-only focus, published pricing, three contract guarantees (you own everything, no lock-in after 90 days, one client per trade per city), and founder-level attention. We measure success in booked jobs, not impressions.</p></details>
+  </div>
+""" + NEWSLETTER + """</div></section>""" + CTA
+page("contractor-marketing-ottawa.html", "Contractor Marketing in Ottawa (2026) | Packed Agency",
+     "Contractor marketing in Ottawa: Google Maps/local SEO, ads, conversion websites and follow-up automation for HVAC, plumbing, electrical & renovation trades. Published pricing, free audit.", "", cmo_body)
 
 # ============================================================ TRADE PAGES (Phase 2)
 trade_page("hvac-marketing.html", "HVAC",
