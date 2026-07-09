@@ -175,7 +175,7 @@ def head(title, desc, fname=""):
         '<script async src="https://www.googletagmanager.com/gtag/js?id=G-P93QZLT872"></script>\n'
         '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-P93QZLT872");</script>\n'
         '<meta name="theme-color" content="#0A0E14">\n'
-        '<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Packed Agency","telephone":"+1-343-558-5062","email":"info@packedagency.ca","url":"https://packedagency.ca","address":{"@type":"PostalAddress","streetAddress":"500 Preston St","addressLocality":"Ottawa","addressRegion":"ON","addressCountry":"CA"},"areaServed":["Ottawa","Gatineau","Toronto"],"description":"Marketing, exclusive leads and follow-up automation for contractors and home-service companies."}</script>\n</head>\n<body>\n')
+        '<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Packed Agency","telephone":"+1-343-558-5062","email":"info@packedagency.ca","url":"https://packedagency.ca","address":{"@type":"PostalAddress","streetAddress":"159 Loreka Court","addressLocality":"Stittsville","postalCode":"K2S 0N3","addressRegion":"ON","addressCountry":"CA"},"areaServed":["Ottawa","Gatineau","Toronto"],"description":"Marketing, exclusive leads and follow-up automation for contractors and home-service companies."}</script>\n</head>\n<body>\n')
 
 def header(active=""):
     def on(k): return " class=\"on\"" if k == active else ""
@@ -792,11 +792,11 @@ contact_body += """
   <h2 style="margin-top:0">Other ways to reach us</h2>
   <p><b>Phone / text:</b> <a href=\"""" + TEL + """\" style="color:var(--orange);font-weight:700">""" + PHONE + """</a><br>
   <b>Email:</b> <a href="mailto:""" + EMAIL + """" style="color:var(--orange);font-weight:700">""" + EMAIL + """</a><br>
-  <b>Address:</b> 500 Preston St, Ottawa, ON<br>
+  <b>Address:</b> 159 Loreka Court, Stittsville, ON K2S 0N3<br>
   <b>Service area:</b> Ottawa–Gatineau and surrounding region · Toronto/GTA (remote)</p>
   <div style="border-radius:14px;overflow:hidden;border:1.5px solid var(--line);margin-top:20px">
-    <iframe src="https://maps.google.com/maps?q=500%20Preston%20St%2C%20Ottawa%2C%20ON&z=15&output=embed"
-      width="100%" height="280" style="border:0;display:block" loading="lazy" title="Packed Agency — 500 Preston St, Ottawa"></iframe>
+    <iframe src="https://maps.google.com/maps?q=159%20Loreka%20Court%2C%20Stittsville%2C%20ON%20K2S%200N3&z=15&output=embed"
+      width="100%" height="280" style="border:0;display:block" loading="lazy" title="Packed Agency — 159 Loreka Court, Stittsville"></iframe>
   </div>
   <p>Prefer to skip the back-and-forth? The fastest path is the <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a> — you'll have real numbers about your business before we ever talk.</p>
 </div>
@@ -1572,7 +1572,7 @@ LLMS = """# Packed Agency
 > Founder-led digital marketing agency for contractors and home-service companies (HVAC, plumbing, electrical, renovation/general contracting) in Ottawa, Canada, expanding to Toronto/GTA. We keep contractors' schedules packed: Google Maps/local SEO, Google Ads & Local Services Ads, conversion websites, and follow-up automation (missed-call text-back, instant lead response, customer win-back campaigns).
 
 Key facts:
-- Location: 500 Preston St, Ottawa, ON, Canada. Phone: 343-558-5062. Email: info@packedagency.ca
+- Location: 159 Loreka Court, Stittsville, ON K2S 0N3, Canada. Phone: 343-558-5062. Email: info@packedagency.ca
 - Published pricing (rare in this industry): Door-Opener $749 one-time; Conversion Website $3,950 one-time; Lead Engine $1,495/month; Growth $2,950/month + ad spend
 - Three contract guarantees: the client owns every asset (website, ad accounts, data); no lock-in after a 90-day initial term; one client per trade per city (market exclusivity)
 - Unique service in this market: follow-up automation (missed-call text-back, sub-60-second lead response, database reactivation) - confirmed unavailable from local competitors
@@ -1606,7 +1606,7 @@ priv_body = phero("Legal", "Privacy <em>Policy.</em>", "Plain-language and CASL-
 priv_body += """
 <section><div class="wrap prose">
 <div class="note"><b>Template notice:</b> this is a working draft for launch. Have it reviewed by a lawyer and replace the bracketed items.</div>
-<h2>Who we are</h2><p>Packed Agency (&ldquo;we&rdquo;) is a marketing services business operated by [legal name], at 500 Preston St, Ottawa, Ontario. Contact: """ + EMAIL + """.</p>
+<h2>Who we are</h2><p>Packed Agency (&ldquo;we&rdquo;) is a marketing services business operated by [legal name], at 159 Loreka Court, Stittsville, Ontario. Contact: """ + EMAIL + """.</p>
 <h2>What we collect</h2><p>Information you submit through our forms (name, company, trade, phone, email), chat messages, and standard analytics (GA4) about site usage.</p>
 <h2>How we use it</h2><p>To deliver the audit or services you requested, to respond to enquiries, and &mdash; only with your express consent (CASL) &mdash; to send commercial electronic messages. Every message includes an unsubscribe that works.</p>
 <h2>What we never do</h2><p>Sell, rent or trade your information. Ever.</p>
