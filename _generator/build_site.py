@@ -330,6 +330,8 @@ def cb_table(rows):
 
 PAGES = []
 BLOG_POSTS = {
+    "best-time-to-advertise-hvac.html": ("The Best Time to Advertise an HVAC Business in Ottawa", "2026-06-16"),
+    "rank-higher-google-maps-contractor.html": ("How to Rank Higher on Google Maps as a Contractor", "2026-06-16"),
     "why-competitors-outrank-me.html": ("Why Do Competitors With Worse Work Outrank Me on Google?", "2026-06-10"),
     "is-marketing-worth-it-for-contractors.html": ("Is Marketing Worth It for Contractors?", "2026-06-10"),
     "how-much-should-contractors-spend-on-marketing.html": ("How Much Should a Contractor Spend on Marketing?", "2026-06-10"),
@@ -917,6 +919,8 @@ blog_body = phero("The Packed Blog", "We give the playbook <em>away.</em>",
     "Weekly, Ottawa-specific answers to the questions contractors actually type into Google. Teaching is our marketing.", "Blog")
 blog_body += """
 <section><div class="wrap"><div class="grid3" style="row-gap:14px">
+  <a class="card" href="rank-higher-google-maps-contractor.html"><span class="tag">Maps</span><h3>How to Rank Higher on Google Maps as a Contractor</h3><p>The top-3 map pack takes most calls. Exactly how to climb into it.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read &rarr;</span></a>
+  <a class="card" href="best-time-to-advertise-hvac.html"><span class="tag">Timing</span><h3>The Best Time to Advertise an HVAC Business</h3><p>Spend ahead of Ottawa's seasons, not during them. The year-round rhythm.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read &rarr;</span></a>
   <a class="card" href="why-competitors-outrank-me.html"><span class="tag">Popular</span><h3>Why Do Competitors With Worse Work Outrank Me?</h3><p>The 5 real reasons a &ldquo;worse&rdquo; company beats you on Google — and how to fix each.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
   <a class="card" href="why-leads-dont-become-jobs.html"><span class="tag">Close more</span><h3>I Get Calls But Not Jobs — Why?</h3><p>Where jobs slip away, in order — and how to plug the leak without spending more.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
   <a class="card" href="is-marketing-worth-it-for-contractors.html"><span class="tag">Honest ROI</span><h3>Is Marketing Worth It for Contractors?</h3><p>If you've been burned before, the honest answer — with the actual math.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
@@ -1260,6 +1264,65 @@ blogpost("stop-feast-or-famine-contractor.html", "Blog &middot; 6 min read",
   """,
   "How to Stop the Feast-or-Famine Cycle in Your Trade | Packed Agency",
   "How to stop feast-or-famine as a contractor: build owned lead channels, mine your customer list, market ahead of the swing, and automate follow-up for a steadier schedule.")
+
+# ---- regenerated auto-topics (brand + address consistent) ----
+blogpost("best-time-to-advertise-hvac.html", "Blog &middot; 5 min read",
+  "The Best Time to Advertise an <em>HVAC Business</em> in Ottawa",
+  "Timing your marketing to Ottawa's seasons is the difference between ads that print money and ads that burn it.",
+  """
+  <p>HVAC demand in Ottawa isn't steady &mdash; it swings hard with the weather, and so should your advertising. Spend at the wrong time and you pay premium prices to compete with every other company; spend ahead of the curve and you catch homeowners before your competitors even show up. Here's the timing that works.</p>
+  <h2>The two big peaks</h2>
+  <ul>
+    <li><b>Cooling season (late spring into summer):</b> HVAC searches in Ottawa can double or triple as the first heat waves hit &mdash; usually May through July. Air-conditioning installs and repairs spike.</li>
+    <li><b>Heating season (fall):</b> a second surge in September and October as furnaces get their first run of the year and homeowners book tune-ups and replacements before winter.</li>
+  </ul>
+  <h2>The secret: advertise <i>before</i> the peak, not during it</h2>
+  <p>Leads lag. If you wait until the heat wave to start advertising, you're bidding against every competitor at the most expensive moment, and your rankings haven't had time to build. Start <b>4&ndash;6 weeks ahead</b> &mdash; late April for cooling, late August for heating &mdash; and you catch the early searchers cheaply and enter the peak already visible.</p>
+  <h2>What to run in the shoulder seasons</h2>
+  <p>The quiet stretches (late winter, deep summer) are when your calendar feels thin &mdash; and they're perfect for the cheapest work you'll ever get: a <b>tune-up campaign to your past customers</b>. &ldquo;Book your pre-summer AC check&rdquo; or &ldquo;Beat the fall rush &mdash; furnace tune-up now&rdquo; fills slow weeks at a fraction of new-lead cost.</p>
+  <h2>A simple year-round rhythm</h2>
+  <ol>
+    <li><b>Late winter:</b> reactivate past customers; keep local SEO steady.</li>
+    <li><b>Late April:</b> ramp cooling ads and Local Services Ads ahead of the heat.</li>
+    <li><b>Summer:</b> capture peak demand; keep answering fast.</li>
+    <li><b>Late August:</b> shift messaging to heating; ramp again.</li>
+    <li><b>Fall:</b> peak heating; push tune-ups and replacements.</li>
+  </ol>
+  <p>The businesses that win aren't the ones that spend the most &mdash; they're the ones that spend at the right moment. Want a plan built around your specific services and calendar? Start with our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a>.</p>
+  <div style="max-width:760px">
+    <details><summary>When should HVAC companies advertise in Ottawa?</summary><p>Start 4&ndash;6 weeks before each peak: late April for cooling season and late August for heating season. Use the quiet shoulder months for past-customer tune-up campaigns.</p></details>
+    <details><summary>Is it worth advertising HVAC in the off-season?</summary><p>Yes &mdash; but shift the goal. Off-season is ideal for low-cost reactivation of past customers and maintaining your Google rankings so you're visible the moment demand returns.</p></details>
+  </div>
+  """,
+  "The Best Time to Advertise an HVAC Business in Ottawa (2026) | Packed Agency",
+  "When should HVAC companies advertise in Ottawa? Start 4-6 weeks before cooling (late April) and heating (late August) peaks - plus what to run in the shoulder seasons.")
+
+blogpost("rank-higher-google-maps-contractor.html", "Blog &middot; 6 min read",
+  "How to Rank Higher on Google Maps <em>as a Contractor</em>",
+  "The top-3 map results take most of the calls. Here's exactly how to climb into them.",
+  """
+  <p>When a homeowner searches &ldquo;[your trade] near me,&rdquo; Google shows a map with three businesses at the top &mdash; the &ldquo;map pack&rdquo; &mdash; and those three get roughly 70% of the calls. Ranking there is the highest-return thing most contractors can do. It's not luck or magic; Google ranks the map pack on a few clear factors. Here's how to move up, in order of impact.</p>
+  <h2>1. Nail your Google Business Profile category and details</h2>
+  <p>Your <b>primary category</b> is the biggest single lever &mdash; pick the most specific one (&ldquo;Plumber,&rdquo; not &ldquo;Contractor&rdquo;). Then fill everything: every service, real photos, hours, service areas, and your website link. A complete profile beats a half-empty one every time.</p>
+  <h2>2. Get more reviews &mdash; steadily</h2>
+  <p>Review count and freshness are massive ranking signals. A business earning 2&ndash;3 new reviews a month climbs past one with a big but stale pile. Ask every happy customer at the moment they thank you, and text them the direct review link within minutes.</p>
+  <h2>3. Keep your name, address and phone identical everywhere</h2>
+  <p>Google cross-checks your business details across the web. If your address or phone differs between your website, Yelp and YellowPages, it trusts you less. Pick one exact format and use it on every listing &mdash; consistency alone can lift your ranking.</p>
+  <h2>4. Build local relevance with service-area pages</h2>
+  <p>A page on your website for each area you serve (&ldquo;furnace repair in Kanata,&rdquo; &ldquo;plumbing in Barrhaven&rdquo;) tells Google exactly where you're relevant, which helps you rank in those neighbourhoods' map results.</p>
+  <h2>5. Earn a few local links</h2>
+  <p>Links from local directories and organisations (your board of trade, a trade association, local directories) signal that you're an established local business &mdash; and that lifts the whole profile.</p>
+  <h2>6. Post and stay active</h2>
+  <p>Google favours active profiles. Post once a week &mdash; a finished job with one photo counts &mdash; and answer the questions people leave. It's a small tie-breaker that adds up.</p>
+  <h2>How long it takes</h2>
+  <p>Category and review improvements can move you within 4&ndash;8 weeks; climbing into a competitive top-3 usually takes 60&ndash;90 days of consistency, then it holds. It's the closest thing to a compounding asset in contractor marketing. Want to see where you rank now and what's holding you back? Our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a> checks your map position and profile in a 10-minute video.</p>
+  <div style="max-width:760px">
+    <details><summary>How do contractors rank higher on Google Maps?</summary><p>Optimise your Google Business Profile (exact primary category, full details, photos), earn steady fresh reviews, keep your name/address/phone identical everywhere, add service-area pages, and earn a few local links.</p></details>
+    <details><summary>How long does it take to rank in the Google map pack?</summary><p>Profile and review improvements can show in 4&ndash;8 weeks; reaching a competitive top-3 typically takes 60&ndash;90 days of consistent effort, after which it tends to hold.</p></details>
+  </div>
+  """,
+  "How to Rank Higher on Google Maps as a Contractor (2026) | Packed Agency",
+  "How to rank higher on Google Maps as a contractor: optimise your Business Profile, earn steady reviews, keep NAP consistent, add service-area pages and local links.")
 
 # ============================================================ TRADE PAGES (Phase 2)
 trade_page("hvac-marketing.html", "HVAC",
