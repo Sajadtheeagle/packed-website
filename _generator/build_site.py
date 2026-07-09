@@ -317,6 +317,11 @@ MAGNET = """
 </div>"""
 
 
+def blogpost(fname, kicker, h1, lead, inner, mtitle, mdesc):
+    b = phero(kicker, h1, lead, "Blog")
+    b += '<section><div class="wrap prose">' + inner + NEWSLETTER + '</div></section>' + CTA
+    page(fname, mtitle, mdesc, "", b)
+
 def cb_table(rows):
     out = "<table class=\"cb\"><tr><th>Your concern</th><th>How Packed handles it</th></tr>"
     for a, b in rows:
@@ -325,7 +330,13 @@ def cb_table(rows):
 
 PAGES = []
 BLOG_POSTS = {
-    "blog-hvac-lead-cost.html": ("What an HVAC Lead Costs in Ottawa (2026)", "2026-06-07"),
+    "why-competitors-outrank-me.html": ("Why Do Competitors With Worse Work Outrank Me on Google?", "2026-06-10"),
+    "is-marketing-worth-it-for-contractors.html": ("Is Marketing Worth It for Contractors?", "2026-06-10"),
+    "how-much-should-contractors-spend-on-marketing.html": ("How Much Should a Contractor Spend on Marketing?", "2026-06-10"),
+    "why-leads-dont-become-jobs.html": ("I Get Calls But Not Jobs - Why?", "2026-06-10"),
+    "why-customers-ghost-after-quote.html": ("Why Customers Ghost After a Quote (and How to Win Them Back)", "2026-06-10"),
+    "stop-feast-or-famine-contractor.html": ("How to Stop the Feast-or-Famine Cycle in Your Trade", "2026-06-10"),
+    "blog-hvac-lead-cost.html":  ("What an HVAC Lead Costs in Ottawa (2026)", "2026-06-07"),
     "is-homestars-worth-it.html": ("Is HomeStars Worth It for Ottawa Contractors? (2026)", "2026-06-09"),
     "how-to-get-more-hvac-leads-ottawa.html": ("How to Get More HVAC Leads in Ottawa (2026)", "2026-06-09"),
     "contractor-marketing-ideas.html": ("11 Contractor Marketing Ideas That Actually Work (2026)", "2026-06-09"),
@@ -905,12 +916,17 @@ page("reviews.html", "Reviews | Packed Agency", "Verified Google reviews from Ot
 blog_body = phero("The Packed Blog", "We give the playbook <em>away.</em>",
     "Weekly, Ottawa-specific answers to the questions contractors actually type into Google. Teaching is our marketing.", "Blog")
 blog_body += """
-<section><div class="wrap"><div class="grid3">
-  <a class="card" href="how-to-get-more-hvac-leads-ottawa.html"><span class="tag">Guide</span><h3>How to Get More HVAC Leads in Ottawa (2026)</h3><p>Seven channels that actually fill an HVAC schedule, ranked by cost and speed — with real Ottawa numbers.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
-  <a class="card" href="is-homestars-worth-it.html"><span class="tag">Honest math</span><h3>Is HomeStars Worth It for Ottawa Contractors?</h3><p>The real cost of shared leads over a year vs. owning your own — run the numbers before you renew.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
-  <a class="card" href="contractor-marketing-ideas.html"><span class="tag">Ideas</span><h3>11 Contractor Marketing Ideas That Actually Work</h3><p>No fluff — the tactics that move the needle in 2026, from free fixes to paid plays.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+<section><div class="wrap"><div class="grid3" style="row-gap:14px">
+  <a class="card" href="why-competitors-outrank-me.html"><span class="tag">Popular</span><h3>Why Do Competitors With Worse Work Outrank Me?</h3><p>The 5 real reasons a &ldquo;worse&rdquo; company beats you on Google — and how to fix each.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+  <a class="card" href="why-leads-dont-become-jobs.html"><span class="tag">Close more</span><h3>I Get Calls But Not Jobs — Why?</h3><p>Where jobs slip away, in order — and how to plug the leak without spending more.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+  <a class="card" href="is-marketing-worth-it-for-contractors.html"><span class="tag">Honest ROI</span><h3>Is Marketing Worth It for Contractors?</h3><p>If you've been burned before, the honest answer — with the actual math.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+  <a class="card" href="how-much-should-contractors-spend-on-marketing.html"><span class="tag">Budget</span><h3>How Much Should a Contractor Spend on Marketing?</h3><p>A simple framework to set a budget that grows your trade without gambling.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+  <a class="card" href="why-customers-ghost-after-quote.html"><span class="tag">Follow-up</span><h3>Why Customers Ghost After a Quote</h3><p>It's rarely price — and the simple follow-up that wins the job back.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+  <a class="card" href="stop-feast-or-famine-contractor.html"><span class="tag">Steady work</span><h3>How to Stop the Feast-or-Famine Cycle</h3><p>Smooth the swings and keep the schedule steadier year-round.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+  <a class="card" href="how-to-get-more-hvac-leads-ottawa.html"><span class="tag">Guide</span><h3>How to Get More HVAC Leads in Ottawa (2026)</h3><p>Seven channels that actually fill an HVAC schedule, ranked by cost and speed.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+  <a class="card" href="is-homestars-worth-it.html"><span class="tag">Honest math</span><h3>Is HomeStars Worth It for Ottawa Contractors?</h3><p>The real cost of shared leads vs. owning your own — before you renew.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
+  <a class="card" href="contractor-marketing-ideas.html"><span class="tag">Ideas</span><h3>11 Contractor Marketing Ideas That Actually Work</h3><p>No fluff — the tactics that move the needle in 2026.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
   <a class="card" href="blog-hvac-lead-cost.html"><span class="tag">Benchmarks</span><h3>What an HVAC Lead Costs in Ottawa (2026)</h3><p>Real benchmark numbers: LSA, Google Ads, marketplaces and SEO compared.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
-  <div class="card" style="opacity:.7"><span class="tag">Next</span><h3>The Mystery Call: We Phoned 10 Ottawa Plumbers</h3><p>How many answered? The results explain who's busy.</p></div>
 </div>""" + NEWSLETTER + """</div></section>""" + CTA
 page("blog.html", "Contractor Marketing Blog | Packed Agency", "Ottawa-specific contractor marketing answers, published weekly.", "", blog_body)
 
@@ -1083,6 +1099,167 @@ cmo_body += """
 """ + NEWSLETTER + """</div></section>""" + CTA
 page("contractor-marketing-ottawa.html", "Contractor Marketing in Ottawa (2026) | Packed Agency",
      "Contractor marketing in Ottawa: Google Maps/local SEO, ads, conversion websites and follow-up automation for HVAC, plumbing, electrical & renovation trades. Published pricing, free audit.", "", cmo_body)
+
+# ============================================================ BLOG BATCH (mindset questions)
+blogpost("why-competitors-outrank-me.html", "Blog &middot; 6 min read",
+  "Why Do Competitors With Worse Work <em>Outrank Me on Google?</em>",
+  "It stings to lose jobs to a company you know does worse work. Here's why it happens &mdash; and how to fix it.",
+  """
+  <p>Almost every contractor has thought it: &ldquo;I do better work than that company, so why do they show up first on Google and I don't?&rdquo; It's one of the most frustrating things in the trade &mdash; and the answer has nothing to do with the quality of your work. Google can't see your craftsmanship. It ranks businesses on signals it <i>can</i> measure. Here are the real reasons a &ldquo;worse&rdquo; competitor beats you, in order.</p>
+  <h2>1. They have more Google reviews</h2>
+  <p>Reviews are the single biggest local-ranking factor most contractors ignore. A company with 300 reviews looks &ldquo;safer&rdquo; to both Google and a nervous homeowner than one with 30 &mdash; even if your rating is higher. And it's about <b>velocity</b>: a steady stream of 2&ndash;3 fresh reviews a month beats a big old pile. If your competitor is asking for reviews and you aren't, they win this every time.</p>
+  <h2>2. Their Google Business Profile is complete; yours isn't</h2>
+  <p>The right primary category, every service listed, real photos, posts, answered questions &mdash; most trades have their profile 30% filled. Your competitor probably filled theirs out. That listing drives more calls than your website, and it's free to fix.</p>
+  <h2>3. They've been in Google's index longer</h2>
+  <p>Google trusts established businesses. A company that's had an active, consistent presence for years has authority you can't buy overnight. The good news: consistency, not age alone, is what compounds &mdash; and you start earning it the day you get serious.</p>
+  <h2>4. Other websites link to them</h2>
+  <p>When local directories, associations, or news sites link to a business, Google reads it as a vote of trust. Your competitor might be listed on YellowPages, the local home-builders' association, and a few &ldquo;best of&rdquo; lists. Each link is a small nudge up the rankings.</p>
+  <h2>5. Their website is faster and clearer</h2>
+  <p>Google favors sites that load fast on mobile and answer the searcher's question quickly. A slow, cluttered site &mdash; even a pretty one &mdash; ranks below a fast, simple one.</p>
+  <h2>The fix, in order</h2>
+  <p>Complete your Google Business Profile today. Start asking every happy customer for a review, the moment they thank you. Get listed in a few local directories. Make sure your website is fast and mobile-friendly. None of this requires being the biggest company &mdash; it requires doing the signals your competitor is quietly doing and you aren't.</p>
+  <p>Want to see exactly where you stand against the competitor beating you? Our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a> compares your listing, reviews and site side-by-side with the top-ranked business in your area &mdash; delivered as a 10-minute video.</p>
+  <div style="max-width:760px">
+    <details><summary>Can I outrank a bigger competitor on Google?</summary><p>Yes &mdash; local rankings reward reviews, a complete profile, and relevance more than company size. A focused smaller contractor regularly outranks a big one that neglects its Google presence.</p></details>
+    <details><summary>How long does it take to outrank a competitor?</summary><p>Profile and review improvements can move you within 4&ndash;8 weeks; fully overtaking an established competitor usually takes 3&ndash;6 months of consistent effort.</p></details>
+  </div>
+  """,
+  "Why Do Competitors With Worse Work Outrank Me on Google? | Packed Agency",
+  "Why do competitors with worse work rank higher on Google? The 5 real reasons - reviews, Google Business Profile, backlinks, site speed - and how to fix each.")
+
+blogpost("is-marketing-worth-it-for-contractors.html", "Blog &middot; 6 min read",
+  "Is Marketing Worth It for <em>Contractors?</em>",
+  "If you've been burned before, the question is fair. Here's the honest answer, with the math.",
+  """
+  <p>Plenty of contractors have paid an agency, gotten a monthly report full of &ldquo;impressions&rdquo; and &ldquo;reach,&rdquo; and watched their phone ring exactly as much as before. So the question <b>&ldquo;is marketing actually worth it for contractors?&rdquo;</b> is a smart one to ask. The honest answer: the right marketing is one of the highest-return things you can spend on &mdash; and the wrong marketing is a money pit. The difference is whether it produces <i>booked jobs</i> you can count.</p>
+  <h2>The math that decides it</h2>
+  <p>Marketing is worth it when the jobs it produces are worth more than it costs. Say a marketing system costs $1,500/month. If your average job is $2,500 and you close half your leads, you need roughly <b>one to two extra jobs a month</b> to break even &mdash; and anything above that is profit. For most trades, a working system produces several. The question isn't really &ldquo;is it worth it&rdquo; &mdash; it's &ldquo;does this specific marketing produce trackable jobs?&rdquo;</p>
+  <h2>Why so much contractor marketing fails</h2>
+  <ul>
+    <li><b>It's measured in the wrong things.</b> Impressions and clicks don't pay your crew. Booked jobs do. If you can't connect the spend to jobs, you can't know if it works.</li>
+    <li><b>There's no follow-up.</b> 80% of sales take 5+ contacts. Marketing that drives leads into a business with no follow-up just fills a leaky bucket.</li>
+    <li><b>It's rented, not owned.</b> Buying shared leads forever means you own nothing. The month you stop paying, it all disappears.</li>
+  </ul>
+  <h2>What &ldquo;worth it&rdquo; marketing looks like</h2>
+  <p>It's tracked (call tracking on every source, so you know what produced each job), it's owned (your website, your Google listing, your reviews &mdash; assets that keep working), and it plugs the leaks first (follow-up before more ads). Done that way, marketing isn't an expense &mdash; it's the most reliable way to keep your schedule full.</p>
+  <h2>How to test it without risk</h2>
+  <p>Start small and demand proof. A one-time win (like a campaign to your past customers) shows results in ~30 days for a few hundred dollars. If it produces jobs, scale up. If it doesn't, you're out very little. Any honest marketer will let you start this way instead of locking you into a year.</p>
+  <p>Curious what it would actually produce for your business? Our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a> shows you where the jobs are leaking and what fixing it is worth &mdash; before you spend a dollar.</p>
+  <div style="max-width:760px">
+    <details><summary>What marketing ROI should a contractor expect?</summary><p>A well-run system commonly returns several times its cost in booked-job revenue. The key is tracking: if you can't tie spend to jobs, you can't measure ROI &mdash; insist on call tracking.</p></details>
+    <details><summary>Why did my last marketing agency not work?</summary><p>Usually one of three reasons: it was measured in vanity metrics, there was no lead follow-up, or you were renting leads instead of building owned assets. Fixing those is what makes marketing pay.</p></details>
+  </div>
+  """,
+  "Is Marketing Worth It for Contractors? (Honest ROI Math) | Packed Agency",
+  "Is marketing worth it for contractors? The honest answer with real ROI math - why most contractor marketing fails, what 'worth it' looks like, and how to test it risk-free.")
+
+blogpost("how-much-should-contractors-spend-on-marketing.html", "Blog &middot; 5 min read",
+  "How Much Should a Contractor <em>Spend on Marketing?</em>",
+  "A simple, honest framework for setting a marketing budget that grows your trade without gambling.",
+  """
+  <p>&ldquo;How much should I spend on marketing?&rdquo; is one of the most common questions contractors ask &mdash; and most answers are either vague or self-serving. Here's a straight framework you can actually use.</p>
+  <h2>The rule of thumb: 5&ndash;10% of revenue</h2>
+  <p>A widely used benchmark: established businesses spend around <b>5% of revenue</b> to maintain, and <b>7&ndash;10%</b> when they want to grow. So a contractor doing $500,000 a year and wanting to grow would budget roughly $35,000&ndash;$50,000/year, or about $3,000&ndash;$4,000/month. Doing $250,000 and holding steady? Closer to $1,000&ndash;$1,500/month. Newer or hungrier businesses often spend a higher percentage to build momentum, then ease off.</p>
+  <h2>But percentages aren't the real answer &mdash; return is</h2>
+  <p>The better question is: <b>what does a job cost you to win, and what's it worth?</b> If $1,500 in marketing reliably produces three $2,500 jobs, spend more &mdash; you'd be foolish not to. If it produces nothing, zero is too much. Set a starting budget from the rule of thumb, then let the <i>results</i> tell you whether to scale up or cut.</p>
+  <h2>Where to put the first dollars</h2>
+  <ol>
+    <li><b>Fix follow-up first (cheap).</b> Missed-call text-back and a simple sequence stop you losing jobs you already have. Highest return, lowest cost.</li>
+    <li><b>Own your Google presence next.</b> Local SEO and reviews compound and keep producing without per-lead fees.</li>
+    <li><b>Layer paid ads last.</b> Once the first two convert, ads scale what's already working. Ads pointed at a leaky business just burn faster.</li>
+  </ol>
+  <h2>What not to do</h2>
+  <p>Don't blow the whole budget on one channel (especially shared marketplace leads). Don't sign a long contract before you've seen results. And don't judge marketing on a single month &mdash; SEO especially takes 60&ndash;90 days to show, then compounds.</p>
+  <p>Not sure what your number should be? Our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a> looks at your current setup and tells you where a budget would produce the most jobs &mdash; free, no obligation.</p>
+  <div style="max-width:760px">
+    <details><summary>What percentage of revenue should contractors spend on marketing?</summary><p>Roughly 5% to maintain and 7&ndash;10% to grow. Newer businesses often spend more early to build momentum. Let return on the spend guide adjustments.</p></details>
+    <details><summary>Is it better to spend on ads or SEO?</summary><p>Fix follow-up first, then invest in owned channels (local SEO, reviews) for long-term low-cost leads, and use ads to scale once those convert. A blend usually wins.</p></details>
+  </div>
+  """,
+  "How Much Should a Contractor Spend on Marketing? (2026) | Packed Agency",
+  "How much should a contractor spend on marketing? The 5-10% of revenue rule, why return matters more than percentages, and where to put your first dollars.")
+
+blogpost("why-leads-dont-become-jobs.html", "Blog &middot; 6 min read",
+  "I Get Calls But Not Jobs &mdash; <em>Why?</em>",
+  "If leads come in but don't turn into booked work, the leak is almost always in one of these five places.",
+  """
+  <p>Getting leads and <i>winning</i> them are two different problems. Plenty of contractors have a phone that rings but a schedule that doesn't fill. If that's you, more marketing isn't the answer yet &mdash; plugging the leak is. Here's where jobs slip away, in order of how often it's the culprit.</p>
+  <h2>1. You didn't answer, and they moved on</h2>
+  <p>The most common leak by far. You're on a roof or under a sink, the call goes to voicemail, and about 85% of those callers never leave a message &mdash; they call the next name on Google. It's not lost interest; it's just unanswered. A <a href="automation.html" style="color:var(--orange);font-weight:700">missed-call text-back</a> that fires instantly (&ldquo;Sorry we missed you &mdash; what's the job?&rdquo;) recovers a big chunk of these.</p>
+  <h2>2. You were too slow to follow up</h2>
+  <p>Studies show the business that responds first wins the job most of the time. If you call a web lead back four hours later, they've often already booked someone else. Speed &mdash; minutes, not hours &mdash; is one of the biggest levers on close rate.</p>
+  <h2>3. You quoted and never followed up again</h2>
+  <p>You send the quote, they say &ldquo;let me think about it,&rdquo; and you never circle back. 80% of sales take five or more contacts; most contractors stop at one. A simple &ldquo;just checking in on that quote&rdquo; text three days later wins jobs your competitors abandon.</p>
+  <h2>4. You're competing on price against shared leads</h2>
+  <p>If your leads come from marketplaces that sell the same homeowner to five companies, you're in a price race, not a value conversation. Owned leads (your Google listing, referrals) come to you alone &mdash; no race, better margins, higher close rate.</p>
+  <h2>5. Your first impression undercuts your work</h2>
+  <p>A slow website, no reviews, an unprofessional voicemail &mdash; small things that make a great contractor look risky. Homeowners are nervous; anything that erodes trust costs you the job before you quote it.</p>
+  <h2>The fix</h2>
+  <p>Answer or auto-text every call. Respond to new leads in minutes. Follow up on every quote at least twice. Build reviews so you look like the safe choice. Do those and your close rate climbs without spending a dollar more on leads.</p>
+  <p>Want to know exactly which leak is costing you most? Our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a> includes a real test of what happens when a customer tries to reach you &mdash; the results usually explain a lot.</p>
+  <div style="max-width:760px">
+    <details><summary>Why do my leads not turn into jobs?</summary><p>Usually missed calls, slow follow-up, or no follow-up after quoting &mdash; not a lack of interest. Answering fast and following up multiple times fixes most of it.</p></details>
+    <details><summary>How fast should I respond to a lead?</summary><p>Within minutes if possible. The first contractor to respond wins the job most of the time; hours-long delays lose leads to faster competitors.</p></details>
+  </div>
+  """,
+  "I Get Calls But Not Jobs - Why? (5 Reasons) | Packed Agency",
+  "Getting calls but not jobs? The 5 reasons leads don't convert for contractors - missed calls, slow follow-up, no quote follow-up, shared leads - and how to fix each.")
+
+blogpost("why-customers-ghost-after-quote.html", "Blog &middot; 5 min read",
+  "Why Customers Ghost After a Quote <em>(and How to Win Them Back)</em>",
+  "You send the quote, they go quiet, and the job vanishes. Here's what's really happening and how to recover it.",
+  """
+  <p>It's one of the most frustrating patterns in the trades: you show up, do a proper estimate, send the quote &mdash; and then silence. The homeowner ghosts. Before you assume they went with someone cheaper, understand what's usually going on, because most of these jobs are recoverable.</p>
+  <h2>Why they go quiet (it's rarely price)</h2>
+  <ul>
+    <li><b>Life got in the way.</b> They meant to reply, then work/kids/the weekend happened. Your quote is sitting in an inbox, forgotten &mdash; not rejected.</li>
+    <li><b>They're still gathering quotes.</b> Many homeowners get three estimates. You quoted first; they're waiting on the others and haven't circled back.</li>
+    <li><b>They have an unspoken question.</b> Something about timing, financing, or scope is unresolved and they don't know how to ask.</li>
+    <li><b>They're a little nervous.</b> Big jobs are scary. Silence is often hesitation, not a &ldquo;no.&rdquo;</li>
+  </ul>
+  <h2>The follow-up that wins them back</h2>
+  <p>The single biggest reason contractors lose these jobs: they never follow up. One polite nudge changes everything, because you're often the only one who bothered.</p>
+  <ol>
+    <li><b>Day 3:</b> a short, friendly text &mdash; &ldquo;Hi [name], just checking in on the quote I sent for [job]. Happy to answer any questions.&rdquo; No pressure.</li>
+    <li><b>Day 7:</b> add value &mdash; &ldquo;If it helps, I can hold that price through [date]&rdquo; or &ldquo;here's a photo of a similar job we just finished.&rdquo;</li>
+    <li><b>Day 14:</b> the soft close &mdash; &ldquo;Should I keep your spot on the schedule for [month], or has the timing changed?&rdquo;</li>
+  </ol>
+  <p>That's it. Most jobs are won not by the lowest bid, but by the contractor who stayed helpfully in touch while everyone else went silent too.</p>
+  <h2>Make it automatic</h2>
+  <p>If remembering to follow up is the problem, automate it. A simple system can text every quoted customer on a schedule so no job ever slips through because you got busy. That's exactly what <a href="automation.html" style="color:var(--orange);font-weight:700">follow-up automation</a> does &mdash; and it quietly recovers jobs you'd otherwise write off.</p>
+  <div style="max-width:760px">
+    <details><summary>Should I follow up after sending a quote?</summary><p>Yes &mdash; at least twice. Most contractors never follow up, so a polite check-in on day 3 and day 7 wins jobs your competitors abandon. It's rarely seen as pushy.</p></details>
+    <details><summary>How do I follow up without being annoying?</summary><p>Keep it short, friendly, and helpful &mdash; check in, offer to answer questions, add a small value (hold the price, share a photo). You're being helpful, not chasing.</p></details>
+  </div>
+  """,
+  "Why Customers Ghost After a Quote (and How to Win Them Back) | Packed Agency",
+  "Why do customers ghost after a contractor quote? It's rarely price - here's what's really happening and the simple 3-touch follow-up that wins the job back.")
+
+blogpost("stop-feast-or-famine-contractor.html", "Blog &middot; 6 min read",
+  "How to Stop the Feast-or-Famine Cycle <em>in Your Trade</em>",
+  "Slammed one month, dead the next. Here's how to smooth out the swings and keep the schedule steadier year-round.",
+  """
+  <p>Almost every contractor knows the feast-or-famine rhythm: you're so busy you can't breathe, so you stop marketing &mdash; then the work dries up, panic sets in, and you scramble for leads. The cycle repeats. The way out isn't working harder in the busy months; it's building a steady lead flow that doesn't switch off. Here's how.</p>
+  <h2>Why the cycle happens</h2>
+  <p>It's simple: when you're busy, marketing feels unnecessary, so you pause it. But leads have a lag &mdash; the work you generate today shows up weeks later. Pause marketing during the feast, and the famine is already baked in. Breaking the cycle means keeping the lead engine running <i>especially</i> when you're busy.</p>
+  <h2>1. Build channels that run without you</h2>
+  <p>Referrals and marketplace leads spike and crash. Owned channels &mdash; a strong Google Business Profile, local SEO, steady reviews &mdash; produce a baseline of calls every month whether you're paying attention or not. That baseline is what flattens the swings.</p>
+  <h2>2. Mine your own customer list</h2>
+  <p>Your past customers are the cheapest work you'll ever get. Before a predictable slow stretch, a simple text or email campaign (&ldquo;time for your annual tune-up?&rdquo; / &ldquo;spring booking is open&rdquo;) fills the calendar for a fraction of new-lead cost. Most contractors never do this &mdash; the list just sits there.</p>
+  <h2>3. Market ahead of the swing, not during it</h2>
+  <p>If your slow season is spring, you market in <b>late winter</b> &mdash; because leads lag. Plan a simple calendar: what you'll promote and when, tied to your trade's natural cycle. Being early is the whole game.</p>
+  <h2>4. Automate the follow-up so nothing leaks</h2>
+  <p>Feast months are when the most calls go unanswered &mdash; you're too busy. Missed-call text-back and follow-up automation catch those leads and turn some into the work that carries you through the next quiet stretch.</p>
+  <h2>5. Track so you can see it coming</h2>
+  <p>When you know your numbers &mdash; calls per week, booked jobs, what's in the pipeline &mdash; a slow patch stops being a surprise. You see it forming and market <i>before</i> it hits, instead of after.</p>
+  <p>The goal isn't to be equally slammed every week &mdash; it's to never hit zero. A steady baseline of owned leads plus a reactivated customer list turns terrifying famines into manageable dips. Want a look at where your steady channel would come from? Start with our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a>.</p>
+  <div style="max-width:760px">
+    <details><summary>How do contractors deal with slow seasons?</summary><p>Market ahead of the slowdown (leads lag), lean on owned channels for a steady baseline, and run a win-back campaign to past customers to fill the calendar cheaply.</p></details>
+    <details><summary>Why is my contracting business feast or famine?</summary><p>Usually because marketing gets paused during busy months, and leads lag &mdash; so the famine is set in motion during the feast. Keeping a steady lead engine running fixes it.</p></details>
+  </div>
+  """,
+  "How to Stop the Feast-or-Famine Cycle in Your Trade | Packed Agency",
+  "How to stop feast-or-famine as a contractor: build owned lead channels, mine your customer list, market ahead of the swing, and automate follow-up for a steadier schedule.")
 
 # ============================================================ TRADE PAGES (Phase 2)
 trade_page("hvac-marketing.html", "HVAC",
