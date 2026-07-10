@@ -330,6 +330,11 @@ def cb_table(rows):
 
 PAGES = []
 BLOG_POSTS = {
+    "get-more-plumbing-jobs-ottawa.html": ("How to Get More Plumbing Jobs in Ottawa", "2026-06-23"),
+    "electrician-marketing-ideas.html": ("Electrician Marketing Ideas That Get More Jobs", "2026-06-23"),
+    "how-to-get-more-google-reviews.html": ("How to Get More Google Reviews as a Contractor", "2026-06-23"),
+    "do-contractors-need-a-website.html": ("Do Contractors Still Need a Website in 2026?", "2026-06-23"),
+    "how-to-choose-marketing-agency-contractor.html": ("How to Choose a Marketing Agency Without Getting Burned", "2026-06-23"),
     "best-time-to-advertise-hvac.html": ("The Best Time to Advertise an HVAC Business in Ottawa", "2026-06-16"),
     "rank-higher-google-maps-contractor.html": ("How to Rank Higher on Google Maps as a Contractor", "2026-06-16"),
     "why-competitors-outrank-me.html": ("Why Do Competitors With Worse Work Outrank Me on Google?", "2026-06-10"),
@@ -919,6 +924,11 @@ blog_body = phero("The Packed Blog", "We give the playbook <em>away.</em>",
     "Weekly, Ottawa-specific answers to the questions contractors actually type into Google. Teaching is our marketing.", "Blog")
 blog_body += """
 <section><div class="wrap"><div class="grid3" style="row-gap:14px">
+  <a class="card" href="how-to-choose-marketing-agency-contractor.html"><span class="tag">Don&rsquo;t get burned</span><h3>How to Choose a Marketing Agency Without Getting Burned</h3><p>The 6 questions that separate real agencies from traps.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read &rarr;</span></a>
+  <a class="card" href="how-to-get-more-google-reviews.html"><span class="tag">Reviews</span><h3>How to Get More Google Reviews as a Contractor</h3><p>The tie-breaker that wins jobs — built steadily, the right way.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read &rarr;</span></a>
+  <a class="card" href="get-more-plumbing-jobs-ottawa.html"><span class="tag">Plumbing</span><h3>How to Get More Plumbing Jobs in Ottawa</h3><p>Emergency-driven and map-pack critical — make the next burst pipe call you.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read &rarr;</span></a>
+  <a class="card" href="electrician-marketing-ideas.html"><span class="tag">Electrical</span><h3>Electrician Marketing Ideas That Get More Jobs</h3><p>Attract the panel upgrades and EV chargers, not just $150 service calls.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read &rarr;</span></a>
+  <a class="card" href="do-contractors-need-a-website.html"><span class="tag">Websites</span><h3>Do Contractors Still Need a Website in 2026?</h3><p>Short answer: yes — here's the honest why, and what it actually needs.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read &rarr;</span></a>
   <a class="card" href="rank-higher-google-maps-contractor.html"><span class="tag">Maps</span><h3>How to Rank Higher on Google Maps as a Contractor</h3><p>The top-3 map pack takes most calls. Exactly how to climb into it.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read &rarr;</span></a>
   <a class="card" href="best-time-to-advertise-hvac.html"><span class="tag">Timing</span><h3>The Best Time to Advertise an HVAC Business</h3><p>Spend ahead of Ottawa's seasons, not during them. The year-round rhythm.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read &rarr;</span></a>
   <a class="card" href="why-competitors-outrank-me.html"><span class="tag">Popular</span><h3>Why Do Competitors With Worse Work Outrank Me?</h3><p>The 5 real reasons a &ldquo;worse&rdquo; company beats you on Google — and how to fix each.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
@@ -1323,6 +1333,138 @@ blogpost("rank-higher-google-maps-contractor.html", "Blog &middot; 6 min read",
   """,
   "How to Rank Higher on Google Maps as a Contractor (2026) | Packed Agency",
   "How to rank higher on Google Maps as a contractor: optimise your Business Profile, earn steady reviews, keep NAP consistent, add service-area pages and local links.")
+
+# ---- BLOG BATCH 2 ----
+blogpost("get-more-plumbing-jobs-ottawa.html", "Blog &middot; 6 min read",
+  "How to Get More Plumbing Jobs in <em>Ottawa</em>",
+  "Plumbing is emergency-driven and map-pack critical. Here's how to make sure the next burst pipe calls you.",
+  """
+  <p>Plumbing work is different from most trades: a lot of it is urgent. A burst pipe or backed-up drain doesn't get shopped around &mdash; the homeowner grabs their phone, searches, and calls the first plumber that looks trustworthy. That means <b>getting more plumbing jobs in Ottawa is mostly about being visible and answerable at the exact moment of panic.</b> Here's how.</p>
+  <h2>1. Own the Google map pack &mdash; it's where emergencies go</h2>
+  <p>When someone searches &ldquo;plumber near me&rdquo; or &ldquo;emergency plumber Ottawa,&rdquo; roughly 70% of calls go to the top three map results. Getting there means a complete Google Business Profile (primary category &ldquo;Plumber&rdquo;), steady reviews, and consistent business details everywhere. For plumbing, this single channel outranks everything else.</p>
+  <h2>2. Answer the phone &mdash; or text back instantly</h2>
+  <p>85% of people who reach a contractor's voicemail hang up and call the next name. In an emergency they won't wait at all. If you can't answer live, an automatic text-back (&ldquo;Sorry we missed you &mdash; what's the emergency?&rdquo;) keeps you in the running instead of losing the job in ten seconds.</p>
+  <h2>3. Stack up reviews &mdash; they break the tie</h2>
+  <p>Two plumbers the same distance away: the one with 150 reviews wins over the one with 30, almost every time. A nervous homeowner picks the &ldquo;safe&rdquo; choice. Ask every customer for a review the moment the job's done and they're relieved.</p>
+  <h2>4. Capture the non-emergency, high-value work too</h2>
+  <p>Not all plumbing is emergencies &mdash; renos, water heaters, repiping, bathroom fit-outs. Those homeowners <i>do</i> research. Pages on your site for each of those services (and each area you serve) help you show up for &ldquo;water heater replacement Kanata&rdquo; and similar planned searches.</p>
+  <h2>5. Don't rely on shared-lead apps</h2>
+  <p>Marketplace apps sell the same emergency to five plumbers &mdash; you're racing on price. Owned channels (your Google listing, reviews, referrals) send you calls nobody else gets. Cheaper per won job, better customers.</p>
+  <p>Want to know where your plumbing business ranks right now and what's costing you emergency calls? Our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a> checks your map position, reviews and phone response in a 10-minute video.</p>
+  <div style="max-width:760px">
+    <details><summary>How do plumbers get more jobs?</summary><p>Rank in the Google map pack for emergency searches, answer or auto-text every call, build steady reviews, and add service pages for planned work like water heaters and renos. Avoid racing on shared-lead apps.</p></details>
+    <details><summary>What's the best marketing for a plumbing business?</summary><p>Local SEO and a strong Google Business Profile, because plumbing is emergency- and proximity-driven. Reviews and fast phone response amplify everything else.</p></details>
+  </div>
+  """,
+  "How to Get More Plumbing Jobs in Ottawa (2026) | Packed Agency",
+  "How to get more plumbing jobs in Ottawa: win the Google map pack for emergencies, answer every call, build reviews, and capture high-value planned work. Practical 2026 guide.")
+
+blogpost("electrician-marketing-ideas.html", "Blog &middot; 6 min read",
+  "Electrician Marketing Ideas That <em>Get More Jobs</em>",
+  "From $150 service calls to $3,000 panel upgrades and EV chargers &mdash; here's how to attract the work you actually want.",
+  """
+  <p>Electrical work spans a huge range, from a quick outlet fix to a full panel upgrade or an EV-charger install. The best electrician marketing doesn't just get you <i>more</i> calls &mdash; it gets you more of the <b>high-value</b> ones. Here are the ideas that work in 2026.</p>
+  <h2>1. Target the high-ticket keywords on purpose</h2>
+  <p>&ldquo;EV charger installation Ottawa,&rdquo; &ldquo;electrical panel upgrade,&rdquo; &ldquo;whole-home rewire&rdquo; &mdash; these are searches from people ready to spend real money, and most electricians don't have pages targeting them. Build a page for each big-ticket service and you'll show up when the profitable jobs are being searched.</p>
+  <h2>2. Ride the EV wave</h2>
+  <p>EV adoption is climbing fast, and every new EV owner needs a licensed electrician for a home charger. It's one of the biggest growth areas in the trade. Make &ldquo;EV charger installation&rdquo; a front-and-centre service on your site and Google listing &mdash; few competitors have.</p>
+  <h2>3. Get into the Google map pack</h2>
+  <p>Like every trade, the top-3 map results win most of the local calls. A complete Google Business Profile plus steady reviews gets you there. This carries your service calls; the keyword pages above capture the big jobs.</p>
+  <h2>4. Show your licences and safety credibility</h2>
+  <p>Electrical is one trade where homeowners genuinely worry about doing it wrong. Displaying your licence, insurance, and ESA authorisation prominently builds the trust that wins jobs &mdash; especially the larger ones.</p>
+  <h2>5. Follow up on quotes for the big work</h2>
+  <p>A $3,000 panel upgrade is a considered purchase &mdash; homeowners get a couple of quotes and think it over. The electrician who politely follows up wins jobs the others let go cold. One check-in text a few days later makes the difference.</p>
+  <h2>6. Ask for reviews that mention the job type</h2>
+  <p>Reviews that say &ldquo;installed our EV charger&rdquo; or &ldquo;upgraded our panel&rdquo; help you rank for those exact services. Prompt happy customers to mention what you did.</p>
+  <p>Want a plan built around the electrical work you want more of? Our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a> shows where the high-value jobs are leaking.</p>
+  <div style="max-width:760px">
+    <details><summary>What's the best marketing for electricians?</summary><p>Target high-ticket keywords (EV chargers, panel upgrades) with dedicated pages, rank in the Google map pack for service calls, show your licences, and follow up on big-job quotes.</p></details>
+    <details><summary>How do electricians get more high-value jobs?</summary><p>Create pages and Google listings focused on the profitable services (EV chargers, panels, rewires), gather reviews that mention those jobs, and follow up on every large quote.</p></details>
+  </div>
+  """,
+  "Electrician Marketing Ideas That Get More Jobs (2026) | Packed Agency",
+  "Electrician marketing ideas for 2026: target high-ticket keywords like EV chargers and panel upgrades, win the map pack, show credibility, and follow up on big quotes.")
+
+blogpost("how-to-get-more-google-reviews.html", "Blog &middot; 5 min read",
+  "How to Get More Google Reviews <em>as a Contractor</em>",
+  "Reviews are the tie-breaker that decides who gets the call. Here's how to build them steadily &mdash; the right way.",
+  """
+  <p>Ask any busy contractor what wins them jobs and reviews come up fast. They're the tie-breaker in the Google map pack and the first thing a nervous homeowner checks. Yet most trades have a thin, stale pile. Here's how to get more Google reviews without being pushy &mdash; and without breaking Google's rules.</p>
+  <h2>1. Ask at the moment of relief</h2>
+  <p>Timing beats everything. The best moment is right when the customer is happiest &mdash; the furnace is warm again, the leak is fixed, they say &ldquo;thank you so much.&rdquo; That's your window. A review asked for then converts far better than a generic email three days later.</p>
+  <h2>2. Make it one tap</h2>
+  <p>Text them your direct Google review link within minutes, while they're still holding the phone. Search &ldquo;Google review link generator,&rdquo; grab your link once, and save it. The fewer steps, the more reviews.</p>
+  <h2>3. Go for velocity, not a big one-time push</h2>
+  <p>A steady 2&ndash;3 fresh reviews a month signals to Google that you're active and trusted &mdash; and it beats a burst of 30 that then goes quiet. Build asking into your routine, every job.</p>
+  <h2>4. Reply to every review</h2>
+  <p>Respond to all of them, good and bad. Replies are a ranking signal and a trust signal &mdash; future customers read how you handle a complaint more closely than the complaint itself. Stay calm, factual, and offer to make it right offline.</p>
+  <h2>5. Never buy or incentivise reviews</h2>
+  <p>Google's rules tightened again in 2026: paying for reviews, offering discounts for them, review &ldquo;stations&rdquo; and quotas are violations that can get your reviews wiped or your profile suspended. Ask honestly at the right moment and you won't need tricks.</p>
+  <h2>6. Train your crew to ask</h2>
+  <p>The tech who did the work has the best relationship in that moment. A simple, natural line &mdash; &ldquo;If you were happy, a quick Google review really helps a local business like us&rdquo; &mdash; from the person on site works better than anything automated.</p>
+  <p>Want your reviews on autopilot? Automatic review requests after every job are part of what we set up. Start with a <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a> to see your review gap vs. competitors.</p>
+  <div style="max-width:760px">
+    <details><summary>How can contractors get more Google reviews?</summary><p>Ask at the moment of relief, text the direct review link within minutes, aim for a steady 2&ndash;3 a month, reply to every review, and never buy or incentivise them.</p></details>
+    <details><summary>Is it against Google's rules to ask for reviews?</summary><p>No &mdash; asking is fine and encouraged. What's banned is paying for reviews, offering incentives, review quotas, and on-site pressure. Ask honestly and you're compliant.</p></details>
+  </div>
+  """,
+  "How to Get More Google Reviews as a Contractor (2026) | Packed Agency",
+  "How to get more Google reviews as a contractor: ask at the moment of relief, text the direct link, aim for steady velocity, reply to all, and stay within Google's 2026 rules.")
+
+blogpost("do-contractors-need-a-website.html", "Blog &middot; 5 min read",
+  "Do Contractors Still Need a Website in <em>2026?</em>",
+  "With Google listings and social media everywhere, is a website still worth it for a trade? Short answer: yes &mdash; here's why.",
+  """
+  <p>It's a fair question in 2026. If your Google Business Profile shows your phone, reviews and photos, and you post on Facebook, do you really need a website too? Plenty of contractors get by without one. But &ldquo;getting by&rdquo; and &ldquo;winning the good jobs&rdquo; are different things. Here's the honest case for a website &mdash; and when you can skip it.</p>
+  <h2>Why a website still matters</h2>
+  <ul>
+    <li><b>It's the trust check.</b> Homeowners comparing two contractors click through to the website to decide who looks legit. No website (or a bad one) makes you the riskier choice &mdash; especially on bigger jobs.</li>
+    <li><b>You own it.</b> Your Google listing and Facebook page live on someone else's platform and can change or vanish. Your website is the one asset you fully control.</li>
+    <li><b>It's where you rank for the planned, high-value searches.</b> Emergency work comes from the map, but &ldquo;bathroom renovation Ottawa cost&rdquo; and &ldquo;heat pump installation&rdquo; are researched on websites. No site, no ranking for those.</li>
+    <li><b>It turns visitors into calls.</b> A good site has click-to-call, a quote form, your reviews and real photos &mdash; it converts the interest your Google listing and ads create.</li>
+  </ul>
+  <h2>What a contractor website actually needs (and doesn't)</h2>
+  <p>You don't need a huge, expensive site. You need a fast, mobile-first one with: a clear headline, click-to-call at the top, a simple quote form, your services, real job photos, reviews, and a page per service/area. That's it. What you don't need: sliders, stock photos, jargon, or ten pages nobody reads.</p>
+  <h2>When you might skip it (for now)</h2>
+  <p>If you're brand new, fully booked by referrals, and only do emergency work, you can lean on a strong Google Business Profile for a while. But the moment you want to grow, win larger jobs, or stop depending on referrals, a website becomes the piece that makes everything else convert.</p>
+  <h2>The bigger risk: a website that doesn't work</h2>
+  <p>Having a website isn't enough &mdash; about 90% of contractor sites fail to turn visitors into calls (slow, no click-to-call, buried phone number). A bad website can be worse than none because it wastes every ad dollar and SEO gain you buy. If yours is slow or dated, fixing it is often the highest-return thing you can do.</p>
+  <p>Not sure if your site is helping or hurting? Our <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a> scores it on the 7 things that make a contractor site convert.</p>
+  <div style="max-width:760px">
+    <details><summary>Do contractors need a website in 2026?</summary><p>Yes &mdash; it's the trust check homeowners use to choose between contractors, the one asset you own, and where you rank for high-value planned searches. A simple, fast, conversion-focused site is enough.</p></details>
+    <details><summary>What should a contractor website include?</summary><p>Click-to-call at the top, a simple quote form, clear services, real job photos, reviews, and a page per service and area &mdash; all fast and mobile-first. Skip sliders and stock photos.</p></details>
+  </div>
+  """,
+  "Do Contractors Still Need a Website in 2026? | Packed Agency",
+  "Do contractors still need a website in 2026? Yes - it's the trust check, the asset you own, and where you rank for high-value searches. What a contractor site really needs.")
+
+blogpost("how-to-choose-marketing-agency-contractor.html", "Blog &middot; 6 min read",
+  "How to Choose a Marketing Agency <em>Without Getting Burned</em>",
+  "Been burned before? Here are the exact questions to ask so it doesn't happen again.",
+  """
+  <p>Most contractors who've hired a marketing agency have a horror story: a big monthly fee, reports full of &ldquo;impressions,&rdquo; a website they didn't own, and a phone that rang no more than before. So the fear is justified. Here's how to choose a marketing agency without getting burned &mdash; the questions that separate the real ones from the rest.</p>
+  <h2>1. &ldquo;Do I own everything you build?&rdquo;</h2>
+  <p>The single most important question. Your website, Google listing, ad accounts and data should all be registered in <b>your</b> name, and you should keep them if you leave. Agencies that build on proprietary platforms you can't take with you are holding you hostage. Get ownership in writing.</p>
+  <h2>2. &ldquo;Am I locked into a contract?&rdquo;</h2>
+  <p>Be very cautious of 12-month commitments with exit fees. A confident agency proves results, then earns the next month. A short initial term (say 90 days) followed by month-to-month is fair; a year-long lock-in before you've seen anything is a red flag.</p>
+  <h2>3. &ldquo;How do you measure success?&rdquo;</h2>
+  <p>The answer you want: <b>booked jobs and revenue</b>, with call tracking so you can see which calls came from their work. The answer to run from: impressions, reach, clicks, &ldquo;brand awareness.&rdquo; Those don't pay your crew. If they can't tie spend to jobs, they can't prove it works.</p>
+  <h2>4. &ldquo;Do you actually work with contractors?&rdquo;</h2>
+  <p>General marketing experience isn't the same as understanding how homeowners search for a plumber at 2 a.m. Ask for contractor-specific examples. An agency that knows your trade will get results faster than a generalist learning on your dime.</p>
+  <h2>5. &ldquo;What's your pricing?&rdquo;</h2>
+  <p>If they won't tell you the price without a sales call, that's a warning. Transparent, published pricing signals a company confident in its value and not planning to charge whatever they think you'll pay.</p>
+  <h2>6. &ldquo;Can I talk to a client &mdash; or start small?&rdquo;</h2>
+  <p>Ask for a reference in your trade, or better, start with a small one-time project to see how they work before committing to a retainer. Any honest agency will let you test the water.</p>
+  <h2>The green flags, summed up</h2>
+  <p>You own everything, no long lock-in, measured in jobs not vanity metrics, trade-specific experience, published pricing, and a willingness to prove it before you commit. Find those and you've found a partner, not a trap.</p>
+  <p>Those happen to be the exact promises we put in our contracts &mdash; you can see them on our <a href="guarantees.html" style="color:var(--orange);font-weight:700">guarantees page</a>, and our <a href="pricing.html" style="color:var(--orange);font-weight:700">prices are published</a>. Start with a <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a>, no strings attached.</p>
+  <div style="max-width:760px">
+    <details><summary>What should I ask a marketing agency before hiring?</summary><p>Do I own everything you build? Am I locked into a contract? How do you measure success (jobs, not impressions)? Do you work with contractors specifically? What's your pricing? Can I start small?</p></details>
+    <details><summary>How do I avoid getting burned by a marketing agency?</summary><p>Insist on asset ownership in writing, avoid long lock-in contracts, demand success measured in booked jobs with call tracking, and prefer agencies with transparent pricing and trade-specific experience.</p></details>
+  </div>
+  """,
+  "How to Choose a Marketing Agency Without Getting Burned | Packed Agency",
+  "How to choose a marketing agency without getting burned: the 6 questions to ask about ownership, contracts, how success is measured, and pricing. For contractors.")
 
 # ============================================================ TRADE PAGES (Phase 2)
 trade_page("hvac-marketing.html", "HVAC",
