@@ -258,7 +258,7 @@ FOOTER = ("<footer class=\"site\"><div class=\"wrap\"><div class=\"f-grid\">"
     "<p style=\"font-size:14px;max-width:300px\">We keep your schedule packed. Marketing, exclusive leads and follow-up automation for Canada's trades. Ottawa-built.</p></div>"
     "<div><h4>Services</h4><a href=\"local-seo.html\">Local SEO &amp; Maps</a><a href=\"google-ads.html\">Google Ads &amp; LSA</a><a href=\"websites.html\">Conversion Websites</a><a href=\"automation.html\">Follow-up Automation</a><a href=\"calculator.html\">Missed-Call Calculator</a></div>"
     "<div><h4>Trades</h4><a href=\"hvac-marketing.html\">HVAC Marketing</a><a href=\"plumber-marketing.html\">Plumber Marketing</a><a href=\"electrician-marketing.html\">Electrician Marketing</a><a href=\"renovation-marketing.html\">Renovation Marketing</a><a href=\"toronto.html\">Toronto</a></div>"
-    "<div><h4>Company</h4><a href=\"contractor-marketing-ottawa.html\">Contractor Marketing Ottawa</a><a href=\"process.html\">Our Process</a><a href=\"resources.html\">Free Resources</a><a href=\"events.html\">Events</a><a href=\"news.html\">Trade News</a><a href=\"guarantees.html\">Guarantees</a><a href=\"results.html\">Results</a><a href=\"reviews.html\">Reviews</a><a href=\"blog.html\">Blog</a><a href=\"contact.html\">Contact</a></div>"
+    "<div><h4>Company</h4><a href=\"contractor-marketing-ottawa.html\">Contractor Marketing Ottawa</a><a href=\"areas-we-serve.html\">Areas We Serve</a><a href=\"process.html\">Our Process</a><a href=\"resources.html\">Free Resources</a><a href=\"events.html\">Events</a><a href=\"news.html\">Trade News</a><a href=\"guarantees.html\">Guarantees</a><a href=\"results.html\">Results</a><a href=\"reviews.html\">Reviews</a><a href=\"blog.html\">Blog</a><a href=\"contact.html\">Contact</a></div>"
     "</div><div class=\"f-bottom\"><span>&copy; 2026 Packed Agency. All rights reserved.</span>"
     "<span><a href=\"privacy.html\">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href=\"terms.html\">Terms</a> &nbsp;&middot;&nbsp; Client Portal (coming soon)</span></div></div></footer>\n"
     "<a class=\"callbar\" href=\"https://calendar.app.google/s2etv2aRyPFDhRZm7\" target=\"_blank\" rel=\"noopener\">&#128197; Book a free 30-min call</a>\n" + FORM_JS + "<!--Start of Tawk.to Script--><script type=\"text/javascript\">var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();(function(){var s1=document.createElement(\"script\"),s0=document.getElementsByTagName(\"script\")[0];s1.async=true;s1.src='https://embed.tawk.to/6a2b7499d6a95f1c2c58b9cc/1jqsruufi';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();</script><!--End of Tawk.to Script--></body>\n</html>")
@@ -683,7 +683,17 @@ svc_body += """
   <a class="card" href="websites.html"><span class="tag">Get Hired</span><h3>Conversion Websites</h3><p>Fast, simple sites built to turn visitors into phone calls. You own every file.</p><div class="from">$2,950 one-time</div></a>
   <a class="card dark" href="automation.html"><span class="badge">ONLY AT PACKED</span><h3>Follow-up Automation</h3><p>Missed calls texted back in seconds, every quote followed up, past customers brought back. Nobody else here sells this.</p><div class="from" style="color:#fff">From $349/mo</div></a>
 </div>
-<p style="margin-top:34px;text-align:center"><a class="btn navy" href="calculator.html">First: see what missed calls cost you →</a></p>
+<div class="prose" style="max-width:860px;margin:50px auto 0">
+  <h2 style="font-size:26px">How the four services work together</h2>
+  <p>Most agencies sell you one piece. That's why so much contractor marketing fails &mdash; each part only works if the others do. Ads send people to a website that doesn't convert; a great website nobody finds; leads pour in and then die in a missed call. We build the whole loop.</p>
+  <p><b>Get found</b> (local SEO + Google Maps) puts you where homeowners are searching. <b>Get leads</b> (Google Ads &amp; LSA) buys you the urgent, high-intent calls while the free rankings build. <b>Get hired</b> (your website) turns those visits into phone calls and quote requests. And <b>never miss a lead</b> (follow-up automation) catches everything the first three produce &mdash; the missed calls, the quotes going cold, the past customers who'd hire you again.</p>
+  <h2 style="font-size:26px">The order we do it in</h2>
+  <p>We almost always start by <b>plugging the leaks</b>, not pouring in more water. Fixing follow-up and reviews costs the least and pays back fastest, because you're recovering work you already earned. Then we build the owned channels (Google Business Profile, local SEO) that keep producing without a per-lead fee. Ads come last, once the rest converts &mdash; because ads pointed at a leaky business just drain the budget faster.</p>
+  <h2 style="font-size:26px">What every service includes</h2>
+  <p>Call tracking from day one, so you can see which calls came from what. A monthly report written in <b>calls, jobs and dollars</b> &mdash; never impressions. Full ownership of everything we build, in writing. And no lock-in after the 90-day initial term. If a service isn't producing, our report says so first.</p>
+  <p>Not sure which piece you need? The <a href="free-audit.html" style="color:var(--orange);font-weight:700">free audit</a> tells you where your biggest leak is &mdash; free, in a 10-minute video, no obligation.</p>
+</div>
+<p style="margin-top:34px;text-align:center"><a class="btn navy" href="calculator.html">First: see what missed calls cost you &rarr;</a></p>
 </div></section>""" + CTA
 page("services.html", "Services | Packed Agency", "Local SEO, Google Ads, conversion websites and follow-up automation for Ottawa contractors.", "services", svc_body)
 
@@ -841,7 +851,7 @@ for i, (t, d) in enumerate(steps, 1):
     process_body += ("<div style=\"display:flex;gap:26px;margin-bottom:34px\"><div style=\"font-family:'Archivo',sans-serif;font-weight:900;font-size:42px;color:var(--orange);min-width:64px\">0" + str(i) + "</div>"
         "<div><h3 style=\"font-size:21px;margin-bottom:6px\">" + t + "</h3><p style=\"color:var(--grey)\">" + d + "</p></div></div>")
 process_body += "</div></section>" + CTA
-page("process.html", "Our Process | Packed Agency", "From free audit to packed calendar in five transparent steps.", "", process_body)
+page("process.html", "Our Process | Packed Agency", "How Packed Agency works: from a free 10-point audit to a packed calendar in five transparent steps. No mystery, no lock-in, results in jobs and dollars.", "", process_body)
 
 # ============================================================ CALCULATOR
 calc_body = phero("Free tool", "The Missed-Call <em>Cost Calculator.</em>",
@@ -917,7 +927,7 @@ reviews_body += """
 <div class="note" style="max-width:760px">Google reviews widget goes here once the Google Business Profile is live (GHL or Elfsight embed — both free options documented in the launch checklist). Until then, this page stays honest and empty.</div>
 <p style="margin-top:24px"><a class="btn navy" href="results.html">See results instead →</a></p>
 </div></section>""" + CTA
-page("reviews.html", "Reviews | Packed Agency", "Verified Google reviews from Ottawa contractors.", "", reviews_body)
+page("reviews.html", "Reviews | Packed Agency", "Verified Google reviews from Ottawa contractors who work with Packed Agency. We publish real, verifiable feedback - never quotes we can't prove.", "", reviews_body)
 
 # ============================================================ BLOG + first post
 blog_body = phero("The Packed Blog", "We give the playbook <em>away.</em>",
@@ -942,7 +952,7 @@ blog_body += """
   <a class="card" href="contractor-marketing-ideas.html"><span class="tag">Ideas</span><h3>11 Contractor Marketing Ideas That Actually Work</h3><p>No fluff — the tactics that move the needle in 2026.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
   <a class="card" href="blog-hvac-lead-cost.html"><span class="tag">Benchmarks</span><h3>What an HVAC Lead Costs in Ottawa (2026)</h3><p>Real benchmark numbers: LSA, Google Ads, marketplaces and SEO compared.</p><span style="color:var(--orange);font-weight:700;font-size:14px">Read →</span></a>
 </div>""" + NEWSLETTER + """</div></section>""" + CTA
-page("blog.html", "Contractor Marketing Blog | Packed Agency", "Ottawa-specific contractor marketing answers, published weekly.", "", blog_body)
+page("blog.html", "Contractor Marketing Blog | Packed Agency", "Ottawa-specific contractor marketing answers, published weekly: lead costs, Google rankings, reviews, follow-up and what actually fills a schedule.", "", blog_body)
 
 post_body = phero("Blog · 6 min read", "What an HVAC Lead Costs in Ottawa <em>(2026)</em>",
     "Real benchmark numbers across every channel — so you can stop guessing what 'good' looks like.", "Blog")
@@ -997,7 +1007,7 @@ hs_body += """
     <details><summary>What's better than HomeStars for contractors?</summary><p>Owned channels: a top-3 Google Business Profile, steady reviews, and follow-up automation. They cost less per won job and the leads are exclusively yours, with no per-lead fee once they're ranking.</p></details>
   </div>
 """ + NEWSLETTER + """</div></section>""" + CTA
-page("is-homestars-worth-it.html", "Is HomeStars Worth It for Ottawa Contractors? (2026 Honest Math) | Packed Agency",
+page("is-homestars-worth-it.html", "Is HomeStars Worth It for Ottawa Contractors? (2026)",
      "Is HomeStars worth it for contractors? The real cost of shared leads ($150-250+ per won job) vs. owning your Google presence, with honest 2026 math.", "", hs_body)
 
 # ---- SEO post: How to Get More HVAC Leads in Ottawa ----
@@ -1027,7 +1037,7 @@ hl_body += """
     <details><summary>How much do HVAC leads cost in Ottawa?</summary><p>Roughly $60&ndash;$120 on Local Services Ads, ~$50&ndash;$60 per call on managed search ads, and far less per won job once you rank in the Google map pack.</p></details>
   </div>
 """ + NEWSLETTER + """</div></section>""" + CTA
-page("how-to-get-more-hvac-leads-ottawa.html", "How to Get More HVAC Leads in Ottawa (2026 Guide) | Packed Agency",
+page("how-to-get-more-hvac-leads-ottawa.html", "How to Get More HVAC Leads in Ottawa (2026)",
      "How to get more HVAC leads in Ottawa: 7 channels ranked by cost and speed - Google Maps, LSA, reviews, websites, missed-call text-back, reactivation and ads.", "", hl_body)
 
 # ---- SEO post: Contractor Marketing Ideas ----
@@ -1065,8 +1075,8 @@ ci_body += """
     <details><summary>How do contractors get more customers in 2026?</summary><p>Own your Google presence (maps + reviews), fix follow-up so no lead leaks, and publish helpful local content. Paid ads scale it once those convert.</p></details>
   </div>
 """ + NEWSLETTER + """</div></section>""" + CTA
-page("contractor-marketing-ideas.html", "11 Contractor Marketing Ideas That Actually Work (2026) | Packed Agency",
-     "11 contractor marketing ideas that actually work in 2026 - Google Business Profile, reviews, missed-call text-back, follow-up, local pages and more. Ottawa-tested.", "", ci_body)
+page("contractor-marketing-ideas.html", "11 Contractor Marketing Ideas That Actually Work (2026)",
+     "11 contractor marketing ideas that actually work in 2026: Google Business Profile, reviews, missed-call text-back, follow-up and local pages. Ottawa-tested.", "", ci_body)
 
 # ============================================================ CORNERSTONE: Contractor Marketing Ottawa
 cmo_body = phero("Contractor Marketing &mdash; Ottawa", "Contractor Marketing in <em>Ottawa</em>",
@@ -1112,7 +1122,7 @@ cmo_body += """
   </div>
 """ + NEWSLETTER + """</div></section>""" + CTA
 page("contractor-marketing-ottawa.html", "Contractor Marketing in Ottawa (2026) | Packed Agency",
-     "Contractor marketing in Ottawa: Google Maps/local SEO, ads, conversion websites and follow-up automation for HVAC, plumbing, electrical & renovation trades. Published pricing, free audit.", "", cmo_body)
+     "Contractor marketing in Ottawa: Google Maps, ads, conversion websites and follow-up automation for HVAC, plumbing, electrical and renovation trades.", "", cmo_body)
 
 # ============================================================ BLOG BATCH (mindset questions)
 blogpost("why-competitors-outrank-me.html", "Blog &middot; 6 min read",
@@ -1138,7 +1148,7 @@ blogpost("why-competitors-outrank-me.html", "Blog &middot; 6 min read",
     <details><summary>How long does it take to outrank a competitor?</summary><p>Profile and review improvements can move you within 4&ndash;8 weeks; fully overtaking an established competitor usually takes 3&ndash;6 months of consistent effort.</p></details>
   </div>
   """,
-  "Why Do Competitors With Worse Work Outrank Me on Google? | Packed Agency",
+  "Why Do Competitors With Worse Work Outrank Me?",
   "Why do competitors with worse work rank higher on Google? The 5 real reasons - reviews, Google Business Profile, backlinks, site speed - and how to fix each.")
 
 blogpost("is-marketing-worth-it-for-contractors.html", "Blog &middot; 6 min read",
@@ -1164,8 +1174,8 @@ blogpost("is-marketing-worth-it-for-contractors.html", "Blog &middot; 6 min read
     <details><summary>Why did my last marketing agency not work?</summary><p>Usually one of three reasons: it was measured in vanity metrics, there was no lead follow-up, or you were renting leads instead of building owned assets. Fixing those is what makes marketing pay.</p></details>
   </div>
   """,
-  "Is Marketing Worth It for Contractors? (Honest ROI Math) | Packed Agency",
-  "Is marketing worth it for contractors? The honest answer with real ROI math - why most contractor marketing fails, what 'worth it' looks like, and how to test it risk-free.")
+  "Is Marketing Worth It for Contractors? Honest ROI",
+  "Is marketing worth it for contractors? The honest ROI math, why most contractor marketing fails, and how to test it without risking your money.")
 
 blogpost("how-much-should-contractors-spend-on-marketing.html", "Blog &middot; 5 min read",
   "How Much Should a Contractor <em>Spend on Marketing?</em>",
@@ -1190,7 +1200,7 @@ blogpost("how-much-should-contractors-spend-on-marketing.html", "Blog &middot; 5
     <details><summary>Is it better to spend on ads or SEO?</summary><p>Fix follow-up first, then invest in owned channels (local SEO, reviews) for long-term low-cost leads, and use ads to scale once those convert. A blend usually wins.</p></details>
   </div>
   """,
-  "How Much Should a Contractor Spend on Marketing? (2026) | Packed Agency",
+  "How Much Should a Contractor Spend on Marketing?",
   "How much should a contractor spend on marketing? The 5-10% of revenue rule, why return matters more than percentages, and where to put your first dollars.")
 
 blogpost("why-leads-dont-become-jobs.html", "Blog &middot; 6 min read",
@@ -1217,7 +1227,7 @@ blogpost("why-leads-dont-become-jobs.html", "Blog &middot; 6 min read",
   </div>
   """,
   "I Get Calls But Not Jobs - Why? (5 Reasons) | Packed Agency",
-  "Getting calls but not jobs? The 5 reasons leads don't convert for contractors - missed calls, slow follow-up, no quote follow-up, shared leads - and how to fix each.")
+  "Getting calls but not jobs? The 5 reasons leads don't convert for contractors - missed calls, slow follow-up, no quote follow-up - and how to fix each.")
 
 blogpost("why-customers-ghost-after-quote.html", "Blog &middot; 5 min read",
   "Why Customers Ghost After a Quote <em>(and How to Win Them Back)</em>",
@@ -1246,7 +1256,7 @@ blogpost("why-customers-ghost-after-quote.html", "Blog &middot; 5 min read",
     <details><summary>How do I follow up without being annoying?</summary><p>Keep it short, friendly, and helpful &mdash; check in, offer to answer questions, add a small value (hold the price, share a photo). You're being helpful, not chasing.</p></details>
   </div>
   """,
-  "Why Customers Ghost After a Quote (and How to Win Them Back) | Packed Agency",
+  "Why Customers Ghost After a Quote (and How to Fix It)",
   "Why do customers ghost after a contractor quote? It's rarely price - here's what's really happening and the simple 3-touch follow-up that wins the job back.")
 
 blogpost("stop-feast-or-famine-contractor.html", "Blog &middot; 6 min read",
@@ -1272,8 +1282,8 @@ blogpost("stop-feast-or-famine-contractor.html", "Blog &middot; 6 min read",
     <details><summary>Why is my contracting business feast or famine?</summary><p>Usually because marketing gets paused during busy months, and leads lag &mdash; so the famine is set in motion during the feast. Keeping a steady lead engine running fixes it.</p></details>
   </div>
   """,
-  "How to Stop the Feast-or-Famine Cycle in Your Trade | Packed Agency",
-  "How to stop feast-or-famine as a contractor: build owned lead channels, mine your customer list, market ahead of the swing, and automate follow-up for a steadier schedule.")
+  "How to Stop the Feast-or-Famine Cycle in Your Trade",
+  "How to stop feast-or-famine as a contractor: build owned lead channels, mine your customer list, market ahead of the swing and automate follow-up.")
 
 # ---- regenerated auto-topics (brand + address consistent) ----
 blogpost("best-time-to-advertise-hvac.html", "Blog &middot; 5 min read",
@@ -1304,8 +1314,8 @@ blogpost("best-time-to-advertise-hvac.html", "Blog &middot; 5 min read",
     <details><summary>Is it worth advertising HVAC in the off-season?</summary><p>Yes &mdash; but shift the goal. Off-season is ideal for low-cost reactivation of past customers and maintaining your Google rankings so you're visible the moment demand returns.</p></details>
   </div>
   """,
-  "The Best Time to Advertise an HVAC Business in Ottawa (2026) | Packed Agency",
-  "When should HVAC companies advertise in Ottawa? Start 4-6 weeks before cooling (late April) and heating (late August) peaks - plus what to run in the shoulder seasons.")
+  "Best Time to Advertise an HVAC Business in Ottawa (2026)",
+  "When should HVAC companies advertise in Ottawa? Start 4-6 weeks before the cooling and heating peaks - plus what to run in the slow shoulder seasons.")
 
 blogpost("rank-higher-google-maps-contractor.html", "Blog &middot; 6 min read",
   "How to Rank Higher on Google Maps <em>as a Contractor</em>",
@@ -1331,8 +1341,8 @@ blogpost("rank-higher-google-maps-contractor.html", "Blog &middot; 6 min read",
     <details><summary>How long does it take to rank in the Google map pack?</summary><p>Profile and review improvements can show in 4&ndash;8 weeks; reaching a competitive top-3 typically takes 60&ndash;90 days of consistent effort, after which it tends to hold.</p></details>
   </div>
   """,
-  "How to Rank Higher on Google Maps as a Contractor (2026) | Packed Agency",
-  "How to rank higher on Google Maps as a contractor: optimise your Business Profile, earn steady reviews, keep NAP consistent, add service-area pages and local links.")
+  "How to Rank Higher on Google Maps as a Contractor",
+  "How to rank higher on Google Maps as a contractor: optimise your Business Profile, earn steady reviews, keep NAP consistent and add service-area pages.")
 
 # ---- BLOG BATCH 2 ----
 blogpost("get-more-plumbing-jobs-ottawa.html", "Blog &middot; 6 min read",
@@ -1357,7 +1367,7 @@ blogpost("get-more-plumbing-jobs-ottawa.html", "Blog &middot; 6 min read",
   </div>
   """,
   "How to Get More Plumbing Jobs in Ottawa (2026) | Packed Agency",
-  "How to get more plumbing jobs in Ottawa: win the Google map pack for emergencies, answer every call, build reviews, and capture high-value planned work. Practical 2026 guide.")
+  "How to get more plumbing jobs in Ottawa: win the map pack for emergencies, answer every call, build reviews and capture high-value planned work.")
 
 blogpost("electrician-marketing-ideas.html", "Blog &middot; 6 min read",
   "Electrician Marketing Ideas That <em>Get More Jobs</em>",
@@ -1382,8 +1392,8 @@ blogpost("electrician-marketing-ideas.html", "Blog &middot; 6 min read",
     <details><summary>How do electricians get more high-value jobs?</summary><p>Create pages and Google listings focused on the profitable services (EV chargers, panels, rewires), gather reviews that mention those jobs, and follow up on every large quote.</p></details>
   </div>
   """,
-  "Electrician Marketing Ideas That Get More Jobs (2026) | Packed Agency",
-  "Electrician marketing ideas for 2026: target high-ticket keywords like EV chargers and panel upgrades, win the map pack, show credibility, and follow up on big quotes.")
+  "Electrician Marketing Ideas That Get More Jobs (2026)",
+  "Electrician marketing ideas for 2026: target EV chargers and panel upgrades, win the Google map pack, show credibility and follow up on big quotes.")
 
 blogpost("how-to-get-more-google-reviews.html", "Blog &middot; 5 min read",
   "How to Get More Google Reviews <em>as a Contractor</em>",
@@ -1408,8 +1418,8 @@ blogpost("how-to-get-more-google-reviews.html", "Blog &middot; 5 min read",
     <details><summary>Is it against Google's rules to ask for reviews?</summary><p>No &mdash; asking is fine and encouraged. What's banned is paying for reviews, offering incentives, review quotas, and on-site pressure. Ask honestly and you're compliant.</p></details>
   </div>
   """,
-  "How to Get More Google Reviews as a Contractor (2026) | Packed Agency",
-  "How to get more Google reviews as a contractor: ask at the moment of relief, text the direct link, aim for steady velocity, reply to all, and stay within Google's 2026 rules.")
+  "How to Get More Google Reviews as a Contractor",
+  "How to get more Google reviews as a contractor: ask at the moment of relief, text the direct link, aim for steady velocity and stay within Google's rules.")
 
 blogpost("do-contractors-need-a-website.html", "Blog &middot; 5 min read",
   "Do Contractors Still Need a Website in <em>2026?</em>",
@@ -1436,7 +1446,7 @@ blogpost("do-contractors-need-a-website.html", "Blog &middot; 5 min read",
   </div>
   """,
   "Do Contractors Still Need a Website in 2026? | Packed Agency",
-  "Do contractors still need a website in 2026? Yes - it's the trust check, the asset you own, and where you rank for high-value searches. What a contractor site really needs.")
+  "Do contractors still need a website in 2026? Yes - it's the trust check homeowners use, the one asset you own, and where high-value searches land.")
 
 blogpost("how-to-choose-marketing-agency-contractor.html", "Blog &middot; 6 min read",
   "How to Choose a Marketing Agency <em>Without Getting Burned</em>",
@@ -1463,8 +1473,86 @@ blogpost("how-to-choose-marketing-agency-contractor.html", "Blog &middot; 6 min 
     <details><summary>How do I avoid getting burned by a marketing agency?</summary><p>Insist on asset ownership in writing, avoid long lock-in contracts, demand success measured in booked jobs with call tracking, and prefer agencies with transparent pricing and trade-specific experience.</p></details>
   </div>
   """,
-  "How to Choose a Marketing Agency Without Getting Burned | Packed Agency",
-  "How to choose a marketing agency without getting burned: the 6 questions to ask about ownership, contracts, how success is measured, and pricing. For contractors.")
+  "How to Choose a Marketing Agency Without Getting Burned",
+  "How to choose a marketing agency without getting burned: the 6 questions to ask about ownership, contracts, how success is measured, and pricing.")
+
+# ============================================================ LOCAL AREA PAGES (Ottawa)
+AREAS = [
+    ("kanata", "Kanata", "Kanata &amp; Stittsville", "tech-corridor homes, newer subdivisions and a steady stream of renovations",
+     "Kanata North, Kanata Lakes, Bridlewood, Katimavik and Morgan&rsquo;s Grant"),
+    ("barrhaven", "Barrhaven", "Barrhaven &amp; Riverside South", "fast-growing family subdivisions where new-build homes are hitting their first major service years",
+     "Longfields, Stonebridge, Half Moon Bay and Riverside South"),
+    ("nepean", "Nepean", "Nepean", "a mix of established post-war homes and newer builds &mdash; lots of furnace, panel and reno work",
+     "Bells Corners, Centrepointe, City View and Craig Henry"),
+    ("orleans", "Orl&eacute;ans", "Orl&eacute;ans &amp; the East End", "a large, bilingual, family-heavy market with an aging housing stock",
+     "Avalon, Fallingbrook, Chapel Hill and Convent Glen"),
+    ("stittsville", "Stittsville", "Stittsville", "one of Ottawa&rsquo;s fastest-growing communities &mdash; and our own backyard",
+     "Jackson Trails, Fairwinds, Amberwood and Crossing Bridge"),
+    ("gloucester", "Gloucester", "Gloucester &amp; Ottawa South", "dense established neighbourhoods with steady repair and replacement demand",
+     "Blossom Park, Hunt Club, Greenboro and Riverside Park"),
+]
+
+def area_page(slug, name, title_area, character, hoods):
+    fname = "contractor-marketing-" + slug + ".html"
+    body = phero("Contractor Marketing &mdash; " + name,
+        "Contractor Marketing in <em>" + name + "</em>",
+        "Helping " + name + " HVAC, plumbing, electrical and renovation companies get found, get chosen, and stay booked.",
+        "Contractor Marketing " + name)
+    body += """
+<section><div class="wrap prose">
+  <p>If you run a trade in <b>""" + name + """</b>, your customers are your neighbours &mdash; and they find you the same way everyone finds a contractor now: they pull out a phone, search, and call one of the first businesses Google shows them. <b>Contractor marketing in """ + name + """</b> is simply about making sure that business is yours.</p>
+
+  <h2>What makes """ + name + """ different</h2>
+  <p>""" + name + """ is """ + character + """. Homeowners here search locally &mdash; &ldquo;plumber """ + name + """,&rdquo; &ldquo;furnace repair near me&rdquo; &mdash; and Google heavily favours businesses it believes are genuinely local and relevant to the area. That's good news for a smaller trade: you don't have to outrank the whole city, just win your patch. We help contractors show up across """ + hoods + """ and the surrounding streets.</p>
+
+  <h2>How we get """ + name + """ contractors more work</h2>
+  <ul>
+    <li><b>Google Maps &amp; local SEO</b> &mdash; ranking in the top-3 map results for your trade in """ + name + """, which is where roughly 70% of the calls go. <a href="local-seo.html" style="color:var(--orange);font-weight:700">See local SEO &rarr;</a></li>
+    <li><b>Area-specific pages</b> &mdash; a page on your site for """ + name + """ (and each neighbourhood you serve) so you rank for the searches happening on those streets.</li>
+    <li><b>Reviews</b> &mdash; the tie-breaker. Local homeowners read them before they call. <a href="how-to-get-more-google-reviews.html" style="color:var(--orange);font-weight:700">The review playbook &rarr;</a></li>
+    <li><b>A website that converts</b> &mdash; fast, click-to-call, built to turn a visit into a booked job. <a href="websites.html" style="color:var(--orange);font-weight:700">See websites &rarr;</a></li>
+    <li><b>Follow-up automation</b> &mdash; missed-call text-back so a """ + name + """ homeowner who can't reach you doesn't just call the next name. <a href="automation.html" style="color:var(--orange);font-weight:700">See automation &rarr;</a></li>
+  </ul>
+
+  <h2>Trades we work with in """ + name + """</h2>
+  <p>We only work with contractors and home services &mdash; <a href="hvac-marketing.html" style="color:var(--orange);font-weight:700">HVAC</a>, <a href="plumber-marketing.html" style="color:var(--orange);font-weight:700">plumbing</a>, <a href="electrician-marketing.html" style="color:var(--orange);font-weight:700">electrical</a> and <a href="renovation-marketing.html" style="color:var(--orange);font-weight:700">renovation/general contracting</a>. And we take <b>one client per trade, per area</b> &mdash; so if we're working with a """ + name + """ plumber, we can't take another one. First in, protected.</p>
+
+  <h2>Straight pricing, no sales call</h2>
+  <p>A conversion website is $2,950 one-time (yours to keep). Ongoing plans start at $1,495/month. Every price is published on our <a href="pricing.html" style="color:var(--orange);font-weight:700">pricing page</a> &mdash; no &ldquo;contact us for a quote.&rdquo;</p>
+
+  <p>The easiest place to start is a <a href="free-audit.html" style="color:var(--orange);font-weight:700">free 10-point audit</a>: we check how your business shows up in """ + name + """ &mdash; your Google listing, reviews, website and phones &mdash; and send you a 10-minute video of exactly what to fix. Free, no obligation, useful even if you never hire us.</p>
+
+  <div style="max-width:760px">
+    <details><summary>Do you work with contractors in """ + name + """?</summary><p>Yes &mdash; """ + name + """ is part of our core Ottawa service area, along with """ + hoods + """. We work with HVAC, plumbing, electrical and renovation companies, and take only one client per trade per area.</p></details>
+    <details><summary>How do I rank higher on Google in """ + name + """?</summary><p>Complete your Google Business Profile with the exact trade category, build steady reviews, keep your business details identical everywhere, and add a page to your site for """ + name + """ and the neighbourhoods you serve.</p></details>
+    <details><summary>What does contractor marketing cost in """ + name + """?</summary><p>A website is $2,950 one-time; ongoing management starts at $1,495/month, and single services can be bought on their own. All prices are published &mdash; no sales call needed.</p></details>
+  </div>
+""" + NEWSLETTER + """</div></section>""" + CTA
+    page(fname, "Contractor Marketing in " + name + " | Packed Agency",
+         "Contractor marketing in " + name + ": Google Maps rankings, reviews, conversion websites and follow-up automation for HVAC, plumbing and electrical trades.",
+         "", body)
+
+for slug, name, title_area, character, hoods in AREAS:
+    area_page(slug, name, title_area, character, hoods)
+
+# Areas-served hub linking them all (internal link equity + a page targeting "areas we serve")
+areas_body = phero("Where we work", "Ottawa Areas <em>We Serve</em>",
+    "We work with contractors across Ottawa and the surrounding communities &mdash; one client per trade, per area.", "Areas We Serve")
+areas_body += """
+<section><div class="wrap">
+  <p class="sec-sub" style="margin-bottom:30px">Pick your area to see how we help contractors get found and stay booked there. Don&rsquo;t see yours? We serve the whole Ottawa&ndash;Gatineau region &mdash; just <a href="contact.html" style="color:var(--orange);font-weight:700">ask</a>.</p>
+  <div class="grid3">
+"""
+for slug, name, title_area, character, hoods in AREAS:
+    areas_body += ('    <a class="card" href="contractor-marketing-' + slug + '.html"><h3>' + name + '</h3><p>Marketing for ' + name +
+                   ' HVAC, plumbing, electrical and renovation companies.</p><span style="color:var(--orange);font-weight:700;font-size:14px">See ' + name + ' &rarr;</span></a>\n')
+areas_body += """  </div>
+  <div style="max-width:820px;margin-top:40px">
+    <p>We also serve Ottawa proper, Gatineau, and &mdash; remotely &mdash; the Toronto/GTA area. Everything we do is digital and tracked, so distance changes nothing except how often we shake hands.</p>
+  </div>
+""" + NEWSLETTER + """</div></section>""" + CTA
+page("areas-we-serve.html", "Ottawa Areas We Serve | Packed Agency",
+     "Contractor marketing across Ottawa: Kanata, Barrhaven, Nepean, Orleans, Stittsville and Gloucester. One client per trade, per area.", "", areas_body)
 
 # ============================================================ TRADE PAGES (Phase 2)
 trade_page("hvac-marketing.html", "HVAC",
@@ -1554,7 +1642,7 @@ def guide_page(fname, title, kicker, h1, lead, intro, checks, faq, note):
     page(fname, title, lead, "resources", b)
 
 guide_page("guide-google-business-profile.html",
-    "Google Business Profile for Contractors: The 10-Minute Fix | Packed Agency",
+    "Google Business Profile for Contractors: 10-Minute Fix",
     "Free guide", "The 10-minute Google Business Profile <em>fix.</em>",
     "Your Google listing drives more calls than your website — and most trades have it 30% filled. Six fixes you can do today, free.",
     "When a homeowner searches your trade, Google shows the map first. Your Google Business Profile (the listing with your name, reviews and photos) decides whether you appear there. Here is exactly what to fix, in order of impact:",
@@ -1570,7 +1658,7 @@ guide_page("guide-google-business-profile.html",
     "<b>Since November 2024</b>, a verified Google Business Profile is also mandatory to run Google&rsquo;s pay-per-lead ads (Local Services Ads) — and since mid-2025 your profile reviews directly power those ads&rsquo; ranking. The listing is no longer optional infrastructure; it IS your marketing foundation.")
 
 guide_page("guide-reviews.html",
-    "How Contractors Get More Google Reviews: The Playbook | Packed Agency",
+    "How Contractors Get More Google Reviews: The Playbook",
     "Free guide", "The review playbook that <em>actually works.</em>",
     "Reviews decide ties in the Google map pack. The trick isn't asking — it's when and how you ask.",
     "Two contractors, same distance from the homeowner: the one with 150 fresh reviews beats the one with 30 old ones, almost every time. Here is the playbook:",
@@ -1585,7 +1673,7 @@ guide_page("guide-reviews.html",
     "")
 
 guide_page("guide-website-checklist.html",
-    "Why Contractor Websites Don't Generate Leads: 7 Fixes | Packed Agency",
+    "Why Contractor Websites Don't Generate Leads: 7 Fixes",
     "Free guide", "7 reasons contractor websites <em>never ring.</em>",
     "About 90% of contractor websites fail to turn visitors into calls. These are the seven leaks — check yours against each one.",
     "A website that doesn't make the phone ring isn't a website — it's a brochure nobody asked for. Walk through your own site on your phone and check:",
@@ -1601,7 +1689,7 @@ guide_page("guide-website-checklist.html",
     "")
 
 guide_page("guide-follow-up.html",
-    "Lead Follow-Up for Contractors: Where the Money Leaks | Packed Agency",
+    "Lead Follow-Up for Contractors: Where Money Leaks",
     "Free guide", "Follow-up: where the money <em>actually leaks.</em>",
     "80% of sales take five or more contacts — most contractors stop at one. Three free fixes you can start today.",
     "The cheapest lead you will ever get is the one already in your missed-call log. The stats that should change how you run your phone:",
@@ -1617,7 +1705,7 @@ guide_page("guide-follow-up.html",
     "")
 
 guide_page("guide-lead-costs.html",
-    "What a Contractor Lead Should Cost in 2026: Honest Benchmarks | Packed Agency",
+    "What a Contractor Lead Should Cost in 2026",
     "Free guide", "What leads should cost <em>(so nobody rips you off.)</em>",
     "Honest 2026 benchmarks for every lead channel — so when someone quotes you a price, you can make them answer in numbers.",
     "Almost nobody publishes real lead costs, which is exactly why contractors get overcharged. Here are the honest ranges from published industry data:",
@@ -1662,7 +1750,7 @@ ev_body += """
   </ul>
   <div class="note" style="max-width:820px;margin-top:36px"><b>Know an event we should list?</b> Tell us at info@packedagency.ca — this page is updated as the Ottawa calendar moves.</div>
 """ + NEWSLETTER + """</div></section>""" + CTA
-page("events.html", "Contractor Events & Networking in Ottawa (2026) | Packed Agency",
+page("events.html", "Contractor Events & Networking in Ottawa (2026)",
      "Ottawa contractor events, trade shows and associations: GOHBA, OCA Symposium, home shows, BNI — plus how to actually work a trade show.", "resources", ev_body)
 
 # ============================================================ NEWS BULLETIN
@@ -1754,7 +1842,7 @@ nf_body += """
   <a class="card" href="pricing.html"><h3>Pricing</h3><p>Real published prices.</p></a>
   <a class="card" href="free-audit.html"><h3>Free Audit</h3><p>The 30-second form.</p></a>
 </div></div></section>"""
-page("404.html", "Page Not Found | Packed Agency", "That page does not exist.", "", nf_body)
+page("404.html", "Page Not Found | Packed Agency", "That page doesn't exist. Head back to Packed Agency - contractor marketing in Ottawa - or grab your free 10-point marketing audit.", "", nf_body)
 
 # ============================================================ SEO files
 today = datetime.date.today().isoformat()
@@ -1819,7 +1907,7 @@ priv_body += """
 <h2>Cookies</h2><p>We use analytics and chat cookies (GA4, Tawk.to). You can block cookies in your browser without losing access to this site.</p>
 <p><i>Last updated: [date]. Questions: """ + EMAIL + """.</i></p>
 </div></section>"""
-page("privacy.html", "Privacy Policy | Packed Agency", "Packed Agency privacy policy &mdash; CASL-aware, plain language.", "", priv_body)
+page("privacy.html", "Privacy Policy | Packed Agency", "Packed Agency privacy policy - plain language and CASL-aware. What we collect, how we use it, and what we never do with your information.", "", priv_body)
 
 terms_body = phero("Legal", "Terms of <em>Service.</em>", "The short, fair version. Full service terms live in your signed agreement.", "Terms")
 terms_body += """
@@ -1831,7 +1919,7 @@ terms_body += """
 <h2>Liability</h2><p>To the maximum extent permitted by law, our liability is limited to fees paid in the three months preceding a claim.</p>
 <p><i>Last updated: [date].</i></p>
 </div></section>"""
-page("terms.html", "Terms | Packed Agency", "Packed Agency terms of service.", "", terms_body)
+page("terms.html", "Terms | Packed Agency", "Packed Agency terms of service - the short, fair version. Site use, service terms, our three guarantees and honest expectations about outcomes.", "", terms_body)
 
 # ============================================================ style.css
 with open(os.path.join(OUT, "style.css"), "w") as f:
